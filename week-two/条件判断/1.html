@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>条件判断</title>
+</head>
+<body>
+  <input type="button" value="-" id="btn1">
+  <input type="button" value="+" id="btn2">
+  <p id="p1">我是可可我是可可我是可可我是可可我是可可我是可可我是可可我是可可我是可可</p>
+</body>
+<script>
+  var oBtn1 = document.getElementById('btn1');
+  var oBtn2 = document.getElementById('btn2');
+  var oP1 = document.getElementById('p1');
+
+  var num = 15;
+  oBtn1.onclick = function() {
+    if(num > 12) {
+      num --;
+      oP1.style.fontSize = num + 'px';
+      console.log(num);
+    }
+  }
+
+  oBtn2.onclick = function() {
+    if(num < 22) {
+      num ++;
+      oP1.style.fontSize = num + 'px';
+      console.log(num);
+    }
+  }
+</script>
+</html>

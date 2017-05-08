@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      text-decoration-line: none;
+    }
+
+    .container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border: 5px solid #ccc;
+      margin: 40px auto 0;
+      text-align: center;
+      background: #fff url('../../images/loading.gif') -2px 40px no-repeat;
+    }
+
+    .container a {
+      position: absolute;
+      top: 175px;
+      width: 30px;
+      height: 40px;
+      color: #fff;
+      font-size: 24px;
+      background-color: #000;
+      border: 3px solid #ccc;
+      line-height: 40px;
+      opacity: 0.6;
+      filter: alpha(opacity=60);
+      text-align: center;
+    }
+
+    .container a:hover {
+      cursor: pointer;
+      opacity: 0.9;
+      filter: alpha(opacity=90);
+    }
+
+    #prev {
+      left: 10px;
+    }
+
+    #next {
+      right: 10px;
+    }
+
+    #span1, #p1 {
+      position: absolute;
+      width: 400px;
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      background-color: #000;
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+      text-align: center;
+    }
+
+    #span1 {
+      bottom: 0;
+    }
+
+    #p1 {
+      top: 0;
+    }
+
+    #img1 {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="javascript:;" id="prev"><</a>
+    <a href="javascript:;" id="next">></a>
+    <span id="span1">图片文字正在加载...</span>
+    <p id="p1">数量正在加载中...</p>
+    <img src="" alt="" id="img1">
+  </div>
+</body>
+<script>
+  var oPrev = document.getElementById('prev');
+  var oNext = document.getElementById('next');
+  var oSpan1 = document.getElementById('span1');
+  var oP1 = document.getElementById('p1');
+  var oImg1 = document.getElementById('img1');
+
+  var arrUrl = ['../../images/1.jpg', '../../images/2.jpg',
+                '../../images/3.jpg', '../../images/4.jpg'];
+  var arrText = ['图片一', '图片二', '图片三', '图片四'];
+
+  // 初始化
+  var num = 0;
+  tab();
+
+  oPrev.onclick = function() {
+    num --;
+    if(num == -1) {
+      num = arrUrl.length-1;
+    }
+    tab();
+  }
+
+  oNext.onclick = function() {
+    num ++;
+    if(num == arrUrl.length) {
+      num = 0;
+    }
+    tab();
+  }
+
+  function tab() {
+    oSpan1.innerHTML = arrText[num];
+    oImg1.src = arrUrl[num];
+    oP1.innerHTML = num + 1 + '/' + arrUrl.length;
+  }
+</script>
+</html>

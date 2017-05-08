@@ -41,8 +41,12 @@
     // flag ? oSpan.innerHTML = '于春华' : oSpan.innerHTML = '果果';
 
     oBtn.onclick = function() {
+      if(oText.value == '') {
+        alert('请输入内容');
+      } else {
         oDiv.innerHTML += oSpan.innerHTML + oText.value + '<br />';
         oText.value = '';
+      }
     }
 </script>
 </html>

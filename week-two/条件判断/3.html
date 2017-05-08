@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload = function() {
+      var oText = document.getElementById('val');
+      var oBtn = document.getElementById('btn');
+      oBtn.onclick = function() {
+        if(oText.value != '' && oText.value == 'html') {
+          alert('通过');
+          oText.value = '';
+        } else if(oText.value != '' && oText.value == 'css') {
+          alert('通过');
+          oText.value = '';
+        } else if(oText.value != '' && oText.value == 'js') {
+          alert('通过');
+          oText.value = '';
+        } else {
+          alert('不通过');
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  通关口令
+  <input type="text" id="val"/>
+  <input type="button" value="验证" id="btn">
+</body>
+</html>
