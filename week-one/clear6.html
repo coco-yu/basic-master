@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清浮动第6种方法</title>
+    <style>
+        .clearfix {
+            zoom: 1;
+        }
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .box {
+            border: 1px solid #f00;
+        } 
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        清浮动方法6
+            
+    -->
+    <div class="box clearfix">
+        <div class="item"></div>
+    </div>    
+</body>
+</html>

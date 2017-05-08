@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绝对定位元素父级宽高是奇数</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 307px;
+            height: 307px;
+            background-color: #f00;
+        }
+        .content {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+    <!--
+          解决方案： 避免父级宽高是奇数
+    -->
+</head>
+<body>
+    <div class="box">
+        <div class="content"></div>
+    </div>
+</body>
+</html>

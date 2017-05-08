@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>练习</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .container {
+      padding: 100px;
+    }
+
+    .gn {
+      text-align: left;
+    }
+
+    #btn {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+      background-color: #f00;
+      border: none;
+      margin-left: 20px;
+    }
+
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: #f00;
+      border: 5px solid #000;
+      margin-top: 30px;
+    }
+
+    .modal {
+      position: absolute;
+      top: 20%;
+      left: 45%;
+      width: 400px;
+      height: 250px;
+      padding: 30px;
+      border: 10px solid #ccc;
+      margin: 0 auto;
+      background-color: #fff;
+      z-index: 999;
+    }
+
+    .div1 {
+      margin: 20px 0  20px 0;
+    }
+
+    .text {
+      display: inline-block;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .red, .yellow, .blue, .w200, .w300, .w400, .h200, .h300, .h400 {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      color: #000;
+      padding: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+
+    .red {
+      background-color: #f00;
+    }
+
+    .yellow {
+      background-color: #ff0;
+    }
+
+    .blue {
+      background-color: #00f;
+    }
+
+    button {
+      width: 50px;
+      height: 30px;
+      border: none;
+      background-color: #ccc;
+      border-radius: 5px;
+      margin: 0 50px;
+    }
+
+    #modal {
+      display: none;
+    }
+
+    #filter {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right:0px;
+      opacity: 0.5;
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="gn"><span>请为下面的div设置样式</span><button id="btn">点击设置</button></div>
+    <div id="box"></div>
+    <div class="modal" id="modal">
+      <div class="div1">
+        <p class="text">请选择背景色</p>
+        <p class="red" id="red">红</p>
+        <p class="yellow" id="yellow">黄</p>
+        <p class="blue" id="blue">蓝</p>
+      </div>
+      <div class="div1">
+        <p class="text">请选择宽(px)</p>
+        <p class="w200" id="w200">200</p>
+        <p class="w300" id="w300">300</p>
+        <p class="w400" id="w400">400</p>
+      </div>
+      <div class="div1">
+        <p class="text">请选择高(px)</p>
+        <p class="h200" id="h200">200</p>
+        <p class="h300" id="h300">300</p>
+        <p class="h400" id="h400">400</p>
+      </div>
+      <button id="reset">恢复</button>
+      <button id="ok">确认</button>
+    </div>
+    <div id="filter"></div>
+  </div>
+</body>
+<script>
+
+  var oBtn1 = document.getElementById('btn');
+  var oModal = document.getElementById('modal');
+  var oBody = document.getElementsByTagName('body');
+  var oRedBtn = document.getElementById('red');
+  var oYellowBtn = document.getElementById('yellow');
+  var oBlueBtn = document.getElementById('blue');
+  var w2Btn = document.getElementById('w200');
+  var w3Btn = document.getElementById('w300');
+  var w4Btn = document.getElementById('w400');
+  var h2Btn = document.getElementById('h200');
+  var h3Btn = document.getElementById('h300');
+  var h4Btn = document.getElementById('h400');
+  var oBox = document.getElementById('box');
+  var resetBtn = document.getElementById('reset');
+  var okBtn = document.getElementById('ok');
+  var shadow = document.getElementById('filter');
+
+  oBtn1.onclick = modalShow;
+  oRedBtn.onclick = redBtn;
+  oYellowBtn.onclick = yellowBtn;
+  oBlueBtn.onclick = blueBtn;
+  w2Btn.onclick = wBtn2;
+  w3Btn.onclick = wBtn3;
+  w4Btn.onclick = wBtn4;
+  h2Btn.onclick = hBtn2;
+  h3Btn.onclick = hBtn3;
+  h4Btn.onclick = hBtn4;
+  resetBtn.onclick = reset;
+  okBtn.onclick = ok;
+
+  function modalShow() {
+    oModal.style.display = 'block';
+    shadow.style.width = document.body.offsetWidth + 'px';
+    shadow.style.height = screen.height + 'px';
+    shadow.style.opacity = '0.5';
+  }
+
+  function modalHide() {
+    oModal.style.display = 'hide';
+  }
+
+  function redBtn() {
+    oBox.style.backgroundColor = '#f00';
+  }
+
+  function yellowBtn() {
+    oBox.style.backgroundColor = '#ff0';
+  }
+
+  function blueBtn() {
+    oBox.style.backgroundColor = '#00f';
+  }
+
+  function wBtn2() {
+    oBox.style.width = '200px';
+  }
+
+  function wBtn3() {
+    oBox.style.width = '300px';
+  }
+
+  function wBtn4() {
+    oBox.style.width = '400px';
+  }
+
+  function hBtn2() {
+    console.log('height');
+    oBox.style.height = '200px';
+  }
+
+  function hBtn3() {
+    oBox.style.height = '300px';
+  }
+
+  function hBtn4() {
+    oBox.style.height = '400px';
+  }
+
+  function reset() {
+    oBox.style.backgroundColor = '#f00';
+    oBox.style.width = '200px';
+    oBox.style.height = '200px';
+    oModal.style.display = 'none';
+  }
+
+  function ok() {
+    oModal.style.display = 'none';
+    shadow.style.opacity = '0';
+  }
+</script>
+</html>

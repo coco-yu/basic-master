@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小练习</title>
+    <style>
+        div {
+            width: 275px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            background-color: #d9d9d9;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <span id="span1">熊海奎:</span>
+    <input type="text" id="text1">
+    <input type="button" value="发送" id="btn1">
+</body>
+<script>
+    var oDiv = document.getElementById('div1');
+    var oSpan = document.getElementById('span1');
+    var oText = document.getElementById('text1');
+    var oBtn = document.getElementById('btn1');
+    var flag = false;
+
+    oSpan.onclick = function() {
+        if(flag) {
+            oSpan.innerHTML = '熊海奎:'
+            flag = false;
+        } else {
+            oSpan.innerHTML = '于春华:';
+            flag = true;
+        }
+    }
+
+    // flag ? oSpan.innerHTML = '于春华' : oSpan.innerHTML = '熊海奎';
+
+    oBtn.onclick = function() {
+        oDiv.innerHTML += oSpan.innerHTML + oText.value + '<br />';
+        oText.value = '';
+    }
+</script>
+</html>

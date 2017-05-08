@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>position</title>
+    <style>
+        /** {
+            padding: 0;
+            margin: 0;
+        }*/
+        body {
+            position: relative
+        }
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        .div1 {
+            background-color: #f00;
+        }
+
+        .div2 {
+            /*position: relative;
+            top: 200px;
+            left: 200px;*/
+            position: absolute;
+            top: 400px;
+            left: 200px;
+            background-color: #0f0;
+        }
+
+        .div3 {
+            /*position: absolute;
+            top: 100px;
+            left: 100px;*/
+            position: absolute;
+            top: 400px;
+            background-color: #00f;;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3">div3</div>
+</body>
+</html>

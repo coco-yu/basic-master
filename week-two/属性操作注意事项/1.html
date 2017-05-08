@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性操作实例</title>
+    <style>
+        .red {
+            width: 300px;
+            background-color: #f00;
+            padding: 20px;
+            color: #ff9;
+            border: 10px solid #ccc;
+        }
+
+        .yellow {
+            width: 300px;
+            background-color: #ff9;
+            padding: 20px;
+            color: #f00;
+            border: 10px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="-" id="btn1">
+    <input type="button" value="+" id="btn2">
+    <input type="button" value="红" id="btn3">
+    <input type="button" value="黄" id="btn4">
+    <p id="p1">
+        我是可可我是可可我是可可
+        我是可可我是可可我是可可
+    </p>
+    <input type="checkbox" name="" id="input1">
+    <!--<input type="button" name="" id="input2" value="checkbox变text">-->
+</body>
+<script>
+    var oBtn1 = document.getElementById('btn1');
+    var oBtn2 = document.getElementById('btn2');
+    var oP = document.getElementById('p1');
+    var oBtn3 = document.getElementById('btn3');
+    var oBtn4 = document.getElementById('btn4');
+
+    var oInput1 = document.getElementById('input1');
+    // var oInput2 = document.getElementById('input2');
+    var num = 15;
+
+    oBtn1.onclick = function() {
+        num --;
+        if(num > 12) {
+            oP.style.fontSize = num + 'px';
+        }
+    }
+
+    oBtn2.onclick = function() {
+        num ++;
+        if(num <24) {
+            oP.style.fontSize = num + 'px';
+        }
+    }
+
+    oBtn3.onclick = function() {
+        // oP.style.width = '300px';
+        // oP.style.backgroundColor = '#f00';
+        // oP.style.padding = '20px';
+        // oP.style.color = 'yellow';
+        // oP.style.border = '10px solid #ccc';
+        oP.className = 'red';
+    }
+
+    oBtn4.onclick = function() {
+        oP.className = 'yellow';
+
+    }
+    oInput1.onclick = function() {
+        // IE6、7、8下不兼容
+        oInput1.type = 'text';
+        // 要想兼容IE6、7、8 可以先设置checkbox显示、text隐藏
+        // 点击checkbox时， checkbox隐藏、text显示
+    }
+
+</script>
+</html>

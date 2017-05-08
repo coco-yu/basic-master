@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文字复制问题</title>
+    <style>
+        .wrap {
+            width: 400px;
+        }
+        .left {
+            float: left;
+        }
+
+        .right {
+            width: 400px;
+            float: right;
+        }
+    </style>
+    <!--
+        出现状况： 两个浮动元素之间有注释或内联元素并且和父级元素宽度相差不超过3px
+    
+        解决方法：
+            1.两个浮动元素中间避免出现内联元素或者注释；
+            2.与父级宽度相差3px或以上
+    -->
+</head>
+<body>
+    <div class="wrap">
+        <div class="left"></div>
+        <span></span><span></span><span></span>
+        <div class="right">&darr;这是多出来的一只猪</div>     
+    </div>
+</body>
+</html>

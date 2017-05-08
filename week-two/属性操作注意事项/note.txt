@@ -1,0 +1,14 @@
+1.给元素动态添加class
+  class保留字 不能使用  用className
+  xx.className = '类名';
+
+2.相对路径不能拿来做判断
+
+3.颜色值不要拿来做判断
+
+4.innerHTML不要拿来做判断
+
+5.oDiv.style.float = 'left';
+  有的浏览器认识，有的浏览器不认识;
+  IE下  ===>  styleFloat
+非IE下  ===>  cssFloat

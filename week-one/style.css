@@ -1,0 +1,59 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+#box1 {
+ width: 100px;
+ height: 200px;
+ border: 1px solid #f00; 
+ background-color: #0f0;  
+}
+
+#box2 {
+  width: 400px;
+  height: 400px;
+  border-top: 2px solid #f00;
+  border-right: 4px dotted #0f0;
+}
+
+.box3 {
+  /*font-weight: bold;*/
+  /*font-style: italic;*/
+  /*font-size: 24px;*/
+  /*font-family: "楷体";*/
+  border: 1px solid #f00;
+  /*line-height: 20px;*/
+  /*font: bold italic 40px "楷体";*/
+  /*width: 90px;*/
+  color: #f00;
+  text-align: left;
+  /*text-indent: 30px;*/
+  text-indent: 3rem;
+  /*letter-spacing: 10px;*/
+  word-spacing: 20px;
+}
+
+.box4 {
+  /*width: 50px;*/
+  font-size: 26px;
+  border: 1px solid #0f0;
+  /*white-space: nowrap;*/
+  font-family: "宋体";
+}
+
+#list {
+  text-align: center;
+}
+
+.title {
+  background-color: pink;
+}
+
+.subUl li {
+  display: inline-block;
+  width: 50px;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 4px;
+}

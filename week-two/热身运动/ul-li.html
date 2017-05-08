@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js热身运动</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+    .lis {
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color: #ccc;
+      margin: 10px auto;
+    }
+
+    .lis li a {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+    }
+
+    .lis ul {
+      /*display: none;*/
+      width: 140px;
+      background-color: #eee;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var li = document.getElementById('weiBo');
+      var list = document.getElementById('list');
+
+      li.onmouseover = show;
+      li.onmouseout = hide;
+
+      function hide() {
+        list.style.display = 'none';
+        li.style.backgroundColor = '#ccc';
+      }
+
+      function show() {
+        list.style.display = 'block';
+        li.style.backgroundColor = 'yellow';
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul class="lis">
+    <li id="weiBo">
+      <a href="#">微博</a>
+      <ul id="list">
+        <li><a href="http://www.baidu.com">私信</a></li>
+        <li><a href="http://www.baidu.com">评论</a></li>
+        <li>@我</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+<!--<script>
+  var li = document.getElementById('weiBo');
+  var list = document.getElementById('list');
+
+  li.onmouseover = show;
+  li.onmouseout = hide;
+
+  function hide() {
+    list.style.display = 'none';
+    li.style.backgroundColor = '#ccc';
+  }
+  function show() {
+    list.style.display = 'block';
+    li.style.backgroundColor = 'yellow';
+  }
+</script>-->
+</html>

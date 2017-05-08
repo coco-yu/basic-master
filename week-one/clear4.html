@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清浮动第四种方法</title>
+    <style>
+        .box {
+            border: 1px solid #f00;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            float: left;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        清浮动方法4
+            空标签清除浮动 
+            清浮动标签要放在浮动标签下面
+    -->
+    <div class="box">
+        <div class="item"></div>
+        <div class="clearfix"></div>
+    </div>    
+</body>
+</html>

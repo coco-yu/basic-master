@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>div的显示隐藏</title>
+  <style>
+    #box {
+      display: none;
+      width: 200px;
+      height: 200px;
+      background-color: #f00;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var show = document.getElementById('show');
+      var hide = document.getElementById('hide');
+      var box = document.getElementById('box');
+      var strong = document.getElementById('strong');
+
+      show.onclick = showBox;
+      hide.onclick = hideBox;
+      strong.onclick = showBox;
+
+      function showBox() {
+        box.style.display = 'block';
+        box.style.backgroundColor = '#0f0';
+      }
+
+      function hideBox() {
+        box.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+<body>
+  <button id="show">显示</button>
+  <button id="hide">隐藏</button>
+  <strong id="strong">显示</strong>
+  <div id="box"></div>
+</body>
+</html>

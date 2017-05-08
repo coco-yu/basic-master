@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>li间隙问题</title>
+    <style>
+        .list{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 300px;
+        }
+
+        .list li {
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #f00;
+            *vertical-align: top;
+        }
+        .list li a {
+            float: left;
+        }
+
+        .list li span {
+            float: right;
+        }
+    </style>
+    
+</head>
+<body>
+    <ul class="list">
+        <li>
+            <a href="">左边</a>
+            <span>右边</span>
+        </li>
+        <li>
+            <a href="">左边</a>
+            <span>右边</span>
+        </li>
+        <li>
+            <a href="">左边</a>
+            <span>右边</span>
+        </li>
+        <li>
+            <a href="">左边</a>
+            <span>右边</span>
+        </li>
+        <li>
+            <a href="">左边</a>
+            <span>右边</span>
+        </li>
+    </ul>
+</body>
+</html>

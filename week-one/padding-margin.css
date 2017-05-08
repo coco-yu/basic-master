@@ -1,0 +1,42 @@
+.box {
+    width: 460px;
+    height: 460px;
+    padding: 20px;
+    background-color: #f00;
+    margin: 200px 10px 400px;
+}
+.box1 {
+    width: 420px;
+    height: 420px;
+    padding: 20px;
+    background-color: #0f0;
+}
+.box2 {
+    width: 320px;
+    height: 320px;
+    padding: 50px;
+    background-color: #00f;
+}
+
+.box3 {
+    width: 498px;
+    height: 498px;
+    background-color: pink;
+    border: 1px solid #000;
+    /*margin: 200px;*/
+}
+
+.box4 {
+    width: 198px;
+    height: 198px;
+    margin: 150px;
+    background-color: #f00;
+    border: 1px solid #0f0;
+}
+
+.box5 {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background-color: #ccc;
+}

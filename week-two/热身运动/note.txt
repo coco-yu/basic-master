@@ -1,0 +1,46 @@
+1. 先布局 再写js
+
+2.让一个元素不在页面内(包含不显示、隐藏)
+  1.display: none;        不显示 不占文档流
+  2.visibility: hidden;   隐藏   占文档流
+  3.width  height 为0
+  4.透明度为0
+  5.left  top             改变定位值
+  6.用一个白色div盖住
+  7.margin负值
+
+3.js获取元素
+  1.通过id名称获取元素
+  2.
+
+
+4.事件
+
+    鼠标事件
+      1.onclick
+      2.onmouseover
+      3.onmouseout
+      4.onmousemove       鼠标抚摸事件
+      5.onmouseenter
+      6.onmouseleave
+      7.onmousedown
+      8.onmouseup
+      9.
+
+
+    键盘事件
+    系统事件
+    表单事件
+    自定义事件
+
+
+5.添加事件
+
+
+6.函数
+  执行函数:
+    1.直接调用:
+    2.事件调用  元素.事件 = 函数名
+    3.
+
+7.

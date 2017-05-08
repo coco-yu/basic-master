@@ -1,0 +1,9 @@
+html属性操作:
+
+属性 => 属性名
+        属性值
+
+属性读操作:
+属性写操作:
+innerHTML 读取html标签里的文字
+xxx.innerHTML = '内容';
