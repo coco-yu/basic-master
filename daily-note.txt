@@ -1,0 +1,11 @@
+1.将一个字符串转换成json
+     data是一个字符串
+     JSON.parse(data);  ==>  json类型
+
+2.上下距离用margin 左右距离用padding
+
+3.对象转换成字符串
+     String(json对象)
+
+4.input框去阴影     
+     给input添加一个border就可以去除阴影
