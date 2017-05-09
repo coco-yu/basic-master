@@ -130,12 +130,13 @@
   var arrText = ['图片一', '图片二', '图片三', '图片四'];
 
   oBtn1.onclick = function() {
+    flag = true
     oP0.innerHTML = '图片循环切换';
   }
 
   oBtn2.onclick = function() {
-    oP0.innerHTML = '图片顺序切换';
     flag = false;
+    oP0.innerHTML = '图片顺序切换';
   }
 
 
