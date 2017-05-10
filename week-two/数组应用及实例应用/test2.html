@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>手机发送</title>
+  <style>
+    *, ::before, ::after {
+      box-sizing: border-box;
+    }
+    .container {
+      position: relative;
+      width: 400px;
+      height: 600px;
+      border: 5px solid #ccc;
+      border-radius: 10px;
+      padding: 5px;
+      margin: 30px auto;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .topic {
+      width: 65%;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+
+    .submit {
+      width: 50px;
+      height: 30px;
+      background-color: #068dd5;
+      border: 0;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .content {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 380px;
+      height: 525px;
+      padding: 10px;
+      margin: 10px 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #left, #right {
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content" id="content">
+      <div id="left"></div>
+      <div id="right"></div>
+    </div>
+    <div class="footer">
+      <span id="author">果果</span>
+      <input type="text" class="topic" id="topic">
+      <button id="submit" class="submit">发送</button>
+    </div>
+  </div>
+</body>
+<script>
+  var oSpan = document.getElementById('author');
+  var oInp = document.getElementById('topic');
+  var oBtn = document.getElementById('submit');
+  var oDiv = document.getElementById('content');
+  var oDivLeft = document.getElementById('left');
+  var oDivRight = document.getElementById('right');
+
+  var flag = false;
+  oSpan.onclick = function() {
+    if(flag) {
+      oSpan.innerHTML = '果果';
+      flag = false;
+    } else {
+      oSpan.innerHTML = '可可';
+      flag = true;
+    }
+  }
+
+  oBtn.onclick = function() {
+    console.log('11111');
+    oDiv.innerHTML += oSpan.innerHTML + ':' + oInp.value + '<br />';
+    oInp.value = '';
+  }
+</script>
+</html>
