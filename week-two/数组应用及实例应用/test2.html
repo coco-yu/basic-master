@@ -9,6 +9,7 @@
     *, ::before, ::after {
       box-sizing: border-box;
     }
+
     .container {
       position: relative;
       width: 400px;
@@ -58,19 +59,34 @@
       border-radius: 5px;
     }
 
-    #left, #right {
-      display: inline-block;
+    .fl {
+      float: left;
+    }
+
+    .fr {
+      float: right;
+    }
+
+    .text {
+      display: block;
       width: 50%;
-      height: 100%;
-      border: 1px solid #ccc;
+      white-space: pre-wrap;
+      padding: 5px;
+      border-radius: 5px;
+      margin: 0 10px;
+      background-color: #9c0;
+      overflow: hidden;
+    }
+
+    .fl, .fr {
+      clear: both;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="content" id="content">
-      <div id="left"></div>
-      <div id="right"></div>
     </div>
     <div class="footer">
       <span id="author">果果</span>
@@ -84,8 +100,6 @@
   var oInp = document.getElementById('topic');
   var oBtn = document.getElementById('submit');
   var oDiv = document.getElementById('content');
-  var oDivLeft = document.getElementById('left');
-  var oDivRight = document.getElementById('right');
 
   var flag = false;
   oSpan.onclick = function() {
@@ -100,8 +114,13 @@
 
   oBtn.onclick = function() {
     console.log('11111');
-    oDiv.innerHTML += oSpan.innerHTML + ':' + oInp.value + '<br />';
-    oInp.value = '';
+    if(flag) {
+      oDiv.innerHTML = '<div class="fr mt"><span class="text">' + oInp.value + '</span>' + oSpan.innerHTML + '</div><br/>' + oDiv.innerHTML;
+      oInp.value = '';
+    } else {
+      oDiv.innerHTML = '<div class="fl mt">' + oSpan.innerHTML + '<span class="text">' + oInp.value + '</span></div><br/>' + oDiv.innerHTML;
+      oInp.value = '';
+    }
   }
 </script>
 </html>

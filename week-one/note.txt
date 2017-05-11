@@ -93,7 +93,7 @@ padding  内边距
 margin  外边距
 
 margin的问题
-1.margin-top传递的问题 
+1.margin-top传递的问题
     如果一个div有父级，在给这个div设置margin的时候，
     这个div的父级会被添加一个margin-top大小等于子div的大小
 
@@ -111,7 +111,7 @@ margin的问题
 盒模型宽度：border-left-width + padding-left + width + padding-right + border-right-width
 
 复合属性：
-background  border  padding   margin    
+background  border  padding   margin
 font: font-style|font-weight|font-size|font-family
 
 盒模型线框图
@@ -142,7 +142,7 @@ dd
 mark
 
 常用选择器
-1.id选择器 唯一  
+1.id选择器 唯一
 2.类选择器 可以多个
 3.标签选择器
 4.群组选择器 div,p,h1 {}
@@ -153,7 +153,7 @@ mark
 行间样式 > id选择器 > class选择器 > 标签选择器
 
 块元素，内嵌元素
-块元素的特征  div p 
+块元素的特征  div p
     1.默认独占一行
     2.没有宽度时，默认撑满一行
     3.支持所有css命令
@@ -192,7 +192,7 @@ clear: both 在左右两侧均不允许有浮动元素
     1.加高度   =>扩展性不好
     2.父级元素浮动    =>页面所有元素都加浮动，margin左右自动失效
     3.inline-block清浮动方法    =>margin左右auto失效
-    4.空标签清浮动    =>IE6最小高度19px(解决后IE6下还有2px偏差) 
+    4.空标签清浮动    =>IE6最小高度19px(解决后IE6下还有2px偏差)
     5.br清浮动     不符合工作中：结构、样式、行为三者分离的要求。
     6.after伪类清浮动方法(现在主流方法)
         .clear:after {
@@ -203,7 +203,7 @@ clear: both 在左右两侧均不允许有浮动元素
         .clear {
             zoom: 1;
         }
-        after伪类：元素内部末尾添加内容；     
+        after伪类：元素内部末尾添加内容；
             :after {
                 content: "添加的内容"; IE6、IE7下不兼容
             }
@@ -211,7 +211,7 @@ clear: both 在左右两侧均不允许有浮动元素
             1.触发IE下hasLayout,使元素根据自身内容计算宽高
             2.火狐不支持
         浮动元素的父级加clear:after
-    7.overflow: hidden  清除浮动的方法 
+    7.overflow: hidden  清除浮动的方法
         需要配合宽度或者zoom 兼容IE6、7
 ////////////////////////////////////////////////////
 
@@ -286,12 +286,12 @@ checkbox    复选
 submit  提交
 reset   重置
 button  按钮
-image   图片 
+image   图片
 file    上传
-hidden  隐藏  
+hidden  隐藏
 
 单选按钮 name相同
-<input type="radio" name="people" value="man">男 
+<input type="radio" name="people" value="man">男
 <input type="radio" name="people" value="woman">女
 
 label 标签为input元素定义标注
@@ -300,7 +300,7 @@ label 标签为input元素定义标注
 <input type="text" id="user" />
 
 
-select/option 下拉选框  
+select/option 下拉选框
     对高度的支持不兼容
 textarea    文本域
     各个浏览器下的默认滚动条显示不兼容
