@@ -39,6 +39,16 @@
     aDiv[middleNum].style.left = 10 + 60 * middleNum + 'px';
   }
 
+  for(var i = 0; i < len; i++) {
+    if(i < 6) {
+      aDiv[i].style.top = 60 * i + 'px';
+      aDiv[i].style.left = 10 + 60 * i + 'px';
+    } else {
+      aDiv[i].style.top = 60 * (len-i-1) + 'px';
+      aDiv[i].style.left = 10 + 60 * i + 'px';
+    }
+  }
+
   // for(var i = 0; i )
 </script>
 </html>
