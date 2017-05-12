@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cssText文本格式化与属性操作</title>
+</head>
+<style>
+  div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+  }
+</style>
+<body>
+  <div id="div1"></div>
+</body>
+<script>
+  var oDiv1 = document.getElementById('div1');
+  var flag = false;
+  oDiv1.onclick = function() {
+    if(flag) {
+      // oDiv1.style.width = '50px';
+      // oDiv1.style.height = '50px';
+      // oDiv1.style.backgroundColor = '#fff';
+      // flag = false;
+      // ===========================================
+      oDiv1.style.cssText = 'width: 50px; height: 50px; background-color: #fff';
+      flag = false;
+    } else {
+      // oDiv1.style.width = '100px';
+      // oDiv1.style.height = '100px';
+      // oDiv1.style.backgroundColor = '#f00';
+      // ============================================
+      oDiv1.style.cssText = 'width: 100px; height: 100px; background-color: #f00';
+      flag = true;
+      oDiv1.style.cssText = '';  // cssText清空，只是清空了行间样式， 内联样式和外联样式不受影响。
+    }
+  }
+</script>
+</html>

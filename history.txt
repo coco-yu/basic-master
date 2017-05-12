@@ -2,4 +2,5 @@
 2.js
 3.ZUI
 4.bootstrap
+5.刚发现 script标签应该写在</body>之前，这样才符合标准。
 

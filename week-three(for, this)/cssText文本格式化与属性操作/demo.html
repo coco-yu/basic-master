@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>生成一组新闻</title>
+</head>
+<body>
+  <button id="btn">生成5条新闻</button>
+  <ul id="list"></ul>
+</body>
+<script>
+  var arr = [
+    '杜特尔特的小愿望：带家人去中国坐高铁、看冰雕',
+    '全球军力排行榜:美俄中印前4 韩军第11朝军第23',
+    '看哭了 网友回忆汶川地震:那年我大你2岁',
+    '杨振宁上网络直播：曾跟翁帆说 我准备活到100岁',
+    '台湾1.7亿笔个人资料泄露 不排除蔡英文资料'
+  ];
+  var len = arr.length;
+  var str = '';
+  var oBtn = document.getElementById('btn');
+  var aUl = document.getElementsByTagName('ul')[0];
+  // =====================================================
+  // getElementsByTagName 即使页面上只有一个ul也要加上[0];
+  // =====================================================
+
+
+  // ===============清空======================
+  //  var str = '';
+  // oBtn.onclick = function() {
+  //   // oBtn.disabled = true;
+  //   str = '';
+  //   for(var i = 0; i < arr.length; i++) {
+  //    str += '<li>' + arr[i] + '</li>';
+  //   }
+  //   console.log('str', str);
+  //   aUl.innerHTML = str;
+  // }
+  // =======================================
+
+  // ===============判断====================
+  var flag = true;
+  var str = '';
+  oBtn.onclick = function() {
+    if(flag) {
+      for(var i = 0; i < arr.length; i++) {
+        str += '<li>'+arr[i]+'</li>';
+      }
+      aUl.innerHTML = str;
+      flag = false;
+    }
+  }
+
+  // =======================================
+</script>
+</html>

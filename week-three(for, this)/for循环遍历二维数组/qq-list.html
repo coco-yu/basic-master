@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>qq列表</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration-line: none;
+    }
+    *,::before,::after {
+      box-sizing: border-box;
+    }
+    .box {
+      width: 300px;
+      height: 500px;
+      padding: 50px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+    }
+    h2 {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <ul id="list">
+      <li>
+        <h2>我的好友</h2>
+        <ul>
+          <li>张三1</li>
+          <li>张三2</li>
+          <li>张三3</li>
+        </ul>
+      </li>
+      <li>
+        <h2>你的好友</h2>
+        <ul>
+          <li>李四1</li>
+          <li>李四2</li>
+        </ul>
+      </li>
+      <li>
+        <h2>他的好友</h2>
+        <ul>
+          <li>王五</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+  var oUl = document.getElementById('list');
+  var aUl = oUl.getElementsByTagName('ul');
+  var aLi = null;
+  for(var i = 0;i < aUl.length; i++) {
+    aLi = aUl[i].getElementsByTagName('li');
+    for(var j = 0; j < aLi.length; j++) {
+      console.log(aLi[j]);
+      aLi[j].style.border = '1px solid #ccc';
+    }
+  }
+
+</script>
+</html>
