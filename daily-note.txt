@@ -9,3 +9,66 @@
 
 4.input框去阴影     
      给input添加一个border就可以去除阴影
+
+5.form序列化的时候要给form标签里的每一项添加name属性;
+
+6.attr prop 区别
+     HTML元素本身固有的属性在处理时使用prop方法；
+     HTML元素本身自定义属性在处理时使用attr方法；
+
+7.去掉button的阴影
+     border: 0；
+
+8. append   在被选中元素末尾添加元素  
+     $("p").append("cococo");
+
+9. prepend  在被选元素的开头插入内容
+      $("p").prepend("cococo");
+
+10. after  在被选元素之后插入内容
+     $('p').after('cococo');
+
+11. before   在被选元素之前插入内容
+     $('p').before('cococo');
+
+12. 获取时间的方法
+      var mydate = new Date();
+     mydate.getYear(); //获取当前年份(2位)
+     mydate.getFullYear(); //获取完整的年份(4位,1970-????)
+     mydate.getMonth(); //获取当前月份(0-11,0代表1月)
+     mydate.getDate(); //获取当前日(1-31)
+     mydate.getDay(); //获取当前星期X(0-6,0代表星期天)
+     mydate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)
+     mydate.getHours(); //获取当前小时数(0-23)
+     mydate.getMinutes(); //获取当前分钟数(0-59)
+     mydate.getSeconds(); //获取当前秒数(0-59)
+     mydate.getMilliseconds(); //获取当前毫秒数(0-999)
+     mydate.toLocaleDateString(); //获取当前日期
+     var mytime=mydate.toLocaleTimeString(); //获取当前时间
+     mydate.toLocaleString( ); //获取日期与时间
+
+13. String转换成Int类型
+     parseInt(str);
+
+14. int类型 转成string类型
+     var x = 100;
+       a = x.toString();
+
+15. for-of循环
+     正确响应break,continue,return等语句
+     遍历对象属性
+     遍历数据（数组中的值）
+     不仅支持数组、还支持大多数类数组对象、字符串遍历、Map、Set对象
+
+16.浮动元素 加margin margin失效；
+     先清除浮动；再加margin
+
+17. span自动换行
+     display: inline-block;
+     clear: both;   // 清除左右的浮动
+     width: 150px;     // 宽度必须加上
+     word-break: break-word;  // 文本行的任意字断开
+
+18. 向上取整Math.ceil(xxx);
+      向下取整Math.floor(xxx);
+
