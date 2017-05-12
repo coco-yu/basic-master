@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>byTagName</title>
+</head>
+<body>
+  <ul id="list">
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+<script>
+  var oUl = document.getElementById('list');
+  var aLi = oUl.getElementsByTagName('li');   //  元素集合  不是数组， 但具备数组的方法属性
+  document.body.innerHTML = 'coco';   // 给body里面添加文字
+  document.title = 'coco is good';    //  设置title里面的文字
+
+  var aBtn = document.getElementsByTagName('button');
+
+  document.body.innerHTML = '<button>按钮</button><button>按钮</button><button>按钮</button>';
+  console.log(aBtn.length);
+</script>
+</html>

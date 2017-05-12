@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>for循环生成坐标</title>
+  <style>
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+
+</body>
+<script>
+  var aDiv = document.getElementsByTagName('div');
+  for(var i = 0; i < 10; i++) {
+    document.body.innerHTML += '<div>' + i + '</div>';
+  }
+
+  for(var i = 0; i < aDiv.length; i++) {
+    aDiv[i].style.left = 10 + 50 * i + 'px';  // 第一个块的左边留10px;
+    aDiv[i].style.top = 10 + 20 * i + 'px';
+  }
+  console.log(i);
+</script>
+</html>

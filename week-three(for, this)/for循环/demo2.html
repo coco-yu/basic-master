@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v字形</title>
+  <style>
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+
+</body>
+<script>
+  var aDiv = document.getElementsByTagName('div');
+  var str = '';
+
+  for(var i = 0; i < 11; i++) {
+    str += '<div>' + i + '</div>';
+  }
+  document.body.innerHTML = str;
+
+  var len = aDiv.length;
+  var middleNum = Math.ceil(len/2);
+  for(var i = 0; i < middleNum; i++) {
+    aDiv[i].style.top = 60 * i + 'px';
+    aDiv[i].style.left = 10 + 60 * i + 'px';
+  }
+  for(var middleNum; middleNum < len; middleNum++) {
+    aDiv[middleNum].style.top = 60 * (len - middleNum - 1) + 'px';
+    aDiv[middleNum].style.left = 10 + 60 * middleNum + 'px';
+  }
+
+  // for(var i = 0; i )
+</script>
+</html>

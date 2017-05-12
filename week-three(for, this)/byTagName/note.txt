@@ -1,0 +1,6 @@
+1.  document.getElementById() 静态方法
+2.  document.getElementsByTagName()  动态方法
+3.  byId byTagName区别
+    byId == 前面只能加document  找到一个
+    byTagName == 前面可以是父级元素的名称  找到元素集合  可以找到后面动态添加的元素
+4.

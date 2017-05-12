@@ -1,0 +1,9 @@
+1.  重复执行 每次执行都会有一个数字在变化
+2.  for里面包了一个函数 函数里面的i,是循环后的最后一个i;
+    for(var i = 0; i < 3; i++) {
+      aLi[i].onclick = function() {
+        console.log(i);   // 3
+      }
+    }
+3.性能：arr.length
+  var len = arr.length;  // 这样写每次循环的时候就不用计算arr.length;提高性能；

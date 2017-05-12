@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>for练习</title>
+</head>
+<body>
+
+</body>
+<script>
+  // for(var i = 0; i < 200; i++) {
+  //   document.body.innerHTML += '<button>按钮</button>';
+  // }
+
+  //  节约性能
+  //  document.body.innerHTML += '<button>按钮</button>'; 这样写每次都要去找body;
+
+  var str = '';
+  for(var i = 0; i < 200; i++) {
+    str += '<button>按钮</button>';
+  }
+  document.body.innerHTML = str;  // 只找一次body  提高性能
+</script>
+</html>

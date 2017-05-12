@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>for应用</title>
+  <style>
+    li {
+      height: 30px;
+      border-bottom: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <ul id="list">
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+<script>
+  var oUl = document.getElementById('list');
+  var aLi = oUl.getElementsByTagName('li');
+  var arr = ['今天', '明天', '后天'];
+  for(var i = 0; i < aLi.length; i++) {
+    console.log('=', i);
+    aLi[i].onclick = function() {
+      console.log(i);   // 3  ===>  作用域
+    }
+  }
+
+  for(var i = 0; i < aLi.length; i++) {
+    aLi[i].innerHTML = arr[i];
+  }
+</script>
+</html>

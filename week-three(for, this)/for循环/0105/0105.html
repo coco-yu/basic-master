@@ -1,0 +1,59 @@
+<!DOCTYPE	html>
+<html	lang="en">
+	<head>
+		<meta	charset="utf-8"/>
+		<title>div的逢10排列</title>
+		<style>
+			div {width:50px;height:50px;background:red;position:absolute;color:yellow;text-align:center;line-height:50px;font-weight:bold;}
+		</style>
+		<script>
+			window.onload = function () {
+				for(var i=0; i<100; i++) {
+					document.body.innerHTML += "<div> "+ i +" </div>";
+				}
+				var aDiv = document.getElementsByTagName("div");
+				for(var i=0; i<10; i++) {
+					aDiv[i].style.left = 10+60*i + "px";
+				}
+				for(var i=10; i<20; i++) {
+					aDiv[i].style.left = 10 + 60*(i-10) + "px";
+					aDiv[i].style.top = 70+ "px";
+				}
+				for(var i=20; i<30; i++) {
+					aDiv[i].style.left = 10 + 60*(i-20) + "px";
+					aDiv[i].style.top = 140 + "px";
+				}
+				for(var i=30; i<40; i++) {
+					aDiv[i].style.left = 10 + 60*(i-30) + "px";
+					aDiv[i].style.top = 210+ "px";
+				}
+				for(var i=40; i<50; i++) {
+					aDiv[i].style.left = 10 + 60*(i-40) + "px";
+					aDiv[i].style.top = 280+ "px";
+				}
+				for(var i=50; i<60; i++) {
+					aDiv[i].style.left = 10 + 60*(i-50) + "px";
+					aDiv[i].style.top = 350+ "px";
+				}
+				for(var i=60; i<70; i++) {
+					aDiv[i].style.left = 10 + 60*(i-60) + "px";
+					aDiv[i].style.top = 420+ "px";
+				}
+				for(var i=70; i<80; i++) {
+					aDiv[i].style.left = 10 + 60*(i-70) + "px";
+					aDiv[i].style.top = 490+ "px";
+				}
+				for(var i=80; i<90; i++) {
+					aDiv[i].style.left = 10 + 60*(i-80) + "px";
+					aDiv[i].style.top = 560+ "px";
+				}
+				for(var i=90; i<100; i++) {
+					aDiv[i].style.left = 10 + 60*(i-90) + "px";
+					aDiv[i].style.top = 630+ "px";
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

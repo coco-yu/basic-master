@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>10个换行</title>
+</head>
+<style>
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #f00;
+  }
+</style>
+<body>
+
+</body>
+<script>
+  var aDiv = document.getElementsByTagName('div');
+  var str = '';
+  var y = 0;
+
+  for (var i = 0; i < 100; i++) {
+    str += '<div>' + i + '</div>';
+  }
+  document.body.innerHTML = str;
+  for(var i = 0; i < aDiv.length; i++) {
+    aDiv[i].style.left = 10 + 60 * i + 'px';
+    if (i > 9 && i < 20) {
+      aDiv[i].style.left = 10 + 60 * (i - 10) + 'px';
+      aDiv[i].style.top = '60px';
+    }
+    if (i > 19 && i < 30) {
+      aDiv[i].style.left = 10 + 60 * (i - 20) + 'px';
+      aDiv[i].style.top = '120px';
+    }
+    if (i > 29 && i < 40) {
+      aDiv[i].style.left = 10 + 60 * (i - 30) + 'px';
+      aDiv[i].style.top = '180px';
+    }
+    if (i > 39 && i < 50) {
+      aDiv[i].style.left = 10 + 60 * (i - 40) + 'px';
+      aDiv[i].style.top = '240px';
+    }
+    if (i > 49 && i < 60) {
+      aDiv[i].style.left = 10 + 60 * (i - 50) + 'px';
+      aDiv[i].style.top = '300px';
+    }
+    if (i > 59 && i < 70) {
+      aDiv[i].style.left = 10 + 60 * (i - 60) + 'px';
+      aDiv[i].style.top = '360px';
+    }
+    if (i > 69 && i < 80) {
+      aDiv[i].style.left = 10 + 60 * (i - 70) + 'px';
+      aDiv[i].style.top = '420px';
+    }
+    if (i > 79 && i < 90) {
+      aDiv[i].style.left = 10 + 60 * (i - 80) + 'px';
+      aDiv[i].style.top = '480px';
+    }
+    if (i > 89 && i < 100) {
+      aDiv[i].style.left = 10 + 60 * (i - 90) + 'px';
+      aDiv[i].style.top = '540px';
+    }
+  }
+</script>
+</html>
