@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+</head>
+<style>
+  li {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 80px;
+    margin: 0 20px;
+  }
+
+  div {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: none;
+    width: 200px;
+    height: 200px;
+    background-color: #0f0;
+  }
+
+</style>
+<body>
+  <ul>
+    <li>
+      <div>我是1</div>
+    </li>
+    <li>
+      <div>我是2</div>
+    </li>
+    <li>
+      <div>我是3</div>
+    </li>
+  </ul>
+  <script>
+    var arr = ['../../images/a.png', '../../images/b.png', '../../images/c.png'];
+    var aLi = document.getElementsByTagName('li');
+    for(var i = 0; i < arr.length; i++) {
+      aLi[i].innerHTML = '<img src="'+ arr[i] +'" alt=""/>';
+      aLi[i].onmouseover = function() {
+        console.log('1111');
+        this.getElementsByTagName('div')[0].style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
