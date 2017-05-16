@@ -1,74 +1,74 @@
-1.½«Ò»¸ö×Ö·û´®×ª»»³Éjson
-     dataÊÇÒ»¸ö×Ö·û´®
-     JSON.parse(data);  ==>  jsonÀàĞÍ
+1.å°†ä¸€ä¸ªå­—ç¬¦ä¸²è½¬æ¢æˆjson
+     dataæ˜¯ä¸€ä¸ªå­—ç¬¦ä¸²
+     JSON.parse(data);  ==>  jsonç±»å‹
 
-2.ÉÏÏÂ¾àÀëÓÃmargin ×óÓÒ¾àÀëÓÃpadding
+2.ä¸Šä¸‹è·ç¦»ç”¨margin å·¦å³è·ç¦»ç”¨padding
 
-3.¶ÔÏó×ª»»³É×Ö·û´®
-     String(json¶ÔÏó)
+3.å¯¹è±¡è½¬æ¢æˆå­—ç¬¦ä¸²
+     String(jsonå¯¹è±¡)
 
-4.input¿òÈ¥ÒõÓ°     
-     ¸øinputÌí¼ÓÒ»¸öborder¾Í¿ÉÒÔÈ¥³ıÒõÓ°
+4.inputæ¡†å»é˜´å½±
+     ç»™inputæ·»åŠ ä¸€ä¸ªborderå°±å¯ä»¥å»é™¤é˜´å½±
 
-5.formĞòÁĞ»¯µÄÊ±ºòÒª¸øform±êÇ©ÀïµÄÃ¿Ò»ÏîÌí¼ÓnameÊôĞÔ;
+5.formåºåˆ—åŒ–çš„æ—¶å€™è¦ç»™formæ ‡ç­¾é‡Œçš„æ¯ä¸€é¡¹æ·»åŠ nameå±æ€§;
 
-6.attr prop Çø±ğ
-     HTMLÔªËØ±¾Éí¹ÌÓĞµÄÊôĞÔÔÚ´¦ÀíÊ±Ê¹ÓÃprop·½·¨£»
-     HTMLÔªËØ±¾Éí×Ô¶¨ÒåÊôĞÔÔÚ´¦ÀíÊ±Ê¹ÓÃattr·½·¨£»
+6.attr prop åŒºåˆ«
+     HTMLå…ƒç´ æœ¬èº«å›ºæœ‰çš„å±æ€§åœ¨å¤„ç†æ—¶ä½¿ç”¨propæ–¹æ³•ï¼›
+     HTMLå…ƒç´ æœ¬èº«è‡ªå®šä¹‰å±æ€§åœ¨å¤„ç†æ—¶ä½¿ç”¨attræ–¹æ³•ï¼›
 
-7.È¥µôbuttonµÄÒõÓ°
-     border: 0£»
+7.å»æ‰buttonçš„é˜´å½±
+     border: 0ï¼›
 
-8. append   ÔÚ±»Ñ¡ÖĞÔªËØÄ©Î²Ìí¼ÓÔªËØ  
+8. append   åœ¨è¢«é€‰ä¸­å…ƒç´ æœ«å°¾æ·»åŠ å…ƒç´ 
      $("p").append("cococo");
 
-9. prepend  ÔÚ±»Ñ¡ÔªËØµÄ¿ªÍ·²åÈëÄÚÈİ
+9. prepend  åœ¨è¢«é€‰å…ƒç´ çš„å¼€å¤´æ’å…¥å†…å®¹
       $("p").prepend("cococo");
 
-10. after  ÔÚ±»Ñ¡ÔªËØÖ®ºó²åÈëÄÚÈİ
+10. after  åœ¨è¢«é€‰å…ƒç´ ä¹‹åæ’å…¥å†…å®¹
      $('p').after('cococo');
 
-11. before   ÔÚ±»Ñ¡ÔªËØÖ®Ç°²åÈëÄÚÈİ
+11. before   åœ¨è¢«é€‰å…ƒç´ ä¹‹å‰æ’å…¥å†…å®¹
      $('p').before('cococo');
 
-12. »ñÈ¡Ê±¼äµÄ·½·¨
+12. è·å–æ—¶é—´çš„æ–¹æ³•
       var mydate = new Date();
-     mydate.getYear(); //»ñÈ¡µ±Ç°Äê·İ(2Î»)
-     mydate.getFullYear(); //»ñÈ¡ÍêÕûµÄÄê·İ(4Î»,1970-????)
-     mydate.getMonth(); //»ñÈ¡µ±Ç°ÔÂ·İ(0-11,0´ú±í1ÔÂ)
-     mydate.getDate(); //»ñÈ¡µ±Ç°ÈÕ(1-31)
-     mydate.getDay(); //»ñÈ¡µ±Ç°ĞÇÆÚX(0-6,0´ú±íĞÇÆÚÌì)
-     mydate.getTime(); //»ñÈ¡µ±Ç°Ê±¼ä(´Ó1970.1.1¿ªÊ¼µÄºÁÃëÊı)
-     mydate.getHours(); //»ñÈ¡µ±Ç°Ğ¡Ê±Êı(0-23)
-     mydate.getMinutes(); //»ñÈ¡µ±Ç°·ÖÖÓÊı(0-59)
-     mydate.getSeconds(); //»ñÈ¡µ±Ç°ÃëÊı(0-59)
-     mydate.getMilliseconds(); //»ñÈ¡µ±Ç°ºÁÃëÊı(0-999)
-     mydate.toLocaleDateString(); //»ñÈ¡µ±Ç°ÈÕÆÚ
-     var mytime=mydate.toLocaleTimeString(); //»ñÈ¡µ±Ç°Ê±¼ä
-     mydate.toLocaleString( ); //»ñÈ¡ÈÕÆÚÓëÊ±¼ä
+     mydate.getYear(); //è·å–å½“å‰å¹´ä»½(2ä½)
+     mydate.getFullYear(); //è·å–å®Œæ•´çš„å¹´ä»½(4ä½,1970-????)
+     mydate.getMonth(); //è·å–å½“å‰æœˆä»½(0-11,0ä»£è¡¨1æœˆ)
+     mydate.getDate(); //è·å–å½“å‰æ—¥(1-31)
+     mydate.getDay(); //è·å–å½“å‰æ˜ŸæœŸX(0-6,0ä»£è¡¨æ˜ŸæœŸå¤©)
+     mydate.getTime(); //è·å–å½“å‰æ—¶é—´(ä»1970.1.1å¼€å§‹çš„æ¯«ç§’æ•°)
+     mydate.getHours(); //è·å–å½“å‰å°æ—¶æ•°(0-23)
+     mydate.getMinutes(); //è·å–å½“å‰åˆ†é’Ÿæ•°(0-59)
+     mydate.getSeconds(); //è·å–å½“å‰ç§’æ•°(0-59)
+     mydate.getMilliseconds(); //è·å–å½“å‰æ¯«ç§’æ•°(0-999)
+     mydate.toLocaleDateString(); //è·å–å½“å‰æ—¥æœŸ
+     var mytime=mydate.toLocaleTimeString(); //è·å–å½“å‰æ—¶é—´
+     mydate.toLocaleString( ); //è·å–æ—¥æœŸä¸æ—¶é—´
 
-13. String×ª»»³ÉIntÀàĞÍ
+13. Stringè½¬æ¢æˆIntç±»å‹
      parseInt(str);
 
-14. intÀàĞÍ ×ª³ÉstringÀàĞÍ
+14. intç±»å‹ è½¬æˆstringç±»å‹
      var x = 100;
        a = x.toString();
 
-15. for-ofÑ­»·
-     ÕıÈ·ÏìÓ¦break,continue,returnµÈÓï¾ä
-     ±éÀú¶ÔÏóÊôĞÔ
-     ±éÀúÊı¾İ£¨Êı×éÖĞµÄÖµ£©
-     ²»½öÖ§³ÖÊı×é¡¢»¹Ö§³Ö´ó¶àÊıÀàÊı×é¶ÔÏó¡¢×Ö·û´®±éÀú¡¢Map¡¢Set¶ÔÏó
+15. for-ofå¾ªç¯
+     æ­£ç¡®å“åº”break,continue,returnç­‰è¯­å¥
+     éå†å¯¹è±¡å±æ€§
+     éå†æ•°æ®ï¼ˆæ•°ç»„ä¸­çš„å€¼ï¼‰
+     ä¸ä»…æ”¯æŒæ•°ç»„ã€è¿˜æ”¯æŒå¤§å¤šæ•°ç±»æ•°ç»„å¯¹è±¡ã€å­—ç¬¦ä¸²éå†ã€Mapã€Setå¯¹è±¡
 
-16.¸¡¶¯ÔªËØ ¼Ómargin marginÊ§Ğ§£»
-     ÏÈÇå³ı¸¡¶¯£»ÔÙ¼Ómargin
+16.æµ®åŠ¨å…ƒç´  åŠ margin marginå¤±æ•ˆï¼›
+     å…ˆæ¸…é™¤æµ®åŠ¨ï¼›å†åŠ margin
 
-17. span×Ô¶¯»»ĞĞ
+17. spanè‡ªåŠ¨æ¢è¡Œ
      display: inline-block;
-     clear: both;   // Çå³ı×óÓÒµÄ¸¡¶¯
-     width: 150px;     // ¿í¶È±ØĞë¼ÓÉÏ
-     word-break: break-word;  // ÎÄ±¾ĞĞµÄÈÎÒâ×Ö¶Ï¿ª
+     clear: both;   // æ¸…é™¤å·¦å³çš„æµ®åŠ¨
+     width: 150px;     // å®½åº¦å¿…é¡»åŠ ä¸Š
+     word-break: break-word;  // æ–‡æœ¬è¡Œçš„ä»»æ„å­—æ–­å¼€
 
-18. ÏòÉÏÈ¡ÕûMath.ceil(xxx);
-      ÏòÏÂÈ¡ÕûMath.floor(xxx);
+18. å‘ä¸Šå–æ•´Math.ceil(xxx);
+      å‘ä¸‹å–æ•´Math.floor(xxx);
 

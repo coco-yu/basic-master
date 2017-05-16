@@ -1,0 +1,8 @@
+1. for里面摆一个函数，函数里面的i不是0, 1, 2,而是循环的数组的长度
+  for(var i = 0; i < aBtn.length; i++) {
+    aBtn[i].onclick = function() {
+      alert(i);   //  i是aBtn.length的长度
+    }
+   }
+
+2. 建立'匹配'，'对应'关系，用索引值

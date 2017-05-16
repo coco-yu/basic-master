@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义属性</title>
+  <style>
+    li {
+      display: inline-block;
+      list-style: none;
+      width: 220px;
+      height: 140px;
+      background: url(../../images/1.jpg);
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    var aLi = document.getElementsByTagName('li');
+    for(var i = 0; i < aLi.length; i++) {
+      aLi[i].a = true;
+      aLi[i].onclick = function() {
+        console.log(this.a);
+        if(this.a) {
+          this.style.backgroundImage = 'url(../../images/2.jpg)';
+          this.a = false;
+        } else {
+          this.style.backgroundImage = 'url(../../images/1.jpg)';
+          this.a = true;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

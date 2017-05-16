@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>添加索引匹配数组HTML元素</title>
+</head>
+<body>
+  <input type="button" value="btn1">
+  <input type="button" value="btn2">
+  <input type="button" value="btn3">
+  <p>a</p>
+  <p>b</p>
+  <p>c</p>
+  <script>
+    var aBtn = document.getElementsByTagName('input');
+    var aP = document.getElementsByTagName('p');
+
+    var arr = ['可可', '果果', '熊熊'];
+    for (var i = 0; i < aBtn.length; i++) {
+      aBtn[i].index = i;  // 自定义属性 添加索引值
+      aP[i].index = i;
+      aBtn[i].onclick = function() {
+        this.value = arr[this.index];
+        aP[this.index].innerHTML = arr[this.index];
+      }
+    }
+  </script>
+</body>
+</html>
