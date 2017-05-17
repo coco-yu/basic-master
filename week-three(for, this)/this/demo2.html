@@ -7,15 +7,30 @@
   <title>demo</title>
 </head>
 <style>
+  html {
+    position: relative;
+  }
   li {
+    float: left;
     position: relative;
     display: inline-block;
-    width: 50px;
+    width: 80px;
     height: 80px;
-    margin: 0 20px;
+    margin: 0 20px; 
+  }
+
+  .div1 {
+    background-image: url('../../images/a.png');
+  }
+  .div2 {
+    background-image: url('../../images/b.png');
+  }
+  .div3 {
+    background-image: url('../../images/c.png');
   }
 
   div {
+    /*clear: both;*/
     position: absolute;
     top: 30px;
     left: 0;
@@ -23,31 +38,38 @@
     width: 200px;
     height: 200px;
     background-color: #0f0;
+    z-index: 999;
   }
-
 </style>
 <body>
   <ul>
-    <li>
+    <li class="div1">
       <div>我是1</div>
     </li>
-    <li>
+    <li class="div2">
       <div>我是2</div>
     </li>
-    <li>
+    <li class="div3">
       <div>我是3</div>
     </li>
   </ul>
   <script>
-    var arr = ['../../images/a.png', '../../images/b.png', '../../images/c.png'];
     var aLi = document.getElementsByTagName('li');
-    for(var i = 0; i < arr.length; i++) {
-      aLi[i].innerHTML = '<img src="'+ arr[i] +'" alt=""/>';
+    for(var i = 0; i < aLi.length; i++) {
       aLi[i].onmouseover = function() {
-        console.log('1111');
-        this.getElementsByTagName('div')[0].style.display = 'block';
+        // console.log(this, '==');
+        this.style.zIndex = '999';
+        var a = this.getElementsByTagName('div')[0];
+        a.style.cssText = 'display: block';
+        
+      }
+      aLi[i].onmouseout = function() {
+        this.style.zIndex = '0';
+        var a = this.getElementsByTagName('div')[0];
+        a.style.display = 'none';
       }
     }
   </script>
+  <!---->
 </body>
 </html>
