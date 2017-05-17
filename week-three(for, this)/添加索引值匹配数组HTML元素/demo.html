@@ -1,12 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>图片切换综合实例</title>
-</head>
-<body>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
 
+    #pic {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      border: 1px solid #333;
+      margin: 100px auto 0;
+      background-image: url('../../images/loading.gif');
+    }
+
+    #pic img {
+      width: 400px;
+      height: 300px;
+    }
+
+    #pic span,
+    p {
+      position: absolute;
+      left: 0;
+      width: 400px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color: #ccc;
+    }
+
+    #pic span {
+      top: 0;
+    }
+
+    #pic p {
+      bottom: 0;
+    }
+
+    #pic ul {
+      position: absolute;
+      top: 0;
+      right: -60px;
+    }
+
+    #pic ul li {
+      width: 50px;
+      height: 50px;
+      background-color: #0f0;
+      margin-bottom: 10px;
+    }
+
+    .active {
+      background-color: #00f!important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pic">
+    <img src="" alt="">
+    <span>数量正在加载中...</span>
+    <p>图片文字正在加载中...</p>
+    <ul>
+    </ul>
+  </div>
+  <script>
+    var textArr = ['图片一', '图片二', '图片三', '图片四'];
+    var picArr = ['../../images/1.jpg', '../../images/2.jpg', '../../images/3.jpg', '../../images/4.jpg'];
+    var oDiv = document.getElementById('pic');
+    var aUl = oDiv.getElementsByTagName('ul')[0];
+    var aLi = aUl.getElementsByTagName('li');
+    var aImg = oDiv.getElementsByTagName('img')[0];
+    var aSpan = oDiv.getElementsByTagName('span')[0];
+    var aP = oDiv.getElementsByTagName('p')[0];
+    var num = 0;
+    var oldLi = null;
+
+    for (var i = 0; i < textArr.length; i++) {
+      aUl.innerHTML += '<li></li>';
+    }
+    fnTab();
+    // 初始化  num
+    oldLi = aLi[num];
+
+    for (var i = 0; i < aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onclick = function () {
+
+        num = this.index;
+
+        // aImg.src = picArr[num];
+        // aSpan.innerHTML = (num + 1) + '/' + picArr.length;
+        // aP.innerHTML = textArr[num];
+        // // 1.
+        //  for (var i = 0; i < aLi.length; i++) {
+        //    aLi[i].className = '';
+        //  }
+
+        // // 2.
+        // // oldLi.className = '';
+        // // oldLi = this;
+        // aLi[num].className = 'active';
+        fnTab();
+      }
+    }
+
+     // 给li添加背景
+       // 1. 全部清空, 给当前清空
+       // 2. 清空上一个, 给当前添加
+       function fnTab() {
+          for(var i = 0; i < picArr.length; i++) {
+            aLi[i].className = '';
+          }
+          aImg.src = picArr[num];
+          aSpan.innerHTML = (num+1) + '/' + picArr.length;
+          aP.innerHTML = textArr[num];
+
+          aLi[num].className = 'active';
+       }
+  </script>
 </body>
+
 </html>
