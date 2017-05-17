@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>QQ菜单实例</title>
+  <title>QQ菜单实例-2</title>
   <style>
     * {
       padding: 0;
@@ -76,9 +76,18 @@
     var oldli = null;
     var arr = [];
 
+    for(var i = 0; i < aH2.length; i++) {
+      console.log('22222');
+      aUl[i].style.display = 'none';
+    }
+
     for(var i=0;i<aH2.length;i++) {
       aH2[i].index = i;
       aH2[i].onclick = function() {
+        for(var i=0; i<aUl.length; i++) {
+          aUl[i].style.display = 'none';
+          aH2[i].className = '';
+        }
         if (this.className == '') {
           aUl[this.index].style.display = 'block';
           this.className = 'active';
@@ -99,9 +108,15 @@
     for(var i=0; i<arr.length; i++) {
       oldli = arr[0];
       arr[i].onclick = function() {
-        oldli.className = ''
-        this.className = 'active-li';
-        oldli = this;
+        if (this.className == '') {
+          oldli.className = ''
+          this.className = 'active-li';
+          oldli = this;
+        } else {
+          oldli.className = ''
+          this.className = '';
+          oldli = this;
+        }
       }
     }
   </script>
