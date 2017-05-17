@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>QQ菜单实例</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    #list {
+      width: 200px;
+      margin: 50px auto 0;
+      border: 1px solid #000;
+    }
+
+    #list .lis {
+      font-size: 14px;
+      text-indent: 20px;
+    }
+
+    #list .lis  h2 {
+      background: url('../../images/1.jpg') center no-repeat;
+    }
+
+    #list .active {
+      background: url('../../images/2.jpg') center no-repeat!important;
+    }
+
+    #list .lis ul {
+      display: none;
+    }
+    .active-li {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="list">
+    <ul>
+      <li class="lis">
+        <h2>我的好友</h2>
+        <ul>
+          <li>熊熊</li>
+          <li>怡怡</li>
+          <li>可可</li>
+        </ul>
+      </li>
+      <li class="lis">
+        <h2>你的好友</h2>
+        <ul>
+          <li>熊熊</li>
+          <li>怡怡</li>
+          <li>可可</li>
+        </ul>
+      </li>
+      <li class="lis">
+        <h2>黑名单</h2>
+        <ul>
+          <li>熊熊</li>
+          <li>怡怡</li>
+          <li>可可</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <script>
+    var oDiv = document.getElementById('list');
+    var oUl = oDiv.getElementsByTagName('ul')[0];
+    var aH2 = oUl.getElementsByTagName('h2');
+    var aUl = oUl.getElementsByTagName('ul');
+    var oldli = null;
+
+    for(var i=0;i<aH2.length;i++) {
+      aH2[i].index = i;
+      aH2[i].onclick = function() {
+        if (this.className == '') {
+          aUl[this.index].style.display = 'block';
+          this.className = 'active';
+        } else {
+          aUl[this.index].style.display = 'none';
+          this.className = '';
+        }
+      }
+    }
+
+    for (var i=0; i<aUl.length; i++) {
+      var aLi = aUl[i].getElementsByTagName('li');
+      for(var j=0; j<aLi.length; j++) {
+        oldli = aLi[0];
+        aLi[j].onclick = function() {
+          oldli.className = ''
+          this.className = 'active-li';
+          oldli = this;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
