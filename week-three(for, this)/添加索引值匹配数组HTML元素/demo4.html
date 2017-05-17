@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>带缩略图图片轮换</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    #list {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      margin: 50px auto 0;
+      border: 1px solid #ccc;
+    }
+
+    img {
+      width: 800px;
+      height: 600px;
+    }
+    #prev, #next {
+      position: absolute;
+      top: 280px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      border-radius: 40px;
+      background-color: #333;
+    }
+    #prev {
+      left: 40px;
+    }
+
+    #next {
+      right: 40px;
+    }
+
+    #list ul {
+      position: absolute;
+      bottom: -50px;
+      width: 800px;
+      text-align: center;
+    }
+
+    #list ul li {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      border-radius: 50px;
+      border: 1px solid #ccc;
+    }
+
+    #list ul li img {
+      display: none;
+      position: absolute;
+      bottom: 35px;
+      left: -2px;
+      width: 30px;
+      height: 20px;
+    }
+
+    .active {
+      background-color: #00f!important;
+    }
+  </style>
+</head>
+<body>
+  <h2>带缩略图图片轮换</h2>
+  <div id="list">
+    <img src="../../images/1.jpg" alt="">
+    <span id="prev"><</span>
+    <span id="next">></span>
+    <ul>
+      <li><img src="" alt=""></li>
+      <li><img src="" alt=""></li>
+      <li><img src="" alt=""></li>
+      <li><img src="" alt=""></li>
+    </ul>
+  </div>
+  <script>
+    var oDiv = document.getElementById('list');
+    var oImg = oDiv.getElementsByTagName('img')[0];
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var aUl = oDiv.getElementsByTagName('ul')[0];
+    var aLi = aUl.getElementsByTagName('li');
+    var oldLi = null;
+    var num = 0;
+    var imgArr = [];
+    var aImg = null;
+    var picArr = ['../../images/1.jpg', '../../images/2.jpg', '../../images/3.jpg', '../../images/4.jpg'];
+    // 初始化
+
+    // for(var i = 0; i < picArr.length; i++) {
+    //   aUl.innerHTML += '<li></li>';
+    // }
+
+    for(var i = 0; i < aLi.length; i++) {
+      aImg = aLi[i].getElementsByTagName('img');
+      for( var j = 0; j < aImg.length; j++) {
+        imgArr.push(aImg[j]);
+      }
+    }
+    fnTab();
+    // 点击向前按钮
+    oPrev.onclick = function() {
+      num --;
+      if(num == -1) {
+        num = picArr.length-1;
+      }
+      oldLi.className = '';
+      fnTab();
+    }
+
+    // 点击向后按钮
+    oNext.onclick = function() {
+      num ++;
+      if(num == picArr.length) {
+        num = 0;
+      }
+      oldLi.className = '';
+      fnTab();
+    }
+
+    // 四个li鼠标划过事件
+    var flag = true;
+    for(var i = 0; i < aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onmouseover = function() {
+        for(var i = 0; i < aLi.length;i++) {
+          imgArr[i].style.display = 'none';
+        }
+        imgArr[this.index].style.display = 'block';
+        imgArr[this.index].src = picArr[this.index];
+      }
+
+      aLi[i].onmouseout = function() {
+        for(var i = 0; i < aLi.length;i++) {
+          imgArr[i].style.display = 'none';
+        }
+        imgArr[this.index].style.display = 'none';
+        imgArr[this.index].src = picArr[this.index];
+      }
+    }
+
+    // li被点击时事件
+    for(var i = 0; i < aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onclick = function() {
+        imgArr[this.index].style.display = 'none';
+      }
+    }
+
+    function fnTab() {
+      oldLi = aLi[num];
+      aLi[num].className = 'active';
+      oImg.src = picArr[num];
+      for(var i = 0; i < aLi.length;i++) {
+        console.log('imgArr', imgArr);
+        imgArr[i].style.display = 'none';
+      }
+      imgArr[num].style.display = 'block';
+      imgArr[num].src = picArr[num];
+    }
+  </script>
+</body>
+</html>
