@@ -17,6 +17,15 @@
     var b = '10';
     b++;
     console.log(typeof b);  // 11 number
+    console.log(typeof NaN);  // number
+    console.log(NaN === NaN);  // false
+
+    console.log(isNaN('111'));  // false
+    console.log(isNaN(true));  // false
+    console.log(isNaN(''));  // false
+    console.log(isNaN([]));  // false
+
+
   </script>
 </body>
 </html>

@@ -10,5 +10,11 @@
     !                       取反
     ==
 
-3. NaN
+3. NaN:  not a Number 进行了非法的运算操作 布尔值为假  数字类型
+    NaN  === NaN  => false
 
+4. isNaN() 判断是不是数字  是数字 => false  不是数字 => true
+
+5. isNaN('121'); 先Number()判断 如果是数字就为false 否则为true
+
+6.
