@@ -98,3 +98,6 @@
 22. 添加是 +=
 
 23. HTML中拿到的内容类型都是字符串 (type value id);
+
+24. parseInt(str) == str; 看看取整之后是否还是本身，如果是本身就是整数、否则是小数
+    parseInt(arr[i]) == parseFloat(arr[i])  看看取整和取浮点数之后是否一样，如果一样的话就是整数、否则是小数

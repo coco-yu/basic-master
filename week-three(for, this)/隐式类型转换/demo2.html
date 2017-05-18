@@ -16,7 +16,16 @@
     var str = '';
     aInp[1].onclick = function() {
       str = aInp[0].value;
-      
+      if(str !== ''
+          && isNaN(str) === false
+          && str.length > 5
+          && str.length < 11
+          && str.charAt(0) !== '0'
+          && parseInt(str) == str) {
+          console.log('ok');
+      } else {
+        console.log('no');
+      }
     }
   </script>
 </body>

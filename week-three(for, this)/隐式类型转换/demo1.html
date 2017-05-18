@@ -28,11 +28,11 @@
 
     // 找到可以转换成数字的(true, false除外): '100px', -98765, 34, -2, 0, '300', '23.45元', 5
     for(var i = 0; i < arr.length; i++) {
-      if(parseInt(arr[i]) || parseInt(arr[i]) == 0) {
+      if(parseInt(arr[i]) && (parseInt(arr[i]) == parseFloat(arr[i])) || parseInt(arr[i]) == 0) {
         arr2.push(arr[i]);
       }
     }
-    console.log(arr2);
+    console.log(arr2, 'arr2');
 
     // 转成数字以后，判断出最大值： 300
     for(var i = 0; i < arr.length; i++) {
