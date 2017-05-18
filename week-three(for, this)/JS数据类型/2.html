@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数据类型转换</title>
+</head>
+<body>
+  <script>
+    var a = '00000100';
+    console.log(Number(a)+100);  // 200
+
+    var b = '+100';
+    console.log(Number(b)+100);  //200
+
+    var c = '-100';
+    console.log(Number(c)+100);  //0
+
+    var d = '';
+    console.log(Number(d)+100);  //100
+
+    var e = '    ';
+    console.log(Number(d));  //0
+
+    var f = true;
+    console.log(Number(f)+100);  //101
+
+    var g = false;
+    console.log(Number(g)+100);  //100
+
+    var h = function(){console.log('1')};
+    console.log(Number(h));  // NaN
+
+    var i = [];
+    console.log(Number(i));  // 0
+
+    var j = {};
+    console.log(Number(j));  // NaN
+
+    var k = ['111'];
+    console.log(Number(k)); //  111
+
+    var l = ['111', '1'];
+    console.log(Number(l)); //  NaN
+
+    var m = null;
+    console.log(Number(m)); //  0
+
+    var n = undefined;
+    console.log(Number(n)); //  NaN
+  </script>
+</body>
+</html>

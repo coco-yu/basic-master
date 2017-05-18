@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS数组类型</title>
+</head>
+<body>
+  <script>
+    var a = '  coo';
+    console.log(a.length);  // 5
+    console.log(a.charAt(2));  //c
+    var b = true;  // boolean
+    var obj = window;
+    console.log(typeof window);  // object
+
+    var obj = document;
+    obj.fn1 = function() {
+      console.log(obj);
+    }
+    console.log(obj.fn1);
+
+    var arr = [1, 2, 3, 4];
+    arr[0] = 0;     // 可以修改每一项
+    console.log(arr);
+    arr.fn = function() {
+      console.log('ok');
+    }
+    arr.fn();
+
+    var json = {num: 1, name: 'coco'}
+    json.age = '22';
+    console.log(json);
+    console.log(typeof json);  //object
+
+    var c = null;    // 空的  不能添加自定义属性
+    console.log(typeof c);  //object
+    // c.a = 'coco';
+    // console.log(c.a);  //报错
+
+
+    var u;
+    console.log(typeof u);  // undefined
+  </script>
+</body>
+</html>

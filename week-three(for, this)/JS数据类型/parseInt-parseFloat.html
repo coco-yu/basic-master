@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>parseInt parseFloat</title>
+</head>
+<body>
+  <script>
+    var a = '100px';
+    console.log(parseInt(a));  //100
+
+    var b = 'aa100px';
+    console.log(parseInt(b));  //NaN
+
+    var c = '100px23';
+    console.log(parseInt(c));  //100
+
+    var d = '00100px';
+    console.log(parseInt(d));  //100
+
+    var e = true;
+    console.log(parseInt(e));  //NaN
+
+    var f = '+100';
+    console.log(parseInt(f));  //100
+
+    var g = '-100';
+    console.log(parseInt(g));  //-100
+
+    var h = '     100';
+    console.log(parseInt(h));  //100
+
+    var i = '00000000000100';
+    console.log(parseInt(i));  //100
+
+    var j = '12.34元';
+    console.log(parseInt(j));  //12
+    console.log(parseFloat(j));  // 12.34
+
+    // =========================================
+    var k = 256;
+    console.log(parseInt(k, 10));  // 256
+    console.log(parseInt(k, 8));  // 174
+    console.log(parseInt(k, 2));  // NaN
+    console.log(parseInt(k, 16));  // 598
+
+    var num = '200.223px';
+    if(parseInt(num) === parseFloat(num)) {
+      console.log(num + '是整数');
+    } else {
+      console.log(num + '是小数');
+    }
+  </script>
+</body>
+</html>
