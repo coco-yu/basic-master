@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>传参实例</title>
+</head>
+<body>
+  <ul>
+    <li id="list1">
+      <input type="button" value="-" id="minusone">
+      <strong>2</strong>
+      <input type="button" value="+" id="plusone">
+      单价：<em>12元</em>
+      小计：<span>0元</span>
+    </li>
+    <li id="list2">
+      <input type="button" value="-" id="minustwo">
+      <strong>0</strong>
+      <input type="button" value="+" id="plustwo">
+      单价：<em>19.5元</em>
+      小计：<span>0元</span>
+    </li>
+    <li id="list3">
+      <input type="button" value="-" id="minusthree">
+      <strong>0</strong>
+      <input type="button" value="+" id="plusthree">
+      单价：<em>6.5元</em>
+      小计：<span>0元</span>
+    </li>
+    <li id="list4">
+      <input type="button" value="-" id="minusfour">
+      <strong>0</strong>
+      <input type="button" value="+" id="plusfour">
+      单价：<em>1.5元</em>
+      小计：<span>0元</span>
+    </li>
+    <li id="list5">
+      <input type="button" value="-" id="minusfive">
+      <strong>0</strong>
+      <input type="button" value="+" id="plusfive">
+      单价：<em>10.5元</em>
+      小计：<span>0元</span>
+    </li>
+  </ul>
+
+  <script>
+    // var priceArr = ['10.5', '12', '10', '8', '6'];
+    fn('list1');
+    fn('list2');
+    fn('list3');
+    fn('list4');
+    fn('list5');
+
+    function fn(id) {
+      var oLi = document.getElementById(id);
+      var ominusBtn = oLi.getElementsByTagName('input')[0];
+      var oplusBtn = oLi.getElementsByTagName('input')[1];
+      var oStrong = oLi.getElementsByTagName('strong')[0];
+      var oEm = oLi.getElementsByTagName('em')[0];
+      var oSpan = oLi.getElementsByTagName('span')[0];
+      var n1 = Number(oStrong.innerHTML);
+      var n2 = parseFloat(oEm.innerHTML);
+      // 初始化
+      oStrong.innerHTML = n1;
+      oEm.innerHTML = n2;
+      oSpan.innerHTML = n1 * n2 + '元';
+
+      ominusBtn.onclick = function() {
+        n1--;     // 隐式类型转换  n1=n1+1  =>  字符串
+        if(n1 == -1) {
+          n1 = 0;
+        }
+        oStrong.innerHTML = n1;
+        oEm.innerHTML = n2;
+        oSpan.innerHTML = n1 * n2 + '元';
+      }
+
+      oplusBtn.onclick = function() {
+        n1++;
+        oStrong.innerHTML = n1;
+        oEm.innerHTML = n2;
+        oSpan.innerHTML = n1 * n2 + '元';
+      }
+    }
+  </script>
+</body>
+</html>

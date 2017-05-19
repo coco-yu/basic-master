@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数传参</title>
+</head>
+<body>
+  <script>
+    function a(a, b) {
+      console.log(a+b);
+    }
+    a(1, 1);
+
+    function b(a) {
+      console.log(a.charAt(3));
+    }
+    b('miaov');
+    b('妙味课堂');
+
+    function fn1(fn) {
+      fn();
+    }
+    fn1(function(){console.log('参数为函数');})
+
+    function fn2(fn) {
+      fn();
+    }
+
+    function fn3() {
+      console.log('ok');
+    }
+
+    fn2(fn3);
+
+    function fn4(w, d) {
+      w.onload = function() {
+        d.body.innerHTML = 'coco';
+      }
+    }
+    fn4(window, document);
+  </script>
+</body>
+</html>
