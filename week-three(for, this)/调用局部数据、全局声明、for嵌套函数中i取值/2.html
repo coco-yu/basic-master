@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    alert(fn1);  // undefined  这里不应该打印出fn1的代码块吗  为什么是 undefined
+    var a = 1;
+    function fn1() {
+      alert('2');
+    }
+  </script>
+
+  <!--
+    1. js预解析
+        a = undefined
+        fn1 = function fn1() {
+                alert('2');
+              }
+    2. 逐行解读代码
+
+
+  -->
+</body>
+</html>

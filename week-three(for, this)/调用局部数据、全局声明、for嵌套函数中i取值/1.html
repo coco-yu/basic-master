@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>调用局部数据、全局声明、for嵌套函数中i取值</title>
+</head>
+<body>
+  <script>
+    function fn() {
+      var a = 'coco';
+      fn1(a);
+    }
+
+    function fn1(str) {
+      alert(str);  // 'coco'
+    }
+    fn();
+  </script>
+</body>
+</html>

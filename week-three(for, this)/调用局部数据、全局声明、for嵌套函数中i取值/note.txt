@@ -1,0 +1,9 @@
+1. 想要获取函数内的值，
+    for(var i = 0; i < aBtn.length; i++) {
+      aBtn[i].onclick = function() {
+        console.log(i);  // 3 (按钮个数的长度); ===>  不能直接使用i
+        for(var i = 0; i < aBtn.length; i++) {
+          aBtn[i].style.backgroundColor = '#f00';
+        }
+      }
+    }

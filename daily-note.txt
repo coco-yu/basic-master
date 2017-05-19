@@ -109,4 +109,17 @@
     2.把核心的主程序先实现，用函数包起来
     3.把每组里不同的值找出来， 通过传参实现
 
-27.
+27. 函数的大括号是域
+    if(){不是域}
+    for(){不是域}
+
+28. 不要在if for里面定义全局变量全局函数
+
+29. for(var i = 0; i < aBtn.length; i++) {
+      aBtn[i].onclick = function() {
+        console.log(i);  // 3 (按钮个数的长度); ===>  不能直接使用i
+        for(var i = 0; i < aBtn.length; i++) {
+          aBtn[i].style.backgroundColor = '#f00';
+        }
+      }
+    }
