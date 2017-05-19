@@ -7,36 +7,36 @@
   <title>传参实例</title>
 </head>
 <body>
-  <ul>
-    <li id="list1">
+  <ul id="list">
+    <li>
       <input type="button" value="-" id="minusone">
       <strong>2</strong>
       <input type="button" value="+" id="plusone">
       单价：<em>12元</em>
       小计：<span>0元</span>
     </li>
-    <li id="list2">
+    <li>
       <input type="button" value="-" id="minustwo">
       <strong>0</strong>
       <input type="button" value="+" id="plustwo">
       单价：<em>19.5元</em>
       小计：<span>0元</span>
     </li>
-    <li id="list3">
+    <li>
       <input type="button" value="-" id="minusthree">
       <strong>0</strong>
       <input type="button" value="+" id="plusthree">
       单价：<em>6.5元</em>
       小计：<span>0元</span>
     </li>
-    <li id="list4">
+    <li>
       <input type="button" value="-" id="minusfour">
       <strong>0</strong>
       <input type="button" value="+" id="plusfour">
       单价：<em>1.5元</em>
       小计：<span>0元</span>
     </li>
-    <li id="list5">
+    <li>
       <input type="button" value="-" id="minusfive">
       <strong>0</strong>
       <input type="button" value="+" id="plusfive">
@@ -46,20 +46,19 @@
   </ul>
 
   <script>
-    // var priceArr = ['10.5', '12', '10', '8', '6'];
-    fn('list1');
-    fn('list2');
-    fn('list3');
-    fn('list4');
-    fn('list5');
+    var oUl = document.getElementById('list');
+    var oLi = oUl.getElementsByTagName('li');
+    for(var i = 0; i < oLi.length; i++) {
+      fn(oLi[i]);
+    }
 
-    function fn(id) {
-      var oLi = document.getElementById(id);
-      var ominusBtn = oLi.getElementsByTagName('input')[0];
-      var oplusBtn = oLi.getElementsByTagName('input')[1];
-      var oStrong = oLi.getElementsByTagName('strong')[0];
-      var oEm = oLi.getElementsByTagName('em')[0];
-      var oSpan = oLi.getElementsByTagName('span')[0];
+    function fn(a) {
+
+      var ominusBtn = a.getElementsByTagName('input')[0];
+      var oplusBtn = a.getElementsByTagName('input')[1];
+      var oStrong = a.getElementsByTagName('strong')[0];
+      var oEm = a.getElementsByTagName('em')[0];
+      var oSpan = a.getElementsByTagName('span')[0];
       var n1 = Number(oStrong.innerHTML);
       var n2 = parseFloat(oEm.innerHTML);
       // 初始化
