@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js预解析</title>
+</head>
+<body>
+  <script>
+    var a = 1;
+    function fn1(a) {
+      alert(a);
+      a = 2;
+    }
+    fn1(a);  // 参数没有传进来
+    alert(a);
+  </script>
+
+  <!--
+    1. js预解析
+      a = undefined
+      fn1 = function fn1(a) {
+              alert(a);
+              a = 2;
+            }
+    2. 逐行解读代码
+        a = 1
+        1) js预解析
+              a = undefined
+        2) 逐行解读代码
+              a = 1
+              alert(a)  // 1
+              a = 2
+        alert(a)  // 1
+
+
+  -->
+</body>
+</html>

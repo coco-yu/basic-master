@@ -1,86 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>传参实例</title>
 </head>
+
 <body>
   <ul id="list">
     <li>
       <input type="button" value="-" id="minusone">
-      <strong>2</strong>
-      <input type="button" value="+" id="plusone">
-      单价：<em>12元</em>
-      小计：<span>0元</span>
+      <strong>5</strong>
+      <input type="button" value="+" id="plusone"> 单价：
+      <em>12元</em> 小计：
+      <span>0元</span>
     </li>
     <li>
       <input type="button" value="-" id="minustwo">
       <strong>0</strong>
-      <input type="button" value="+" id="plustwo">
-      单价：<em>19.5元</em>
-      小计：<span>0元</span>
+      <input type="button" value="+" id="plustwo"> 单价：
+      <em>19.5元</em> 小计：
+      <span>0元</span>
     </li>
     <li>
       <input type="button" value="-" id="minusthree">
       <strong>0</strong>
-      <input type="button" value="+" id="plusthree">
-      单价：<em>6.5元</em>
-      小计：<span>0元</span>
+      <input type="button" value="+" id="plusthree"> 单价：
+      <em>6.5元</em> 小计：
+      <span>0元</span>
     </li>
     <li>
       <input type="button" value="-" id="minusfour">
       <strong>0</strong>
-      <input type="button" value="+" id="plusfour">
-      单价：<em>1.5元</em>
-      小计：<span>0元</span>
+      <input type="button" value="+" id="plusfour"> 单价：
+      <em>1.5元</em> 小计：
+      <span>0元</span>
     </li>
     <li>
       <input type="button" value="-" id="minusfive">
       <strong>0</strong>
-      <input type="button" value="+" id="plusfive">
-      单价：<em>10.5元</em>
-      小计：<span>0元</span>
+      <input type="button" value="+" id="plusfive"> 单价：
+      <em>10.5元</em> 小计：
+      <span>0元</span>
     </li>
   </ul>
+  <p>
+    商品合计共：0件，共花费了：0元<br/> 其中最贵的商品单价是： 0元
+  </p>
 
   <script>
     var oUl = document.getElementById('list');
     var oLi = oUl.getElementsByTagName('li');
-    for(var i = 0; i < oLi.length; i++) {
+    var str = 0;
+    var num = 0;
+    var arrNum = [];
+    var totalNum = 0;
+    for (var i = 0; i < oLi.length; i++) {
       fn(oLi[i]);
     }
 
     function fn(a) {
-
       var ominusBtn = a.getElementsByTagName('input')[0];
       var oplusBtn = a.getElementsByTagName('input')[1];
       var oStrong = a.getElementsByTagName('strong')[0];
       var oEm = a.getElementsByTagName('em')[0];
       var oSpan = a.getElementsByTagName('span')[0];
+
       var n1 = Number(oStrong.innerHTML);
       var n2 = parseFloat(oEm.innerHTML);
       // 初始化
       oStrong.innerHTML = n1;
-      oEm.innerHTML = n2;
+      oEm.innerHTML = n2 + '元';
       oSpan.innerHTML = n1 * n2 + '元';
 
-      ominusBtn.onclick = function() {
+      ominusBtn.onclick = function () {
         n1--;     // 隐式类型转换  n1=n1+1  =>  字符串
-        if(n1 == -1) {
+        if (n1 == -1) {
           n1 = 0;
         }
         oStrong.innerHTML = n1;
-        oEm.innerHTML = n2;
+        oEm.innerHTML = n2 + '元';
         oSpan.innerHTML = n1 * n2 + '元';
       }
 
-      oplusBtn.onclick = function() {
+      oplusBtn.onclick = function () {
         n1++;
         oStrong.innerHTML = n1;
-        oEm.innerHTML = n2;
+        oEm.innerHTML = n2 + '元';
         oSpan.innerHTML = n1 * n2 + '元';
+      }
+    }
+
+    // 最贵的商品单价 str
+    for (var i = 0; i < oLi.length; i++) {
+      var oEm = oLi[i].getElementsByTagName('em')[0];
+      var oStrong = oLi[i].getElementsByTagName('strong')[0];
+      var b = parseFloat(oEm.innerHTML);
+      var c = parseInt(oStrong.innerHTML);
+      if (b > str) {
+        str = b;
       }
     }
   </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS作用域</title>
+</head>
+<body>
+  <script>
+    // console.log(a);  // undefined
+    // var a = 1;
+// =======================================
+    // console.log(b);   // b is not defined
+    // b = 1;
+// =======================================
+  alert(a);  //   function a() {alert(4);}
+  var a = 1;
+  alert(a);   // 1
+  function a(){
+    alert(2);
+  }
+  alert(a);  // 1
+  var a = 3;
+  alert(a);  // 3
+  function a() {
+    alert(4);
+  }
+  alert(a);  // 3
+  a();  // a is not a function
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js预解析</title>
+</head>
+<body>
+  <script>
+    alert(a);  // a is not defined
+  </script>
+  <script>
+    var a = 1;
+  </script>
+
+  <!--
+    1. 先预解析第一个script块  预解析  逐行读代码
+    2. 再预解析第二个script块  预解析  逐行读代码
+  -->
+</body>
+</html>

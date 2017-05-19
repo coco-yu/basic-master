@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js预解析</title>
+</head>
+<body>
+  <script>
+    var a = 1;
+    function fn1() {
+      alert(a);
+      a = 2;
+    }
+    fn1();
+    alert(a);
+  </script>
+
+  <!--
+    1. js预解析
+        a = undefined
+        function fn1() {
+          alert(a);
+          a = 2;
+        }
+    2. 逐行解读代码
+        a = 1
+        1) js预解析
+            ...(没有关键字， 但是上一层预解析仓库里有a = 1)  ===>  作用域链(子的预解析仓库里没有找到预解析的值，去上一层（父级）的预解析仓库里去找)
+        2) 逐行解读代码
+            alert(a)  // 1
+            表达式修改预解析的值
+            a = 2
+        预解析仓库里的 a 被修改为2
+        alert(a)  // 2
+  -->
+</body>
+</html>
