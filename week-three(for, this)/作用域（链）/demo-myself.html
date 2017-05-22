@@ -46,8 +46,8 @@
       <span>0元</span>
     </li>
   </ul>
-  <p>
-    商品合计共：0件，共花费了：0元<br/> 其中最贵的商品单价是： 0元
+  <p id="p">
+
   </p>
 
   <script>
@@ -83,6 +83,7 @@
         oStrong.innerHTML = n1;
         oEm.innerHTML = n2 + '元';
         oSpan.innerHTML = n1 * n2 + '元';
+        total();
       }
 
       oplusBtn.onclick = function () {
@@ -90,19 +91,38 @@
         oStrong.innerHTML = n1;
         oEm.innerHTML = n2 + '元';
         oSpan.innerHTML = n1 * n2 + '元';
+        total();
       }
     }
 
-    // 最贵的商品单价 str
-    for (var i = 0; i < oLi.length; i++) {
-      var oEm = oLi[i].getElementsByTagName('em')[0];
-      var oStrong = oLi[i].getElementsByTagName('strong')[0];
-      var b = parseFloat(oEm.innerHTML);
-      var c = parseInt(oStrong.innerHTML);
-      if (b > str) {
-        str = b;
+    function total() {
+      var count = 0;
+      var totalPrice = 0;
+      var maxPrice = 0;
+      var arr = [];
+      var oP = document.getElementById('p');
+      for(var i = 0; i < oLi.length; i++) {
+        var aStrong = document.getElementsByTagName('strong');
+        var aEm = document.getElementsByTagName('em');
+        var aSpan = document.getElementsByTagName('span');
       }
+      for(var i = 0; i< aStrong.length; i++) {
+        count += parseInt(aStrong[i].innerHTML);
+        totalPrice += parseFloat(aSpan[i].innerHTML);
+        if(parseInt(aStrong[i].innerHTML) > 0) {
+          arr.push(parseFloat(aEm[i].innerHTML));
+        }
+      }
+
+      for(var i = 0; i < arr.length; i++) {
+        if(arr[i] > maxPrice) {
+          maxPrice = arr[i];
+        }
+      }
+      oP.innerHTML = '商品合计共：'+count+'件，共花费了：'+totalPrice+'元<br/> 其中最贵的商品单价是： '+maxPrice+'元。'
     }
+
+
   </script>
 </body>
 </html>
