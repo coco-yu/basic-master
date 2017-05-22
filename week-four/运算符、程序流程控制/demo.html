@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>总体评价</title>
+  <style>
+    ul {
+      display: inline-block;
+    }
+    ul li {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+    }
+    p {
+      display: inline-block;
+      color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <ul id="ul">
+    <h5>总体评价</h5>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <p></p>
+  <script>
+    var oUl = document.getElementById('ul');
+    var aLi = oUl.getElementsByTagName('li');
+    var oP = document.getElementsByTagName('p')[0];
+    var arrText = ['很差','较差','一般','良好','优秀'];
+    var num = 0;
+    for(var i = 0; i < aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onmouseover = function() {
+        num = this.index;
+        if(num < 2) {
+          this.style.backgroundColor = '#ccc';
+          oP.innerHTML = arrText[num];
+        } else if(num >= 2 && num < aLi.length) {
+          for( var i = 0; i < num+1; i++) {
+            aLi[i].style.backgroundColor = '#09c';
+            oP.innerHTML = arrText[i];
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

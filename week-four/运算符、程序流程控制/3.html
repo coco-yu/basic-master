@@ -32,7 +32,9 @@
     var arrColor = ['#f00', '#0f0', '#00f'];
     var len = arrColor.length;
     var _len = aLi.length;
-    console.log(aLi.length);
+    var str = '';
+    var num = 0;
+    var arr = [];
     for(var i = 0; i < _len; i++) {
       aLi[i].index = i;
       aLi[i].style.backgroundColor = arrColor[i%len];
@@ -42,7 +44,15 @@
       aLi[i].onmouseout = function() {
         this.style.backgroundColor = arrColor[this.index%len];
       }
+      aLi[i].onclick = function() {
+        aLi[num].style.backgroundColor = arrColor[num%len];
+        this.style.backgroundColor = '#000';
+        num = this.index;
+        arr.push(this.index);
+        console.log('arr', arr);
+      }
     }
+    
   </script>
 </body>
 </html>

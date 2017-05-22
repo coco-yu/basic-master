@@ -32,15 +32,15 @@
     var arrColor = ['#f00', '#0f0', '#00f'];
     var len = arrColor.length;
     var _len = aLi.length;
-    console.log(aLi.length);
+    var str = '';
     for(var i = 0; i < _len; i++) {
-      aLi[i].index = i;
       aLi[i].style.backgroundColor = arrColor[i%len];
       aLi[i].onmouseover = function() {
+        str = this.style.backgroundColor;
         this.style.backgroundColor = '#ccc';
       }
       aLi[i].onmouseout = function() {
-        this.style.backgroundColor = arrColor[this.index%len];
+        this.style.backgroundColor = str;
       }
     }
   </script>

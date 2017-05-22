@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>反选</title>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="choose">反选</button>
+    <ul>
+        <li>
+            <input type="checkbox" name="" id="">
+        </li>
+        <li>
+            <input type="checkbox" name="" id="" checked>
+        </li>
+        <li>
+            <input type="checkbox" name="" id="" checked>
+        </li>
+        <li>
+            <input type="checkbox" name="" id="">
+        </li>
+        <li>
+            <input type="checkbox" name="" id="">
+        </li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById('choose');
+        var oUl = document.getElementsByTagName('ul')[0];
+        var aLi = oUl.getElementsByTagName('li');
+        oBtn.onclick = function() {
+            for(var i = 0; i < aLi.length; i++) {
+                var oBox = aLi[i].getElementsByTagName('input')[0];
+                oBox.checked = !oBox.checked;
+            }
+        }
+    </script>
+</body>
+</html>
