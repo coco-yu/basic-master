@@ -36,18 +36,45 @@
     var aLi = oUl.getElementsByTagName('li');
     var oP = document.getElementsByTagName('p')[0];
     var arrText = ['很差','较差','一般','良好','优秀'];
-    var num = 0;
+
+    var flag = false;
+
     for(var i = 0; i < aLi.length; i++) {
       aLi[i].index = i;
       aLi[i].onmouseover = function() {
-        num = this.index;
-        if(num < 2) {
-          this.style.backgroundColor = '#ccc';
-          oP.innerHTML = arrText[num];
-        } else if(num >= 2 && num < aLi.length) {
-          for( var i = 0; i < num+1; i++) {
-            aLi[i].style.backgroundColor = '#09c';
-            oP.innerHTML = arrText[i];
+        flag = false;
+        if(!flag) {
+          for(var i = 0; i <= this.index; i++) {
+            if(this.index < 2) {
+              aLi[i].style.backgroundColor = '#ccc';
+            } else {
+              aLi[i].style.backgroundColor = '#09c';
+            }
+          }
+        }
+      }
+
+      aLi[i].onmouseout = function() {
+        if(!flag) {
+          for(var i = 0; i < aLi.length; i++) {
+            aLi[i].style.backgroundColor = '';
+          }
+        }
+      }
+
+      aLi[i].onclick = function() {
+        for(var i = 0; i < aLi.length; i++) {
+          aLi[i].style.backgroundColor = '';
+        }
+        flag = true;
+        console.log('flag', flag);
+        if(flag) {
+          for(var i = 0; i <= this.index; i++) {
+            if(this.index < 2) {
+              aLi[i].style.backgroundColor = '#ccc';
+            } else {
+              aLi[i].style.backgroundColor = '#09c';
+            }
           }
         }
       }

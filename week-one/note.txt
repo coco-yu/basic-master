@@ -41,7 +41,7 @@ font-family 字体格式
 line-height 行高 文字在一行里面所占用的位置
             当行高和容器高度一致时，文字会垂直居中显示
 
-多行文字测量行uy高
+多行文字测量行高
 1.确认文字大小
 2.测量两行文字之间的距离
 3.空隙大小除以2, 得出来的值就是每行文字的上下的孔隙大小
@@ -75,7 +75,7 @@ letter-spacing 字母间距
 word-spacing 单词间距 (以空格为解析单位)
 
 强制不换行
-white-space 强制不换行  w
+white-space 强制不换行
 nowrap 强制不换行
 
 一个空格的大小: "宋体"字体下文字大小的一半
@@ -216,7 +216,7 @@ clear: both 在左右两侧均不允许有浮动元素
 ////////////////////////////////////////////////////
 
 BFC(block formatting context) 标准浏览器
-    1.float的值部位none;
+    1.float的值不为none;
     2.overflow的值不为visible;
     3.display的值为table-cell, table-caption,
       inline-block中的 任何一个;
