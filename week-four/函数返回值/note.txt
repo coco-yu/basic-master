@@ -1,0 +1,14 @@
+1. return
+2. 函数默认返回值未定义
+3. return后面的代码不会执行
+4. a)函数名+()  等于  return后面的值
+   b)所有函数默认返回值都是undefined;
+   c)return 后面任何代码都不执行
+5. argument
+   function fn1(a, b, c) {  // a b c 形参--形式上的参数
+
+   }
+   fn1(1,2,3) // 实参--实际传递的参数
+   function fn1() {  // 虽然没有形参但是还是传递进来了参数
+     arguments = [1, 2, 3]--实参
+   }

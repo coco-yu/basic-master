@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>currentStyle-getComputedStyle</title>
+  <script src="../../lib/customize/coco.customize.js"></script>
+  <style>
+    div {
+      width: 100px;
+      height: 120px;
+      background-color: #f00;
+    }
+  </style>
+  <script>
+    $(function() {
+      $('btn').onclick = function() {
+        // console.log(getComputedStyle($('div1')).width);
+        // 获取到的是计算机（浏览器）计算后的样式  IE 6 7 8不兼容
+
+        // 兼容方法
+        // console.log($('div1').currentStyle.width); // IE下可以显示 标准浏览器下不能用
+
+        // 判断浏览是否认识括号里的字符
+        // if($('div1').currentStyle) {
+        //   console.log($('div1').currentStyle.width);
+        // } else {
+        //   console.log(getComputedStyle($('div1')).width);
+        // }
+        console.log(getStyle($('div1'), 'height'));
+      }
+    })
+  </script>
+</head>
+<body>
+  <input type="button" value="按钮" id="btn">
+  <div id="div1"></div>
+</body>
+</html>

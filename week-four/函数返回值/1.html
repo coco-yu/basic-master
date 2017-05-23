@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数返回值</title>
+</head>
+<body>
+  <script>
+    function fn1() {
+      return 100;
+    }
+    console.log(fn1());  // 100
+
+    function fn2(b) {
+      return function(a) {
+        console.log(a+b);
+      }
+    }
+
+    console.log(fn2());  // function () {
+                         //    console.log('fn2');
+                         // }
+    fn2(5)(10);
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数返回值</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="button" id="btn">
+  <div id="box">111</div>
+  <script>
+    function getById(a) {
+      return document.getElementById(a);
+    }
+
+    var oBtn = getById('btn');
+    var oBox = getById('box');
+
+    console.log('oBtn', oBtn);
+    console.log('oBox', oBox);
+    oBox.onclick = function() {
+      console.log(this.innerHTML, '11');
+    }
+  </script>
+
+</body>
+</html>

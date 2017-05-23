@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数返回值</title>
+</head>
+<body>
+
+
+  <script>
+    function a () {
+      // 函数这里没有return;
+    }
+    alert(a(), 'a');  // undefined
+
+    function b () {
+      return;
+    }
+
+    alert(b(), 'b');  // undefined
+
+    function c () {
+      return 'coco';
+      alert('123');  // return后面的代码不执行
+    }
+
+    alert(c(), 'c');  // coco
+  </script>
+</body>
+</html>
