@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定时器应用</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    div {
+      position: relative;
+      width: 400px;
+      height: 500px;
+      margin: 0 auto;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      background-color: #333;
+    }
+
+    p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      background-color: #333;
+    }
+    ul {
+      position: absolute;
+      top: 0;
+      right: -100px;
+    }
+    ul li {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      background-color: #ccc;
+    }
+    .active {
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span>1/4</span>
+    <p>第一张图片</p>
+    <ul id="list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script>
+    var oDiv = document.getElementsByTagName('div')[0];
+    var oSpan = document.getElementsByTagName('span')[0];
+    var oP = document.getElementsByTagName('p')[0];
+    var oUl = document.getElementById('list');
+    var aLi = oUl.getElementsByTagName('li');
+    var arrPic = ['../../images/1.jpg', '../../images/2.jpg', '../../images/3.jpg', '../../images/4.jpg'];
+    var arrText = ['图片一', '图片二', '图片三', '图片四'];
+    var timer = null;
+    var num = 0;
+
+    function fnTab() {
+      oDiv.style.backgroundImage = 'url('+arrPic[num]+')';
+      oSpan.innerHTML = num+1 + '/' + arrPic.length;
+      oP.innerHTML = arrText[num];
+      for(var i = 0; i < aLi.length; i++) {
+        aLi[i].className = '';
+      }
+      aLi[num].className = 'active';
+    }
+
+    // 初始化
+    fnTab();
+
+    clearInterval(timer);
+    timer = setInterval(function() {
+      num ++;
+      num%=arrPic.length;
+      fnTab();
+    }, 1000);
+
+    oDiv.onmouseover = function() {
+      clearInterval(timer);
+    }
+
+    oDiv.onmouseout = function() {
+      clearInterval(timer);
+      timer = setInterval(function() {
+        num ++;
+        num%=arrPic.length;
+        fnTab();
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
