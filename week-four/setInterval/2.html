@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>替换背景实例</title>
+</head>
+<body>
+  <input type="button" value="换背景" />
+  <input type="button" value="停">
+  <script>
+    var aBtn = document.getElementsByTagName('input');
+    var timer = null;
+    var num = 0;
+    var arrPic = ['../../images/1.jpg', '../../images/2.jpg', '../../images/3.jpg'];
+
+    function a() {
+      document.body.style.backgroundImage = 'url('+arrPic[num]+')';
+      num ++;
+      num %= arrPic.length;
+    }
+    aBtn[0].onclick = function() {
+      clearInterval(timer);  // null、未定义都可以
+      timer = setInterval(a, 1000);
+    }
+
+    aBtn[1].onclick = function() {
+      clearInterval(timer);
+    }
+  </script>
+</body>
+</html>

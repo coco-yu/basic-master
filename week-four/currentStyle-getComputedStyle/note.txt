@@ -1,1 +1,4 @@
 1.获取元素样式
+2. getComputedStyle($('div1), false/0/'xx').width
+    // FF 4.0 之前要加上第二个参数(第二个参数可以是任意值);
+3.

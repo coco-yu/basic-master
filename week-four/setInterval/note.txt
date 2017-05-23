@@ -1,0 +1,9 @@
+1.setInterval(function(){}, 3000);  // 参数一  函数 参数二 毫秒
+2.毫秒数最好写14以上
+3.clearInterval(要停止的定时器)
+  var timer = setInterval(fn1, 1000);
+  clearInterval(timer);
+4.定时器先关后开
+5.setTimeout 只执行一次  时间延迟
+6.clearTimeout
+

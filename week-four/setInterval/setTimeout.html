@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>setTimeout</title>
+  <style>
+    .box {
+      position: relative;
+      width: 900px;
+      height: 900px;
+      margin: 0 auto;
+      background-color: #ccc;
+    }
+
+    .box1 {
+      position: absolute;
+      display: none;
+      top: 200px;
+      left: 0px;
+      width: 300px;
+      height: 300px;
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="box1" id="ad"></div>
+  </div>
+  <script>
+    var oBtn = document.getElementById('btn');
+    var oDiv = document.getElementById('ad');
+    var timer = null;
+
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      oDiv.style.display = 'inline-block';  // img是内联元素 所以要写inline-block
+      setTimeout(function(){
+        oDiv.style.display = 'none';
+      },3000);
+    }, 3000);
+  </script>
+</body>
+</html>
