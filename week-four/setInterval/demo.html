@@ -88,21 +88,7 @@
       aLi[num].className = 'active';
     }
 
-    // 初始化
-    fnTab();
-
-    clearInterval(timer);
-    timer = setInterval(function() {
-      num ++;
-      num%=arrPic.length;
-      fnTab();
-    }, 1000);
-
-    oDiv.onmouseover = function() {
-      clearInterval(timer);
-    }
-
-    oDiv.onmouseout = function() {
+    function interval() {
       clearInterval(timer);
       timer = setInterval(function() {
         num ++;
@@ -110,6 +96,19 @@
         fnTab();
       }, 1000);
     }
+
+
+    // 初始化
+    fnTab();
+    // interval();
+    setTimeout(interval, 2000);
+
+
+    oDiv.onmouseover = function() {
+      clearInterval(timer);
+    }
+
+    oDiv.onmouseout = interval;
 
     for(var i = 0; i <aLi.length; i++) {
       aLi[i].index = i;
@@ -123,15 +122,7 @@
         fnTab();
       }
 
-      aLi[i].onmouseout = function() {
-        console.log('num', num);
-        clearInterval(timer);
-        timer = setInterval(function() {
-          num ++;
-          num%=arrPic.length;
-          fnTab();
-        }, 1000);
-      }
+      aLi[i].onmouseout = interval;
     }
 
   </script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>博客</title>
+  <script src="../../lib/customize/coco.customize.js"></script>
+  <style>
+    ul, li {
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    #content {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 10px;
+      width: 180px;
+      height: 30px;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <ul id="id">
+    <li>主页</li>
+    <li>我的博客</li>
+    <li>你的博客</li>
+    <li>关于我们</li>
+  </ul>
+  <ul id="content">
+    <li>111</li>
+    <li>2222</li>
+    <li>3333</li>
+    <li>4444</li>
+  </ul>
+  <script>
+    var nav = $('id');
+    var content = $('content');
+    var navList = nav.getElementsByTagName('li');
+
+    var timer = null;
+
+    for(var i = 0; i < navList.length; i++) {
+      navList[i].index = i;
+      navList[i].onmouseover = function(){
+        show(this.index);
+      };
+      navList[i].onmouseout = hide;
+
+      content.onmouseover = show;
+      content.onmouseout = hide;
+    }
+
+    function show(num) {
+      clearTimeout(timer);
+      content.style.display = 'block';
+      content.style.left = num * 50 + 'px';
+    }
+
+    function hide() {
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        content.style.display = 'none';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>qq延迟菜单实例</title>
+  <script src="../../lib/customize/coco.customize.js"></script>
+  <style>
+    #qq {
+      width: 200px;
+      height: 400px;
+      background-color: #f9c;
+    }
+
+    #title {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 220px;
+      width: 240px;
+      height: 180px;
+      background-color: #fc6;
+    }
+  </style>
+</head>
+<body>
+  <div id="qq"></div>
+  <div id="title"></div>
+
+  <script>
+    var qq = $('qq');
+    var title = $('title');
+    var timer = null;
+
+    function show() {
+      clearTimeout(timer);
+      title.style.display = 'block';
+    }
+
+    function hide() {
+      clearTimeout(timer);
+      timer = setTimeout(function() {
+        title.style.display = 'none';
+      }, 1000);
+    }
+
+    qq.onmouseover = show;
+    qq.onmouseout = hide;
+    title.onmouseover = show;
+    title.onmouseout = hide;
+  </script>
+</body>
+</html>
