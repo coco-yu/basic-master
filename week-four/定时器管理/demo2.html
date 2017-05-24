@@ -33,28 +33,16 @@
   <script>
     var oImg = document.getElementById('img');
     var oDiv = document.getElementById('div1');
-    // var arr = [];
-    // var timer = null;
-    // var num = 0;
-    // var pos = parseInt(getStyle(oImg, 'left'));
-    // for (var i = 20; i > 0; i -= 2) {
-    //   arr.push(i, -i);
-    // }
-    // arr.push(0);
-    // oImg.onclick = function () {
-    //   clearInterval(timer);
-    //   timer = setInterval(function () {
-    //     console.log('coco');
-    //     oImg.style.left = pos+arr[num] + 'px';
-    //     num++;
-    //     if(num === arr.length) {
-    //       clearInterval(timer);
-    //       num %= arr.length;
-    //     }
-    //   }, 100);
-    // }
-    shake(10, 2, oImg, 'left');
-    shake(20, 2, oDiv, 'top', function(){console.log('coco');})
+
+    oImg.onclick = function () {
+      shake(10, 2, oImg, 'left');
+    };
+
+    oDiv.onclick = function () {
+      shake(20, 2, oDiv, 'top', function () {
+        shake(20, 2, oDiv, 'left');
+      })
+    };
     function shake(maxpos, step, obj, attr, endFn) {
       obj.arr = [];
       obj.timer = null;
@@ -64,18 +52,16 @@
         obj.arr.push(i, -i);
       }
       obj.arr.push(0);
-      obj.onclick = function () {
-        clearInterval(obj.timer);
-        obj.timer = setInterval(function () {
-          obj.style[attr] = obj.pos+obj.arr[obj.num] + 'px';
-          obj.num++;
-          if(obj.num === obj.arr.length) {
-            clearInterval(obj.timer);
-            endFn&&endFn();
-            obj.num %= obj.arr.length;
-          }
-        }, 100);
-      };
+      clearInterval(obj.timer);
+      obj.timer = setInterval(function () {
+        obj.style[attr] = obj.pos + obj.arr[obj.num] + 'px';
+        obj.num++;
+        if (obj.num === obj.arr.length) {
+          clearInterval(obj.timer);
+          endFn && endFn();
+          obj.num %= obj.arr.length;
+        }
+      }, 100);
     }
   </script>
 </body>
