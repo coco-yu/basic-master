@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo4</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .container {
+      width: 400px;
+      height: 300px;
+      margin: 100px auto 0;
+      border: 1px solid #ccc;
+    }
+
+    .nav {
+      padding: 5px 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .nav li {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-right: 1px solid #ccc;
+    }
+
+    img {
+      width: 150px;
+      height: 259px;
+      border-right: 1px solid #ccc;
+    }
+
+    .content {
+      display: inline-block;
+      width: 242px;
+      height: 256px;
+      vertical-align: top;
+    }
+
+    .content ul li {
+      height: 30px;
+      line-height: 30px;
+      margin: 10px auto;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .active {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul class="nav">
+    </ul>
+    <img src="../../images/a.jpg" alt="">
+    <div class="content">
+      <ul class="info-list">
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    var arrNav = ['nav1', 'nav2', 'nav3'];
+    var arrInfo = ['list1', 'list2', 'list3', 'list4', 'list5', 'list6'];
+
+    var num = 0;
+    var num1 = 0;
+    var timer = null;
+    var str = '';
+    var info = '';
+    var timer = null;
+    var timerInfo = null;
+
+    var navUl = document.getElementsByClassName('nav')[0];
+    var navList = navUl.getElementsByTagName('li');
+    var infoUl = document.getElementsByClassName('info-list')[0];
+    var infoList = infoUl.getElementsByTagName('li');
+
+
+
+    for(var i = 0; i < arrNav.length; i++) {
+      str += '<li>'+arrNav[i]+'</li>';
+    }
+    navUl.innerHTML = str;
+    for(var i = 0; i < arrInfo.length; i++) {
+      info += '<li>'+arrInfo[i]+'</li>';
+    }
+    infoUl.innerHTML = info;
+
+    navList[num].className = 'active';
+    infoList[num1].className = 'active';
+
+    // clearInterval(timer);
+    navInterval();
+    // infoInterval();
+
+    function navInterval() {
+      clearInterval(timer);
+      timer = setInterval(function() {
+        for(var i = 0; i < arrNav.length; i++) {
+          navList[i].className = '';
+        }
+        num++;
+        num%=arrNav.length;
+        navList[num].className = 'active';
+        infoInterval();
+      }, 1000);
+    }
+
+    function infoInterval() {
+      clearInterval(timerInfo);
+      timerInfo = setInterval(function() {
+        for(var i = 0; i < arrInfo.length; i++) {
+          infoList[i].className = '';
+        }
+        num1++;
+        num1%=arrInfo.length;
+        infoList[num1].className = 'active';
+      }, 1000);
+    }
+
+  </script>
+</body>
+</html>

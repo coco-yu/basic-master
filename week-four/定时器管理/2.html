@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定时器应用</title>
+  <style>
+    #div1 {
+      position: absolute;
+      top: 50px;
+      left: 30px;
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="button" value="向前" id="btn">
+  <input type="button" value="向后" id="btn1">
+  <div id="div1"></div>
+  <script>
+    var oBtn = document.getElementById('btn');
+    var oBtBack = document.getElementById('btn1');
+    var oDiv = document.getElementById('div1');
+
+    // oDiv.timer = null;
+
+    oBtn.onclick = function() {
+      doMove(oDiv, 12, 800, 'top');
+    }
+
+    oBtBack.onclick = function() {
+      doMove(oDiv, 12, 50, 'top');
+    }
+
+
+    function doMove (obj, dir, target, attr){
+      dir = parseInt(getStyle(oDiv, attr)) < target ? dir : -dir;
+      clearInterval(obj.timer);
+      obj.timer = setInterval(function(){
+        let oldLeft = parseInt(getStyle(obj, attr)) + dir;
+        if(oldLeft < target && dir < 0 || oldLeft > target && dir > 0) {
+          oldLeft = target;
+        }
+        obj.style[attr] = oldLeft + 'px';
+        if(oldLeft == target) {
+          clearInterval(obj.timer);
+        }
+      }, 30);
+    }
+
+
+    function getStyle(obj, attr) {
+      if(obj.currentStyle) {
+        return obj.currentStyle[attr];
+      } else {
+        return getComputedStyle(obj)[attr];
+      }
+    }
+  </script>
+</body>
+</html>
