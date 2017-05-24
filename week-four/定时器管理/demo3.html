@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>抖函数的修复</title>
+  <script src="../../lib/customize/coco.customize.js"></script>
+  <style>
+    img {
+      position: absolute;
+      left: 100px;
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <img src="../../images/a.jpg"/>
+  <img src="../../images/b.jpg"/>
+  <img src="../../images/a.jpg"/>
+  <img src="../../images/b.jpg"/>
+  <img src="../../images/a.jpg"/>
+  <img src="../../images/b.jpg"/>
+
+  <script>
+    var aImg = document.getElementsByTagName('img');
+    for(var i = 0; i < aImg.length; i++) {
+      aImg[i].style.left = i * 110 + 'px';
+      aImg[i].open = true;
+      aImg[i].onmouseover = function() {
+        if(this.open)shake(20, 2, this, 'top', function() {console.log('coco');});
+      }
+    }
+  </script>
+</body>
+</html>
