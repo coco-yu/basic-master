@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片抖动</title>
+  <script src="../../lib/customize/coco.customize.js"></script>
+  <style>
+    img {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      width: 100px;
+      border: 1px solid #ccc;
+    }
+
+    div {
+      position: absolute;
+      top: 100px;
+      left: 300px;
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="../../images/a.jpg" alt="" id="img">
+  <div id="div1"></div>
+  <script>
+    var oImg = document.getElementById('img');
+    var oDiv = document.getElementById('div1');
+    // var arr = [];
+    // var timer = null;
+    // var num = 0;
+    // var pos = parseInt(getStyle(oImg, 'left'));
+    // for (var i = 20; i > 0; i -= 2) {
+    //   arr.push(i, -i);
+    // }
+    // arr.push(0);
+    // oImg.onclick = function () {
+    //   clearInterval(timer);
+    //   timer = setInterval(function () {
+    //     console.log('coco');
+    //     oImg.style.left = pos+arr[num] + 'px';
+    //     num++;
+    //     if(num === arr.length) {
+    //       clearInterval(timer);
+    //       num %= arr.length;
+    //     }
+    //   }, 100);
+    // }
+    shake(10, 2, oImg, 'left');
+    shake(20, 2, oDiv, 'top', function(){console.log('coco');})
+    function shake(maxpos, step, obj, attr, endFn) {
+      obj.arr = [];
+      obj.timer = null;
+      obj.num = 0;
+      obj.pos = parseInt(getStyle(obj, attr));
+      for (var i = maxpos; i > 0; i -= step) {
+        obj.arr.push(i, -i);
+      }
+      obj.arr.push(0);
+      obj.onclick = function () {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+          obj.style[attr] = obj.pos+obj.arr[obj.num] + 'px';
+          obj.num++;
+          if(obj.num === obj.arr.length) {
+            clearInterval(obj.timer);
+            endFn&&endFn();
+            obj.num %= obj.arr.length;
+          }
+        }, 100);
+      };
+    }
+  </script>
+</body>
+
+</html>
