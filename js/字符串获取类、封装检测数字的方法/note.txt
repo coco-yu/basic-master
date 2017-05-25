@@ -1,0 +1,13 @@
+1. 字符串操作方法
+    charAt() // 根据下标找到对应的字符  charAt(1);
+    charCodeAt() // 获取对应字符串的unicode编码
+    String.fromCharCode(26159); // 是  根据unicode编码返回对应的字符
+
+2.  0 ~ 9 对应的unicode编码是 48 ~ 57
+    a ~ z 对应的unicode编码是 97 ~ 122
+    A ~ Z 对应的unicode编码是 65 ~ 90
+
+3. str.indexOf()  // 从左往右找，找到第一个匹配的  第二个参数是从第几个位置开始往后找  没找到返回-1
+   str.lastIndexOf()  // 从右往左找，找到第一个匹配的 第二个参数是从第几个位置开始往前找 第二个参数是负数的话当成0来处理
+
+4.

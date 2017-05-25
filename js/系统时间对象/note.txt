@@ -1,0 +1,12 @@
+1. new Date(); // 获取系统当前时间对象  object类型
+
+  number类型：
+    getFullYear()  //年份
+    getMonth       //月份(一月是从0开始计算)
+    getDate        //日期(几日)
+    getDay         //星期（0，1，2...）
+    getHours       //获取小时
+    getMinutes     //获取分钟
+    getSeconds     //获取秒
+
+2.

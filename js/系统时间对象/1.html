@@ -8,7 +8,13 @@
 </head>
 <body>
   <script>
-    console.log(new Date());
+    console.log(new Date());  // 当前系统的事件对象
+    var myDate = new Date();
+    var year = myDate.getFullYear();
+    var day = myDate.getDay();
+    console.log('year', year, 'day', day);
+    if(day === 0) var week = '星期日';
+    console.log('week', week);
   </script>
 </body>
 </html>

@@ -131,3 +131,7 @@
     ||: 左边为true,最后结果就为true不去右边看,最终结果由左边确定;左边为false,去右边看为false还是true;最终结果由右边确定;
 
 32. 块元素加上position: absolute会使块元素变成内联元素，给这个块元素加上宽就可以让元素在想要的位置显示
+
+33. a标签点击时不跳转页面
+     1) href="javascript:;";
+     2) a标签的点击函数return false;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../../lib/customize/coco.customize.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <p id="time" style="font-size: 60px;">qqq</p>
+  <img src="" alt="">
+  <img src="" alt="">
+  <img src="" alt="">
+  <img src="" alt="">
+  <img src="" alt="">
+  <img src="../../images/number/0.jpg" alt="">
+  <script>
+    var oP = document.getElementById('time');
+    var aImg = document.getElementsByTagName('img');
+    var timer = null;
+    var str = '';
+    var imgStr = '';
+
+    clearInterval(timer);
+    fnTime(); // 想页面一刷新 就立即执行 而不是延迟一秒
+    timer = setInterval(fnTime, 1000);
+
+    function fnTime() {
+      var myDate = new Date();
+      var hour = myDate.getHours();
+      var minute = myDate.getMinutes();
+      var second = myDate.getSeconds();
+      var str = '';
+      str = toTime(hour) + toTime(minute) + toTime(second);
+      oP.innerHTML = str;
+      console.log(str.charAt(5));
+      for(var i = 0; i < str.length; i++) {
+        aImg[i].src = '../../images/number/'+str.charAt(i)+'.jpg';
+        doMove(aImg[i], 10, 200, 'top');
+      }
+    }
+
+    function toTime(n) {
+      return n < 10 ? '0' + n : '' + n;
+    }
+
+
+  </script>
+</body>
+</html>

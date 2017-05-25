@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>比较类、截取类、substring</title>
+</head>
+
+<body>
+  <script>
+    var str = '妙味课堂是一支独具特色的IT培训团队';
+    console.log(str.substring(0,2));  // 包含第一个参数但不包含第二个参数
+    console.log(str.substring(7,11));
+    console.log(str.substring(2,0)); // 第一个参数大于第二个参数的时候 会自动将两个参数交换位置
+                                     // 妙味
+    console.log(str.substring(-3,2)); //妙味  负数当做0来处理
+    console.log(str.substring(2,-3)); //妙味  负数当做0来处理然后两个参数调换位置
+
+    // ============slice=============
+
+    console.log(str.slice(0,2), '===slice');  // 妙味
+    console.log(str.slice(2,0), '===slice');  //      什么都没有  不具备交换位置的功能
+    console.log(str.slice(-2), '===slice');   // 团队  负数不当做0来处理，从后面到这往前来数
+    console.log(str.slice(-4,-2), '===slice');  // 培训
+  </script>
+</body>
+
+</html>
