@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 1010px;
+      height: 300px;
+      margin: 200px auto;
+      background-color: #fff;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      float: left;
+      width: 122px;
+      height: 172px;
+      overflow: hidden;
+    }
+
+    .wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="container">
+    <li id="tensHour">
+      <div class="wrap">
+        <img src="" />
+        <img src="" />
+      </div>
+    </li>
+    <li id="singleHour">
+      <div class="wrap">
+        <img src="" />
+        <img src="" />
+      </div>
+    </li>
+    <li class="colon"><img src="http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/colon.JPG" /></li>
+    <li id="tensMinute">
+      <div class="wrap">
+        <img src="" />
+        <img src="" />
+      </div>
+    </li>
+    <li id="singleMinute">
+      <div class="wrap">
+        <img src="" />
+        <img src="" />
+      </div>
+    </li>
+    <li class="colon"><img src="http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/colon.JPG" /></li>
+    <li id="tensSecond">
+      <div class="wrap">
+        <img src="" />
+        <img src="" />
+      </div>
+    </li>
+    <li id="singleSecond">
+      <div class="wrap">
+        <img src="" />
+        <img src="" />
+      </div>
+    </li>
+  </ul>
+
+  <script>
+    function getStyle(object, attribute, pseudoElt) {
+      return object.currentStyle ? object.currentStyle[attribute] : getComputedStyle(object, pseudoElt)[attribute];
+    }
+    function move(object, direction, time, destination, callback) {
+      var speed = Math.abs(destination / time * 30);
+      speed = destination >= parseInt(getStyle(object, direction)) ? speed : -speed;
+      clearInterval(object.moveTimer);
+      object.moveTimer = setInterval(function () {
+        object.isMoving = true;
+        var moveTo = parseInt(getStyle(object, direction)) + speed;
+        if ((moveTo > destination && speed > 0) || (moveTo < destination && speed < 0)) {
+          moveTo = destination;
+          object.isMoving = false;
+          clearInterval(object.moveTimer);
+          object.style[direction] = moveTo + "px";
+          (callback && typeof (callback) === "function") && callback();
+          return false;
+        }
+        object.style[direction] = moveTo + "px";
+      }, 30);
+    }
+    function activeTime(object, img0Value, system) {
+      var img0 = object.getElementsByTagName("img")[0];
+      var img1 = object.getElementsByTagName("img")[1];
+      var wrapper = object.getElementsByClassName("wrap")[0];
+      img0.src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/"
+        + img0Value + ".JPG";
+      var temp = img0Value == (system - 1) ? 0 : img0Value + 1;
+      img1.src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/"
+        + temp + ".JPG";
+      move(wrapper, "top", 500, "-173", function () {
+        img0.value = img1.value;
+        img0.src = img1.src;
+        wrapper.style.top = 0;
+      });
+    }
+    window.onload = function () {
+      var oTensHour = document.getElementById("tensHour");
+      var oSingleHour = document.getElementById("singleHour");
+      var oTensMinute = document.getElementById("tensMinute");
+      var oSingleMinute = document.getElementById("singleMinute");
+      var oTensSecond = document.getElementById("tensSecond");
+      var oSingleSecond = document.getElementById("singleSecond");
+      var aColon = document.getElementsByClassName("colon");
+      var date = new Date();
+      var iHour = date.getHours();
+      var iMin = date.getMinutes();
+      var iSec = date.getSeconds();
+
+      oTensHour.getElementsByTagName("img")[0].src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/" + parseInt(iHour / 10) + ".JPG";
+      oSingleHour.getElementsByTagName("img")[0].src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/" + iHour % 10 + ".JPG";
+      oTensMinute.getElementsByTagName("img")[0].src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/" + parseInt(iMin / 10) + ".JPG";
+      oSingleMinute.getElementsByTagName("img")[0].src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/" + iMin % 10 + ".JPG";
+      oTensSecond.getElementsByTagName("img")[0].src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/" + parseInt(iSec / 10) + ".JPG";
+      oSingleSecond.getElementsByTagName("img")[0].src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/" + iSec % 10 + ".JPG";
+
+      setInterval(function () {
+        for (var i = 0; i < aColon.length; i++) {
+          var oImg = aColon[i].getElementsByTagName("img")[0];
+          oImg.src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/colon-1.JPG";
+        }
+        setTimeout(function () {
+          for (var i = 0; i < aColon.length; i++) {
+            var oImg = aColon[i].getElementsByTagName("img")[0];
+            oImg.src = "http://7xlt2a.com1.z0.glb.clouddn.com/miaoV/homework/JS10/colon.JPG";
+          }
+        }, 500);
+      }, 1000);
+
+      setInterval(function () {
+        var img0Val = iSec % 10;
+        if (iSec % 10 == 9) {
+          activeTime(oTensSecond, parseInt(iSec / 10), 6);
+          if (iSec == 59) {
+            activeTime(oSingleMinute, iMin % 10, 10);
+            if (iMin % 10 == 9) {
+              activeTime(oTensMinute, parseInt(iMin / 10), 6);
+              if (iMin == 59) {
+                if (iHour == 23) {
+                  activeTime(oSingleHour, iHour % 10, 4);
+                  activeTime(oTensHour, parseInt(iHour / 10), 3);
+                } else if (iHour % 10 == 9) {
+                  activeTime(oSingleHour, iHour % 10, 10);
+                }
+                iHour++;
+                if (iHour > 23) {
+                  iHour = 0;
+                }
+              }
+            }
+            iMin++;
+            if (iMin > 59) {
+              iMin = 0;
+            }
+          }
+        }
+        activeTime(oSingleSecond, iSec % 10, 10); // +1秒
+        iSec++;
+        if (iSec > 59) {
+          iSec = 0;
+        }
+        console.log(new Date().toString());
+      }, 1000);
+    };
+  </script>
+</body>
+
+</html>
