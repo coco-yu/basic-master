@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    span {
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <input type="button" value="查找">
+  <p>神话的产生还取决于当时的社会性质。
+    当时人们必须依靠集体，共同获得生活资料，
+    抵御野兽和敌人；劳动所得有限，必须平均分配。
+    在原始公社制度下，人与自然的主要矛盾，成为
+    人民注意的中心。因此，解释自然和制服自然，
+    就成为神话的主要内容。同时，由于人们的利益一致，
+    在集体生产中涌现出来的技艺超群、勇敢刚强的人物，
+    受到全体成员的崇敬，被赋予神奇的能力而成为神或
+    半神。在他们身上，寄托了原始人制服自然的愿望。</p>
+
+    <script>
+      var aInp = document.getElementsByTagName('input');
+      var oP = document.getElementsByTagName('p')[0];
+      var str = oP.innerHTML;
+      var i = 0;
+      aInp[1].onclick = function() {
+        var val = aInp[0].value;
+        var arr = str.split(val);
+        oP.innerHTML = arr.join('<span>'+val+'</span>');
+        //  用一个字符分开一个段文字得到一个数组，再用得到这个数组链接之前的这个字符，会恢复到之前的那段文字
+
+      }
+    </script>
+</body>
+</html>

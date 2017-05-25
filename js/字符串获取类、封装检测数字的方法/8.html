@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>大小写转换，split分割字符串</title>
+</head>
+<body>
+
+  <div id="div"><span>这是一段文字</span></div>
+  <script>
+    var str = 'www.BAIDU.com';
+    console.log(str.toUpperCase());  // WWW.BAIDU.COM  转换成大写
+    console.log(str.toLowerCase());  // www.baidu.com  转换成小写
+
+    var oDiv = document.getElementById('div');
+    oDiv.onclick = function() {
+      console.log(this.innerHTML.toUpperCase());  // <SPAN>这是一段文字</SPAN>
+    }
+  </script>
+</body>
+</html>

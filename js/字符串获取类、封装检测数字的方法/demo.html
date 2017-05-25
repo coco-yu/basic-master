@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>split彩色文字效果实例</title>
+  <style>
+    div {
+      width: 200PX;
+      height: 200PX;
+      border: 1px solid #ccc;
+    }
+
+    span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <input type="text" name="" id="">
+  <input type="button" value="按钮">
+
+  <script>
+    var oDiv = document.getElementById('box');
+    var aInp = document.getElementsByTagName('input');
+
+    aInp[1].onclick = function () {
+      oDiv.innerHTML = '';
+      if (aInp[0].value) {
+        var val = aInp[0].value;
+
+        var arr = val.split('');
+
+        for (var i = 0; i < arr.length; i++) {
+          oDiv.innerHTML += '<span style="background-color:' + getRandomColor() + '">' + arr[i] + '</span>';
+        }
+        aInp[0].value = '';
+      } else {
+        console.log('输入框不能为空');
+      }
+
+    }
+
+    function getRandomColor() {
+      return "#" + ("00000" + ((Math.random() * 16777215 + 0.5) >> 0).toString(16)).slice(-6);
+    }
+  </script>
+</body>
+
+</html>

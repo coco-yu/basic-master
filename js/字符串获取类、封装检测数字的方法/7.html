@@ -12,27 +12,32 @@
   </style>
 </head>
 <body>
-  <p><span></span><a href="javascript:;"></a></p>
+  <p><span>是儿童文学少儿的一类。指0周岁到6周岁的幼儿。
+    故事用作讲述的事情，凡有情节、有头有尾的皆称故事。
+    这个用作讲述的事情，凡有情节、有头有尾的皆称故事。
+    这个用作讲述的事情，凡有情节、有头有尾的皆称故事。
+    这个用作讲述的事情，凡有情节、有头有尾的皆称故事。
+    这个用作讲述的事情，凡有情节、有头有尾的皆称故事。
+    这个事可能是真实的事，也可能是虚构的事。
+    它是通过叙述的方式讲一个带有寓意的事件。</span><a href="javascript:;">收缩</a></p>
 
     <script>
       var aP = document.getElementsByTagName('p')[0];
       var aSpan = document.getElementsByTagName('span')[0];
       var a = document.getElementsByTagName('a')[0];
       var flag = true;
-      var str = '是儿童文学少儿的一类。指0周岁到6周岁的幼儿。故事用作讲述的事情，凡有情节、有头有尾的皆称故事。这个用作讲述的事情，凡有情节、有头有尾的皆称故事。这个用作讲述的事情，凡有情节、有头有尾的皆称故事。这个用作讲述的事情，凡有情节、有头有尾的皆称故事。这个用作讲述的事情，凡有情节、有头有尾的皆称故事。这个事可能是真实的事，也可能是虚构的事。它是通过叙述的方式讲一个带有寓意的事件。';
-      aSpan.innerHTML = str;
-      a.innerHTML = '收缩';
+      var str = aSpan.innerHTML;
       a.onclick = function() {
         if(flag) {
           aSpan.innerHTML = str.substring(0, 20);
           a.innerHTML = '展开';
-          flag = false;
+          flag = !flag;
         } else {
           aSpan.innerHTML = str;
           a.innerHTML = '收缩';
-          flag = true;
+          flag = !flag;
         }
-        // return false;
+        // return false;  // 使得a标签点击不跳转
       }
     </script>
 </body>
