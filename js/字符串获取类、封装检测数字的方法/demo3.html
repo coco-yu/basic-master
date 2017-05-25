@@ -13,7 +13,8 @@
 </head>
 <body>
   <input type="text">
-  <input type="button" value="查找">
+  <input type="text">
+  <input type="button" value="替换">
   <p>神话的产生还取决于当时的社会性质。
     当时人们必须依靠集体，共同获得生活资料，
     抵御野兽和敌人；劳动所得有限，必须平均分配。
@@ -29,11 +30,12 @@
       var oP = document.getElementsByTagName('p')[0];
       var str = oP.innerHTML;
       var i = 0;
-      aInp[1].onclick = function() {
-        var val = aInp[0].value;
-        var arr = str.split(val);
-        if(!val) return;
-        oP.innerHTML = arr.join('<span>'+val+'</span>');
+      aInp[2].onclick = function() {
+        var val0 = aInp[0].value;
+        var val1 = aInp[1].value;
+        var arr = str.split(val0);
+        // if(!val) return;
+        oP.innerHTML = arr.join('<span>'+val1+'</span>');
         //  用一个字符分开一个段文字得到一个数组，再用得到这个数组链接之前的这个字符，会恢复到之前的那段文字
 
       }

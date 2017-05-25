@@ -2,6 +2,14 @@
     charAt() // 根据下标找到对应的字符  charAt(1);
     charCodeAt() // 获取对应字符串的unicode编码
     String.fromCharCode(26159); // 是  根据unicode编码返回对应的字符
+    indexOf()
+    lastIndexOf()
+    substring()
+    slice()
+    split()
+    join()  // 拼成字符串
+    toUpperCase()
+    toLowerCase()
 
 2.  0 ~ 9 对应的unicode编码是 48 ~ 57
     a ~ z 对应的unicode编码是 97 ~ 122
@@ -12,4 +20,4 @@
 
 4. split('.', 3);  // 第二个参数是保留切割后的前几段(截取前三段)
 
-5.
+5. 字符串的方法
