@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>array</title>
+</head>
+<body>
+  <script>
+    var arr = new Array();
+    arr[1] = 'coco';
+    console.log('arr', arr);
+    alert(arr);
+
+    var arr1 = new Array(4);
+    console.log(arr1.length);  // 4
+
+    var arr2 = new Array('4');
+    console.log('arr2', arr2); // ['4']
+    console.log(arr2.length);  // 1
+
+    var str = 'coco';
+    str.length = 1;
+    console.log('str', str);  //  字符串length不可写
+
+
+  </script>
+</body>
+</html>

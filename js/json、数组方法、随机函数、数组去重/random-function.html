@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>随机函数</title>
+</head>
+<body>
+
+  <script>
+
+    console.log(Math.round(Math.random()));  // 0 ~ 1
+    console.log(Math.round(Math.random() * 10));  // 0 ~ 10
+    console.log(Math.round(Math.random()*5+5));  // 5 ~ 10
+    console.log(Math.round(Math.random()*4+6));  // 6 ~ 10
+
+
+    // x ~ y
+    Math.round(Math.random()*(y-x) + x);
+
+    // 0 ~ x
+    Math.round(Math.random()*x);
+
+    // 1 ~ x
+    Math.ceil(Math.random()*x);
+  </script>
+</body>
+</html>

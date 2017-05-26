@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的四个主要方法及技巧</title>
+</head>
+<body>
+
+  <script>
+    var arr = [1, 2, 3];
+    arr.push(4);  // 返回值是数组的长度 从数组的后面往里塞字符串
+    console.log('arr', arr);
+    arr.unshift('0');  // 往数组的前面塞东西   // 返回值是数组的长度
+    console.log('arr', arr);
+
+    // 删除数组最后一位
+    var arr1 = ['coco', '熊', '果果', '怡怡'];
+    arr1.pop();
+    console.log(arr1.pop()); // 返回值是被删除的那个字符
+    console.log('arr1', arr1);
+
+    // 删除数组的第一个字符串
+    var arr2 = ['coco', '熊', '果果', '怡怡'];
+    console.log(arr2.shift());  // coco 返回值是被删除的字符串  从数组的前面删除字符串
+    console.log('arr2', arr2);
+    var arr3 = ['coco', '熊', '果果', '怡怡'];
+    arr3.unshift(arr3.pop());
+    console.log('== arr3', arr3);
+
+
+    // splice
+    // 删除
+    var arr4 = ['coco', '熊', '果果', '怡怡'];
+    arr4.splice(0,2);  // 从数组的第0位删除 删除2个  返回被删除的字符串
+    console.log('arr4', arr4);  // ["果果", "怡怡"]
+
+    // 替换
+    var arr5 = ['coco', '熊', '果果', '怡怡'];
+    console.log(arr5.splice(0, 2, '可可 and 熊熊'), '--------');  // 返回被替换的字符串
+    console.log('arr5', arr5); // ["可可 and 熊熊", "果果", "怡怡"]
+
+    // 添加
+    var arr6 = ['coco', '熊', '果果', '怡怡'];
+    console.log(arr6.splice(1,0,'熊小可'), '**********');   // 添加第二个参数为0 返回空数组
+    console.log('arr6', arr6);  // ["coco", "熊小可", "熊", "果果", "怡怡"]
+
+    // 数组去重
+    // 1.
+    var arr7 = [1,2,2,3,2];
+    for(var i = 0; i < arr7.length; i++) {
+      for(var j = i+1; j < arr7.length; j++) {
+        if(arr7[i] == arr7[j]) {
+          arr7.splice(j,1);
+          j--;
+        }
+      }
+    }
+    console.log('arr7', arr7);
+
+  </script>
+</body>
+</html>

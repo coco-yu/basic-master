@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的concat、reverse方法</title>
+</head>
+<body>
+  <script>
+    var arr1 = [1, 2, 3];
+    var arr2 = [4, 5, 6];
+    console.log(arr1.concat(arr2));  // [1, 2, 3, 4, 5, 6]
+
+
+    var arr3 = [1, 2];
+    var arr4 = [3, 4];
+    var arr5 = [5, 6];
+    console.log(arr3.concat(arr4, arr5)); // [1, 2, 3, 4, 5, 6]
+
+    var arr6 = [1, 2, 3, 4, 5, 6];
+    console.log(arr6.reverse());  // 倒叙 [6, 5, 4, 3, 2, 1]
+
+    var str = 'abcdefg';
+    console.log(str.split('').reverse().join('')); // gfedcba
+
+    var arr7 = [];
+    var a = Math.round(Math.random()*1000);
+    console.log('a', a);
+
+
+    for(var i = 0; i < 100; i++) {
+      var a = Math.round(Math.random()*1000);
+      arr7.push(a);
+    }
+    console.log('arr7', arr7);
+    console.log('length', arr7.length);
+    for(var i = 0; i < arr7.length; i++) {
+      for(var j = i+1; j < arr7.length;j++) {
+        if(arr7[i] == arr7[j]) {
+          arr7.splice(j,1);
+          j++;
+        }
+      }
+    }
+
+    console.log('--------', arr7);
+  </script>
+</body>
+</html>

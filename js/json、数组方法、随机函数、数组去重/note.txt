@@ -1,0 +1,26 @@
+1. json  跨平台
+2. 遍历json  for in
+    for(var attr in json) {
+      // json里面用attr
+    }
+
+3. json没有长度 不能用for
+
+4. for in 可以访问数组
+
+5. 清空数组
+    1) 主要让数组的length = 0就可以立即清空数组
+    2) 给数组重新赋值 附一个空数组  arr = []  效率更高一点
+
+6. 字符串length属性不是可写的
+
+7. push()的返回值是数组的长度
+
+8. unshift()往数组的前面塞东西  // 返回值是数组的长度  IE6,7不支持返回值
+
+9. splice 删除  替换  添加
+
+10. arr.concat('数组1','数组2', ...);  concat里面可以有多个数组
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组sort方法</title>
+</head>
+<body>
+  <script>
+    var arr = ['d', 'e', 'c', 'a', 'b'];
+    arr.sort();
+    console.log('arr', arr);  // ["a", "b", "c", "d", "e"]
+
+
+    // 数字 按字符串解析!!!!!!!!!!
+    var arr1 = [100,60,3,9,0,2];
+    arr1.sort();  // 按字符串解析!!!!!!!!!!
+    console.log('arr1', arr1);  // [0, 100, 2, 3, 60, 9]
+
+    // 字符串
+    var arr2 = ['21','16','3','9','100','2'];
+    arr2.sort();
+    console.log('arr2', arr2);  // ["100", "16", "2", "21", "3", "9"]
+
+
+    var arr3 = [100,60,3,9,0,2];
+    arr3.sort(function(a, b){
+      return a - b;  // 从小到大排序
+    })
+    console.log('arr3', arr3);  // [0, 2, 3, 9, 60, 100]
+
+
+    var arr4 = [100,60,3,9,0,2];
+    arr4.sort(function(a, b){
+      return b - a;  // 从大到小排序
+    })
+    console.log('arr4', arr4);  // [100, 60, 9, 3, 2, 0]
+
+
+    var arr5 = ['200px', '323px', '512px', '90px'];
+    arr5.sort(function(a, b){
+      return parseFloat(a) - parseFloat(b);
+    });
+    console.log('arr5', arr5);  // ["90px", "200px", "323px", "512px"]
+
+  </script>
+</body>
+</html>

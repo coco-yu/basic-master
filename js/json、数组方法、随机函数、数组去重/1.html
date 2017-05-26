@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>json数据格式及json语法</title>
+</head>
+<body>
+  <script>
+    var json = {
+      name: 'coco',
+      age: 23
+    }
+    console.log(json.name);
+
+    var imgData = {
+      url : ['../../images/1.jpg', '../../images/2.jpg', '../../images/3.jpg','../../images/4.jpg'],
+      text: ['图片一', '图片二', '图片三', '图片四']
+    };
+
+    console.log(imgData.url[2]);  // ../../images/3.jpg
+    var json1 = {
+      'name' : 'coco'
+    }
+    console.log(json1.name);  // coco
+    console.log(json1['name']);  // coco
+    json1.name = 'xx';
+    console.log('json1', json1);  // {name: "xx"}
+
+    var arr = [{'name': 'coco', 'age' : 23}, {'name': '熊', 'age': 35}];
+    console.log(arr[1].name +'今年'+ arr[1].age + '岁');
+  </script>
+</body>
+</html>
