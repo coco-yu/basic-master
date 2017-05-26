@@ -1,0 +1,4 @@
+javascript由三部分组成
+  1) ECMAScript(javascript核心标准, 也是一个解析器)
+  2) DOM(通过document提供的方法或者属性来操作页面)
+  3) BOM(通过window提供的方法或者属性来操作浏览器)
