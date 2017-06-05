@@ -1,4 +1,24 @@
-javascript由三部分组成
-  1) ECMAScript(javascript核心标准, 也是一个解析器)
-  2) DOM(通过document提供的方法或者属性来操作页面)
-  3) BOM(通过window提供的方法或者属性来操作浏览器)
+1. javascript由三部分组成
+    1) ECMAScript(javascript核心标准, 也是一个解析器)
+    2) DOM(通过document提供的方法或者属性来操作页面)
+    3) BOM(通过window提供的方法或者属性来操作浏览器)
+
+2. DOM document object model （文档对象模型）
+    document提供了一些API,赋予开发者操作页面的能力
+
+3. nodeType 节点的类型:
+    1)元素节点：nodeType = 1;
+    2)document: nodeType = 9;
+    3)文本节点： nodeType = 3;
+    4)注释节点： nodeType = 8;
+    5)属性节点： nodeType = 2;
+
+4. childNodes: 获取某个节点下的所有子节
+
+5. nodeValue: 查看节点的属性值
+
+6. nodeName: 查看节点的属性名
+
+7. transition: 完成过渡效果需要多少秒或毫秒
+
+8. 不是标准的属性、但是所有的浏览器都支持； 找到某个元素下的所有元素的子节点

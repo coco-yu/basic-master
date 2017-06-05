@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li {
+            width: 20px;
+            height: 30px;
+            margin: 5px;
+            background-color: #f00;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var ul = document.getElementById('ul');
+        var lis = ul.childNodes;
+        var li = ul.children;
+        console.log('lis', lis);  // [text, li, text, li, text, li, text, li, text, li, text]
+        console.log('li', li);  // [li, li, li, li, li]
+        
+
+        document.onclick = function() {
+            for(var i = 0; i <lis.length; i++) {
+                if(lis[i].nodeType === 1) {
+                    lis[i].style.width = '150px';
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

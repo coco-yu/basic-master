@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <!--我是注释-->
+    </div>
+
+    <script>
+        var oDiv = document.getElementById('div1');
+        console.log(oDiv.nodeType);  // 1
+        console.log(document.nodeType);  // 9
+        console.log(typeof document.nodeType);  // number
+        console.log(oDiv.childNodes); // [text, ul, text]
+        console.log(oDiv.childNodes[0]);  // "coco"
+        console.log(oDiv.childNodes[0].nodeType);  // 3
+
+        console.log(oDiv.childNodes); // [text, comment, text]
+        console.log(oDiv.childNodes.length);  // 3
+
+        console.log(oDiv.attributes);  // NamedNodeMap {0: id, length: 1}  属性节点
+        console.log(oDiv.attributes.length);  // 1
+        console.log(oDiv.attributes[0].nodeType);  // 2
+        console.log(oDiv.attributes[0].nodeValue);  // div1
+        console.log(oDiv.attributes[0].nodeName);  // id
+        console.log(oDiv.childNodes[1].nodeValue);  // 我是注释
+    </script>
+</body>
+</html>
