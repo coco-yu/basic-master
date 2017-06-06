@@ -60,6 +60,22 @@
         }
       }
     }
+
+    var firstLi = ul.firstElementChild;
+    firstLi.onmouseover = function() {
+      for(var i = 0; i < lis.length; i++) {
+        lis[i].style.cssText = '';
+      }
+      this.style.backgroundColor = "yellow";
+    }
+
+    var lastLi = ul.lastElementChild;
+    lastLi.onmouseover = function() {
+      for(var i = 0; i < lis.length; i++) {
+        lis[i].style.cssText = '';
+      }
+      this.style.backgroundColor = "yellow";
+    }
   </script>
 </body>
 </html>
