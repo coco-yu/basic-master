@@ -39,5 +39,5 @@
 
 12. node.offsetParent 这个元素的祖先节点中没有定位 该元素的offsetParent是body
 
-13. 不知道有length的循环 建议使用while
+13. 未知length的循环 建议使用while
 
