@@ -57,12 +57,12 @@
         if (this.previousElementSibling !== ul.firstElementChild) {
           this.previousElementSibling.style.cssText = 'color:#00f;background-color:#ccc;';
         } else {
-          this.style.backgroundColor = "yellow";
+          this.previousElementSibling.style.backgroundColor = '#f00';
         }
         if (this.nextElementSibling !== ul.lastElementChild) {
           this.nextElementSibling.style.cssText = 'color:#00f;background-color:#333;';
         } else {
-          this.style.backgroundColor = "yellow";
+          this.nextElementSibling.style.backgroundColor = '#f00';
         }
       }
       lis[i].onmouseout = function() {
@@ -72,21 +72,21 @@
       }
     }
 
-    // var firstLi = ul.firstElementChild;
-    // firstLi.onmouseover = function() {
-    //   for(var i = 0; i < lis.length; i++) {
-    //     lis[i].style.cssText = '';
-    //   }
-    //   this.style.backgroundColor = "yellow";
-    // }
+    var firstLi = ul.firstElementChild;
+    firstLi.onmouseover = function() {
+      for(var i = 0; i < lis.length; i++) {
+        lis[i].style.cssText = '';
+      }
+      this.style.backgroundColor = "yellow";
+    }
 
-    // var lastLi = ul.lastElementChild;
-    // lastLi.onmouseover = function() {
-    //   for(var i = 0; i < lis.length; i++) {
-    //     lis[i].style.cssText = '';
-    //   }
-    //   this.style.backgroundColor = "yellow";
-    // }
+    var lastLi = ul.lastElementChild;
+    lastLi.onmouseover = function() {
+      for(var i = 0; i < lis.length; i++) {
+        lis[i].style.cssText = '';
+      }
+      this.style.backgroundColor = "yellow";
+    }
   </script>
 </body>
 </html>
