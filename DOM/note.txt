@@ -14,6 +14,7 @@
     5)属性节点： nodeType = 2;
 
 4. childNodes: 获取某个节点下的所有子节
+   children: 获取某个节点下的元素节点
 
 5. nodeValue: 查看节点的属性值
 
@@ -22,3 +23,9 @@
 7. transition: 完成过渡效果需要多少秒或毫秒
 
 8. 不是标准的属性、但是所有的浏览器都支持； 找到某个元素下的所有元素的子节点
+
+9. parentNode: 查找某个元素的父节点
+
+10. nextElementSibling 找到某个元素的下一个兄弟节点
+
+

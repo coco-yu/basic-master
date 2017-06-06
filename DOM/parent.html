@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>parentNode</title>
+</head>
+<body>
+    <ul id="ul">
+      <li>11</li>
+      <li>22</li>
+      <li>33</li>
+    </ul>
+
+
+    <ul>
+      <li><a href="javascript:;">1111</a></li>
+      <li><a href="javascript:;">2222</a></li>
+      <li><a href="javascript:;">3333</a></li>
+      <li><a href="javascript:;">4444</a></li>
+      <li><a href="javascript:;">5555</a></li>
+    </ul>
+
+    <script>
+      var oUl = document.getElementById('ul');
+      var aLi = oUl.children;
+      console.log(aLi[0].parentNode, '--');  // <ul>...</ul>
+      console.log(aLi[0].parentNode.parentNode, '--');  // <body>...</body>
+      console.log(aLi[0].parentNode.parentNode.parentNode, '--'); // html
+      console.log(aLi[0].parentNode.parentNode.parentNode.parentNode, '--');  // document
+      console.log(aLi[0].parentNode.parentNode.parentNode.parentNode.parentNode, '--'); // null
+
+
+      var a = document.getElementsByTagName('a');
+
+      for(var i = 0; i < a.length; i++) {
+        a[i].onclick = function() {
+          this.parentNode.style.display = 'none';
+        }
+      }
+    </script>
+</body>
+</html>

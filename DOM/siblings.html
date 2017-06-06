@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>siblings</title>
+</head>
+<body>
+  <ul id="ul">
+    <li>111</li>
+    <li>222</li>
+    <li>332</li>
+  </ul>
+
+  <script>
+    
+    var ul = document.getElementById('ul');
+    var aLi = ul.children;
+
+    console.log(aLi[0].nextElementSibling, '--');  // <li>222</li>
+  </script>
+</body>
+</html>
