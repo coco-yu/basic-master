@@ -25,6 +25,13 @@
     background-color: #eee;
   }
 
+  .first {
+    background-color: #f00;
+  }
+
+  .last {
+    background-color: #f00;
+  }
 
 </style>
 <body>
@@ -47,16 +54,17 @@
     console.log('ul.firstElementChild', !!ul.firstElementChild);
     for(var i = 0; i < lis.length; i++) {
       lis[i].onmouseover = function() {
-        for(var i = 0; i < lis.length; i++) {
-          lis[i].style.cssText = '';
-        }
-        console.log(!!this.previousElementSibling, 'previous', this.previousElementSibling, 'this.previousElementSibling');
         this.style.cssText = 'font-size:20px;color:#fff;background-color:#000;';
         if (this.previousElementSibling !== ul.firstElementChild) {
           this.previousElementSibling.style.cssText = 'color:#00f;background-color:#ccc;';
         }
         if (this.nextElementSibling !== ul.lastElementChild) {
           this.nextElementSibling.style.cssText = 'color:#00f;background-color:#333;';
+        }
+      }
+      lis[i].onmouseout = function() {
+        for(var i = 0; i < lis.length; i++) {
+          lis[i].style.cssText = '';
         }
       }
     }
