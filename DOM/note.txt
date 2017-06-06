@@ -31,6 +31,11 @@
     firstElementChild    找到某个元素下的第一个子元素
     lastElementChild     找到某个元素下的最后一个子元素
 
-11. 
+11. node.offsetParent 最近的有定位属性的祖先节点
+    node.offsetLeft/node.offsetTop 最近的有定位属性的祖先节点的距离（该元素的外边框到有定位的父级的内边框的距离）（eg. 实用的文字提示层）
+    node.getBoundingClientRect()  获取元素的盒模型信息 返回值为一个对象 left top bottom right width height 相对于浏览器可视区域 (eg. 实用的文字提示层)
 
+12. node.offsetParent 这个元素的祖先节点中没有定位 该元素的offsetParent是body
+
+13. 
 

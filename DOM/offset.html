@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>offsetParent</title>
+  <style>
+    div {
+      padding: 100px;
+    }
+
+    .div1  {
+      position: relative;
+      background-color: #f00;
+    }
+
+    .div2 {
+      background-color: #0f0;
+    }
+
+    .div3 {
+      background-color: #00f;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <div class="div2">
+      <div class="div3"></div>
+    </div>
+  </div>
+
+  <script>
+    var div = document.getElementsByClassName('div3')[0];
+    console.log('div', div.offsetParent);  // <div class="div1"></div>
+  </script>
+</body>
+</html>
