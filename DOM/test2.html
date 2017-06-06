@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test2</title>
+  <style>
+    .div1 {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin-left: 50px;
+      border: 1px solid #eee;
+      background-color: #f00;
+    }
+
+    .div2 {
+      position: absolute;
+      left: 20px;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #eee;
+      background-color: #0f0;
+    }
+
+    .div3 {
+      position: absolute;;
+      left: 0;  
+
+      /* 给一个初始化的left值 transition才会有效 */
+      top: 150px;
+      width:100px;
+      height: 100px;
+      border: 1px solid #eee;
+      background-color: #00f;
+      transition: 1s;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">点击就走</button>
+  <div class="div1">
+    <div class="div2">
+      <div class="div3"></div>
+    </div>
+  </div>
+
+  <script>
+    var div3 = document.getElementsByClassName('div3')[0];
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function() {
+      var left = 0;
+      var elem = div3;
+      var div3_bd = parseInt(getComputedStyle(div3).borderLeftWidth);
+      while (elem) {
+        left += elem.offsetLeft + parseInt(getComputedStyle(elem).borderLeftWidth);;
+        elem = elem.offsetParent;
+      }
+      left -= div3_bd;
+      div3.style.left = -left + 'px';
+    }
+
+  </script>
+</body>
+</html>
