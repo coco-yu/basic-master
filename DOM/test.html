@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>练习</title>
+</head>
+
+<style>
+  ul, li {
+    list-style: none;
+  }
+  
+  ul {
+    width: 200px;
+    margin: 0 auto;
+    /*border: 1px solid #ccc;*/
+  }
+  
+  li {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    line-height: 40px;
+    border: 1px solid #333;
+    background-color: #eee;
+  }
+
+
+</style>
+<body>
+  <ul>
+    <li class="first">这是首行</li>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+    <li>666</li>
+    <li>777</li>
+    <li class="last">这是末行</li>
+  </ul>
+
+  <script>
+    var ul = document.getElementsByTagName('ul')[0];
+    var lis = ul.children;
+
+    console.log('ul.firstElementChild', !!ul.firstElementChild);
+    for(var i = 0; i < lis.length; i++) {
+      lis[i].onmouseover = function() {
+        for(var i = 0; i < lis.length; i++) {
+          lis[i].style.cssText = '';
+        }
+        console.log(!!this.previousElementSibling, 'previous', this.previousElementSibling, 'this.previousElementSibling');
+        this.style.cssText = 'font-size:20px;color:#fff;background-color:#000;';
+        if (this.previousElementSibling !== ul.firstElementChild) {
+          this.previousElementSibling.style.cssText = 'color:#00f;background-color:#ccc;';
+        }
+        if (this.nextElementSibling !== ul.lastElementChild) {
+          this.nextElementSibling.style.cssText = 'color:#00f;background-color:#333;';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

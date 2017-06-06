@@ -27,5 +27,10 @@
 9. parentNode: 查找某个元素的父节点
 
 10. nextElementSibling 找到某个元素的下一个兄弟节点
+    previousElementSibling  找到某个元素的上一个兄弟节点
+    firstElementChild    找到某个元素下的第一个子元素
+    lastElementChild     找到某个元素下的最后一个子元素
+
+11. 
 
 

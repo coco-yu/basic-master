@@ -8,7 +8,7 @@
   <ul id="ul">
     <li>111</li>
     <li>222</li>
-    <li>332</li>
+    <li>333</li>
   </ul>
 
   <script>
@@ -17,6 +17,11 @@
     var aLi = ul.children;
 
     console.log(aLi[0].nextElementSibling, '--');  // <li>222</li>
+    aLi[1].previousElementSibling.style.backgroundColor = '#0f0';
+
+
+    console.log(ul.firstElementChild, '--');  // 找到ul下的第一个子元素
+    console.log(ul.lastElementChild, '--');  // 找到ul下的最后一个子元素
   </script>
 </body>
 </html>
