@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>table</title>
+</head>
+
+<body>
+  <table border="" cellspacing="0" cellpadding="0" id="table">
+    <thead>
+      <tr>
+        <th>标题一</th>
+        <th>标题二</th>
+        <th>标题三</th>
+        <th>标题四</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>内容1</td>
+        <td>内容2</td>
+        <td>内容3</td>
+        <td>内容4</td>
+      </tr>
+      <tr>
+        <td>内容1</td>
+        <td>内容2</td>
+        <td>内容3</td>
+        <td>内容4</td>
+      </tr>
+      <tr>
+        <td>内容1</td>
+        <td>内容2</td>
+        <td>内容3</td>
+        <td>内容4</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>统计1</td>
+        <td>统计2</td>
+        <td>统计3</td>
+        <td>统计4</td>
+      </tr>
+    </tfoot>
+  </table>
+  <script>
+    var table = document.getElementById('table');
+    table.tHead.style.backgroundColor = '#f00';
+    table.rows[1].style.backgroundColor = '#0f0';
+    table.tFoot.style.borderColor = '#f00';
+    table.tBodies[0].rows[2].cells[0].style.backgroundColor = '#0f0';
+    table.rows[3].cells[3].style.backgroundColor = '#f00';
+  </script>
+</body>
+
+</html>

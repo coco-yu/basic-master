@@ -64,6 +64,16 @@
     parentNode.removeChild('指定的节点')
     parentNode.replaceChild(node, childNode) node用来替换的节点 childNode被替换的子节点 两个参数都是必填
 
+19. node.cloneNode(boolean) 克隆一个节点  事件不会被克隆的
+    true: 克隆元素和元素包含的子孙节点
+    false: 克隆元素但不包含元素的子孙节点(默认false)
 
-19.
+20. appendChild/insertBefore/replaceChild在操作一个已有元素时，是将已有的额元素移动，而不是复制一份进行操作
 
+21. 操作表格
+    table.tHead   获取表格头部
+    table.rows[n] 获取表格的第n行
+    table.tFoot   获取表格底部
+    table.tBodies 获取表格主体  获取到的是一个集合
+    tBodies[n].rows/tHead.rows/tFoot.rows  表格的行=>tr
+    rows[n].cells => 单元格 => td

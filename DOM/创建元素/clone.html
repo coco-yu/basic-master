@@ -5,8 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>clone</title>
+  <style>
+    li {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #f00;
+    }
+
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+    }
+
+    #div2 {
+      width: 100px;
+      height: 100px;
+      background-color: #0f0;
+    }
+  </style>
 </head>
 <body>
-
+  <input type="button" value="点击添加" id="btn">
+  <ul id="ul">
+  </ul>
+  <div id="box">
+    <div id="div1"></div>
+    <hr id="hr"/>
+    <div id="div2">
+      <p>coco</p>
+    </div>
+  </div>
+  <script>
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    var box = document.getElementById('box');
+    var div1 = document.getElementById('div1');
+    var div2 = document.getElementById('div2');
+    var hr = document.getElementById('hr');
+    // var num = 0;
+    // 当点击按钮的之后，将蓝色方块克隆一份出来放在红色方块下面
+    btn.onclick = function() {
+      var _div2 = div2.cloneNode(false);
+      // box.replaceChild(div2, div1);
+      box.insertBefore(_div2, hr);
+    }
+  </script>
 </body>
 </html>
