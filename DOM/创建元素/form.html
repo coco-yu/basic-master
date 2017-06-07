@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>表单操作</title>
+  <style>
+    a {
+      color: #00f;
+      text-decoration-line: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <table id="table" border="" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>商品全选<input type="checkbox" name="" id="allChecked"></th>
+        <th>商品编号</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+        <th>商品数量</th>
+        <th>商品删除</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+  </table>
+
+  <script>
+    var data = [
+      {
+        num: 1,
+        name: '熊熊',
+        price: 99999,
+        count: 10
+      }, {
+        num: 2,
+        name: '可可',
+        price: 99999,
+        count: 9
+      }, {
+        num: 3,
+        name: '小可爱',
+        price: 99999,
+        count: 8
+      }
+    ]
+
+    var table = document.getElementById('table');
+    var len = data.length;
+    var checkbox = document.createElement('input')
+    checkbox.type = 'checkbox';
+    var aChecked = table.getElementsByTagName('input');
+
+    var allChecked = document.getElementById('allChecked');
+
+    for (var i = 0; i < len; i++) {
+      var tr = document.createElement('tr');
+      var _td = document.createElement('td');
+      var _del = document.createElement('td');
+      var a = document.createElement('a');
+
+      _td.innerHTML = '<input type="checkbox" />';
+      a.innerHTML = '删除';
+      _del.appendChild(a);
+
+      for (var attr in data[i]) {
+        var td = document.createElement('td');
+        td.innerHTML = data[i][attr];
+        tr.appendChild(td);
+      }
+
+      tr.insertBefore(_td, tr.firstElementChild);
+      tr.appendChild(_del);
+      table.tBodies[0].appendChild(tr);
+
+      if (i % 2 === 0) {
+        tr.style.backgroundColor = '#ccc';
+      } else {
+        tr.style.backgroundColor = '#0f0';
+      }
+      _td.onclick = function () {
+        setTrColor();
+      }
+
+      a.onclick = function () {
+        table.tBodies[0].removeChild(this.parentNode.parentNode);
+        var rows = table.tBodies[0].rows;
+        console.log('rows', rows.length);
+        for (var i = 0; i < rows.length; i++) {
+          console.log('i', i);
+          if (i % 2 === 0) {
+            table.tBodies[0].rows[i].style.backgroundColor = '#ccc';
+          } else {
+            table.tBodies[0].rows[i].style.backgroundColor = '#0f0';
+          }
+        }
+      }
+    }
+    allChecked.onclick = function () {
+      for (var i = 0; i < aChecked.length; i++) {
+        aChecked[i].checked = allChecked.checked;
+      }
+    }
+
+    function setTrColor() {
+      for (var i = 0; i < aChecked.length; i++) {
+        if (aChecked[i].checked) {
+          aChecked[i].parentNode.parentNode.style.backgroundColor = '#f00';
+        } else {
+          if (i % 2 === 0) {
+            aChecked[i].parentNode.parentNode.style.backgroundColor = '#ccc';
+          } else {
+            aChecked[i].parentNode.parentNode.style.backgroundColor = '#0f0';
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

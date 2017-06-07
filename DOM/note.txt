@@ -77,3 +77,8 @@
     table.tBodies 获取表格主体  获取到的是一个集合
     tBodies[n].rows/tHead.rows/tFoot.rows  表格的行=>tr
     rows[n].cells => 单元格 => td
+
+
+22. 遍历json中的一项的方法  for(var attr in data[i]) {}
+
+23. tr只能插入td 不能插入其他元素 否则浏览器会过滤掉
