@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>创建元素</title>
+  <style>
+    li {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #f00;
+    }
+
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+    }
+
+    #div2 {
+      width: 100px;
+      height: 100px;
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" value="点击添加" id="btn">
+  <ul id="ul">
+  </ul>
+  <div id="box">
+    <div id="div1"></div>
+    <hr/>
+    <div id="div2"></div>
+  </div>
+  <script>
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    var box = document.getElementById('box');
+    var div1 = document.getElementById('div1');
+    var div2 = document.getElementById('div2');
+    var num = 0;
+
+    btn.onclick = function() {
+      // num++;
+      // var li = document.createElement('li');
+      // li.innerHTML = num;
+
+      // ul.appendChild(li);
+
+      // ul.insertBefore(li, ul.children[0]);
+
+      // if (ul.lastElementChild){
+      //   ul.removeChild(ul.lastElementChild);
+      // }
+
+      var a = box.replaceChild(div2, div1);
+      console.log(a, '=====');  // 返回被替换的childNode
+    }
+  </script>
+</body>
+</html>

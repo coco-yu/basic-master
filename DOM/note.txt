@@ -57,4 +57,13 @@
         元素的left = (document.documentElement.clientWidth - 元素.offsetWidth) / 2 + 'px';
         元素的top = (document.documentElement.clientTop - 元素.offsetHeight) / 2 + 'px';
 
+18. document.createElement('元素名称')  创建一个元素
+    parentNode(父级元素).appendChild(childNode'要插入的元素')  插入元素(向父级末尾添加元素)
+    parentNode.insertBefore(childNode1, childNode2)  往一个节点的指定子节点前插入一个节点  childNode1插入到childNode2前面
+    如果第二个参数为假的（undefined）,会将元素添加到父元素的末尾
+    parentNode.removeChild('指定的节点')
+    parentNode.replaceChild(node, childNode) node用来替换的节点 childNode被替换的子节点 两个参数都是必填
+
+
+19.
 
