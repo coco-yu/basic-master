@@ -41,3 +41,20 @@
 
 13. 未知length的循环 建议使用while
 
+14. 获取元素行间的属性  getAttribute  elem.getAttribute('key')
+    设置元素的行间属性  setAttribute  elem.setAttribute('key', 'value');
+    删除元素的行间属性  removeAttribute  elem.removeAttribute('key');
+
+15. 获取元素的宽高(支持padding,不支持margin)
+        elem.clientWidth/elem.clientHeight  不计算边框
+        elem.offsetWidth/elem.offsetHeight  计算边框
+
+16. 可视区的尺寸
+        可视区的宽  document.documentElement.clientWidth
+        可视区的高  document.documentElement.clientHeight
+
+17. 元素居中
+        元素的left = (document.documentElement.clientWidth - 元素.offsetWidth) / 2 + 'px';
+        元素的top = (document.documentElement.clientTop - 元素.offsetHeight) / 2 + 'px';
+
+

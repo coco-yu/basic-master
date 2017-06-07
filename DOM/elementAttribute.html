@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>元素的属性操作</title>
+</head>
+<body>
+  <div class="div1"></div>
+
+  <img src="../images/1.jpg" alt="">
+  <script>
+    var div = document.getElementsByClassName('div1')[0];
+
+    console.log(div.className);
+    var a = div.getAttribute('class');
+    console.log('a', a);
+    div.setAttribute('class', 'coco');
+    console.log('--', div.className);
+    div.setAttribute('index', '0');
+    console.log('**', div);
+    div.removeAttribute('index');
+    console.log('~~', div.getAttribute('index'));
+
+
+    var img = document.getElementsByTagName('img')[0];
+
+    var _src = img.getAttribute('src');
+    console.log('_src', _src);   // ../images/1.jpg
+  </script>
+</body>
+</html>

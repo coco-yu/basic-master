@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>元素宽高的获取</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1"></div>
+  <script>
+    var div = document.getElementById('div1');
+
+    console.log('div offsetWidth', div.offsetWidth);  // 122
+    console.log('div offsetHeight', div.offsetHeight);  // 122
+
+    console.log('div clientWidth', div.clientWidth);  // 120
+    console.log('div clientHeight', div.clientHeight);  // 120
+
+    console.log(document.documentElement.clientWidth);
+    console.log(document.documentElement.clientHeight);
+  </script>
+</body>
+</html>
