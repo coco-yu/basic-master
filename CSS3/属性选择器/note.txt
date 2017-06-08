@@ -1,3 +1,8 @@
 css3大部分是不兼容的
 
 1. transition 过渡
+
+2. 属性选择器
+    E[attr] {}  选中有attr属性的E标签
+    E[attr="value"]  指定属性名，并指定了该属性的属性值
+
