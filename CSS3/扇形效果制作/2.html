@@ -81,12 +81,12 @@
       imgs[i].index = i;
       imgs[i].onclick = function() {
         target = this.index;
-        // if(target > now) {
-        //   goNext();
-        // } else {
-        //   goPrev();
-        // }
-        goNext();
+        if(target > now) {
+          goNext();
+        } else {
+          goPrev();
+        }
+        // goNext();
       }
     }
     function tab(n) {
@@ -106,10 +106,10 @@
     }
 
     function goNext() {
+      now++;
       if(now > imgs.length-1) {
         now = 0;
       }
-      now++;
       tab(now);
       if(now == target) {
         return;
