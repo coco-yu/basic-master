@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #666;
+    }
+
+    #box {
+      width: 1200px;
+      height: 700px;
+      position: relative;
+      margin: 100px auto;
+    }
+
+    #box div {
+      width: 400px;
+      height: 100px;
+      border-radius: 9px;
+      position: absolute;
+      left: 555px;
+      top: 440px;
+      background: transparent url('../../images/shanxing_bg.gif') no-repeat;
+      transform-origin: 35px 50px;  /* 旋转基点 */
+      transition: 1s;
+    }
+
+    #box div:nth-of-type(1) {
+      background-color: #e61a1a;
+    }
+
+    #box div:nth-of-type(2) {
+      background-color: #69d47f;
+    }
+
+    #box div:nth-of-type(3) {
+      background-color: #de23dc;
+    }
+
+    #box div:nth-of-type(4) {
+      background-color: #f21a75;
+    }
+
+    #box div:nth-of-type(5) {
+      background-color: #2521b7;
+    }
+
+    #box div:nth-of-type(6) {
+      background-color: #c2e521;
+    }
+
+    #box div:nth-of-type(7) {
+      background-color: #9d531c;
+    }
+
+    #box div:nth-of-type(8) {
+      background-color: #9191ec;
+    }
+
+    #box div:nth-of-type(9) {
+      background-color: #7e367d;
+    }
+
+    #box div:nth-of-type(10) {
+      background-color: #204d0b;
+    }
+  </style>
+</head>
+<body>
+  <div id='box'>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <script>
+    var box = document.getElementById('box');
+    var divs = box.children;
+
+    var flag = true;
+    setTimeout(go, 300);
+
+    divs[9].onclick = function(){
+      flag ? go() : shrink();
+      flag = !flag;
+    };
+
+    every();
+
+    function go() {  // 使扇形打开
+      for(var i = 0; i < divs.length; i++) {
+        divs[i].style.transform = 'rotate('+(350-i*17)+'deg)';
+      }
+    }
+
+    function shrink() {  // 点击最后一个div全部div收缩
+      for(var i = 0; i < divs.length; i++) {
+        divs[i].style.transform = 'rotate(0deg)';
+      }
+    }
+
+    function every() {
+      for(var i = 0; i < divs.length - 1; i++) {
+        divs[i].index = i;
+        divs[i].onclick = function() {
+          divs[this.index].style.transform = 'rotate('+((350-(this.index)*17)+this.index*17-80)+'deg)';
+          for(var i = 0; i < divs.length; i++) {
+            if(i < this.index) {
+              divs[i].style.transform = 'rotate('+((350-i*17)+this.index*17-80+10)+'deg)';
+            } else if(i > this.index){
+              divs[i].style.transform = 'rotate('+((350-i*17)+this.index*17-80 -10)+'deg)';
+            }
+          }
+
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>
