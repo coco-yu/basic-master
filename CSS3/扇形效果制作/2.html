@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>展示页</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #999;
+    }
+
+    #wrap {
+      position: relative;
+      height: 500px;
+      transform-style: preserve-3d;
+      background-size: 1800px 500px;
+      perspective: 800px;
+      margin-top: 100px;
+    }
+
+    #wrap img {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px;
+      margin-top: -100px;
+      box-shadow: 5px 5px 5px #333;
+      transition: .7s ease-in-out;
+    }
+
+    #wrap img:nth-of-type(1) {
+      background-color: #f00;
+    }
+
+    #wrap imh:nth-of-type(2) {
+      background-color: #7b3030;
+    }
+
+    #wrap img:nth-of-type(3) {
+      background-color: #7632aa;
+    }
+
+    #wrap img:nth-of-type(4) {
+      background-color: #4b375b;
+    }
+
+    #wrap imh:nth-of-type(5) {
+      background-color: #2266d8;
+    }
+
+    #wrap img:nth-of-type(6) {
+      background-color: #3b4f71;
+    }
+
+    #wrap img:nth-of-type(7) {
+      background-color: #29ee4a;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <img src="../../images/shanxing_bg.gif" alt="">
+    <img src="../../images/shanxing_bg.gif" alt="">
+    <img src="../../images/shanxing_bg.gif" alt="">
+    <img src="../../images/shanxing_bg.gif" alt="">
+    <img src="../../images/shanxing_bg.gif" alt="">
+    <img src="../../images/shanxing_bg.gif" alt="">
+    <img src="../../images/shanxing_bg.gif" alt="">
+  </div>
+  <script>
+    var wrap = document.getElementById('wrap');
+    var imgs = wrap.children;
+    var now = 1;
+    var target;
+    tab(now);
+    for(var i = 0; i < imgs.length;i++) {
+      imgs[i].index = i;
+      imgs[i].onclick = function() {
+        target = this.index;
+        // if(target > now) {
+        //   goNext();
+        // } else {
+        //   goPrev();
+        // }
+        goNext();
+      }
+    }
+    function tab(n) {
+      for(var i = 0; i < 3; i++) {
+        var left = n-1-i;
+        var right = n+1+i;
+        if (left < 0) {
+          left = imgs.length+left;
+        }
+        if(right > imgs.length-1) {
+          right = right-imgs.length;
+        }
+        imgs[left].style.transform = 'translateX('+(-150*(i+1))+'px) translateZ('+(200-i*100)+'px) rotateY(20deg)';
+        imgs[right].style.transform = 'translateX('+(150*(i+1))+'px) translateZ('+(200-i*100)+'px) rotateY(-20deg)';
+      }
+      imgs[n].style.transform = 'translateZ(300px)';
+    }
+
+    function goNext() {
+      if(now > imgs.length-1) {
+        now = 0;
+      }
+      now++;
+      tab(now);
+      if(now == target) {
+        return;
+      }
+      setTimeout(goNext, 500);
+    }
+
+    function goPrev() {
+      now--;
+      if(now < 0) {
+        now = imgs.length-1;
+      }
+      tab(now);
+      if(now == target) {
+        return;
+      }
+      setTimeout(goPrev, 500);
+    }
+  </script>
+</body>
+</html>
