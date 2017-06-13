@@ -37,7 +37,7 @@
     }
 
     #wrap imh:nth-of-type(2) {
-      background-color: #7b3030;
+      background-color: #a9c;
     }
 
     #wrap img:nth-of-type(3) {
@@ -76,17 +76,33 @@
     var imgs = wrap.children;
     var now = 1;
     var target;
-    tab(now);
+    var onoff = true;
+    setTimeout(function(){
+      tab(now);
+    },100);
+
+    console.log(Math.floor(imgs.length/2), '===');
     for(var i = 0; i < imgs.length;i++) {
       imgs[i].index = i;
       imgs[i].onclick = function() {
         target = this.index;
-        if(target > now) {
-          goNext();
-        } else {
-          goPrev();
+        if(!onoff) {
+          return;
         }
-        // goNext();
+        onoff = false;
+        if(target > now) {
+          if(target - now <= Math.floor(imgs.length/2)) {
+            goNext();
+          }else {
+            goPrev();
+          }
+        } else {
+          if(target + imgs.length - now <= Math.floor(imgs.length/2)) {
+            goNext();
+          }else {
+            goPrev();
+          }
+        }
       }
     }
     function tab(n) {
@@ -112,6 +128,7 @@
       }
       tab(now);
       if(now == target) {
+        onoff = true;
         return;
       }
       setTimeout(goNext, 500);
@@ -124,6 +141,7 @@
       }
       tab(now);
       if(now == target) {
+        onoff = true;
         return;
       }
       setTimeout(goPrev, 500);
