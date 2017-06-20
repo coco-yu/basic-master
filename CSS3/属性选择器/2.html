@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            height: 30px;
+            border: 1px solid #000;
+        }
+
+        p[coco ^= 'c'] {
+            background-color: #f00;
+        }
+
+        p[coco $= 'x'] {
+            background-color: #0f0;
+        }
+
+        p[coco *= 'aa'] {
+            background-color: #00f;
+        }
+
+        p[coco |= 'q'] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p coco="a q">a</p>
+    <p coco="caaab b">b</p>
+    <p coco="c bx">c</p>
+    <p coco="d 23 q-z">d</p>
+    <p coco="q"></p>
+    <p coco="q-v"></p>
+
+    <script>
+
+    </script>
+</body>
+</html>
