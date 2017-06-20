@@ -1,0 +1,18 @@
+1. 结构选择器：
+    结构性伪类：
+        E:nth-child(n) 表示E父元素中的第n个子节点；
+            p:nth-child(odd) 匹配奇数行
+            p:nth-child(even) 匹配偶数行
+            p:nth-child(2n)
+        E:nth-last-child(n) 表示E父元素中的第n个子节点；从后向前计算
+        E:nth-of-type(n) 表示E父元素中的第n个子节点；且类型为E
+        E:nth-last-of-type(n) 表示E父元素中的第n个子节点；且类型为E 从后向前计算
+        E:empty 表示E父元素中没有子节点；注意：子节点包含文本节点
+        E:first-child 表示E元素中的第一个子节点
+        E:last-child 表示E元素中的最后一个子节点
+        E:first-of-type 表示E父元素中的第一个子节点且节点类型是E
+        E:last-of-type 表示E父元素中的最后一个子节点且节点类型是E
+        E:only-child 表示E元素中的只有一个子节点 注意子节点不包含文本节点
+        E:only-of-type 表示E父元素中的只有一个子节点，且这个唯一的子节点的类型必须是E,意子节点不包含文本节点
+
+2.
