@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        label {
+            float: left;
+            margin: 0 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        input {
+            position: absolute;
+            /*left: -50px;
+            top: -50px;*/
+        }
+
+        span {
+            float: left;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #000;
+        }
+
+        input:checked {
+            background-color: #0f0;
+        }
+
+        input:checked~span {
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <label for="">
+        <input type="radio" name="tab" id="">
+        <span></span>
+    </label>
+    <label for="">
+        <input type="radio" name="tab" id="" checked>
+        <span></span>
+    </label>
+    <label for="">
+        <input type="radio" name="tab" id="">
+        <span></span>
+    </label>
+</body>
+</html>

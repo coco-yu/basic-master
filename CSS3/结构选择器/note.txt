@@ -15,4 +15,16 @@
         E:only-child 表示E元素中的只有一个子节点 注意子节点不包含文本节点
         E:only-of-type 表示E父元素中的只有一个子节点，且这个唯一的子节点的类型必须是E,意子节点不包含文本节点
 
-2.
+2. 伪类、为元素
+    :target
+    :enabled
+    :disabled
+    :checked
+    E:first-line 表示E元素中的第一行
+    E:first-letter 表示E元素中的第一个字符
+    E::section 表示E元素在用户选中文字时
+    E::before 生成内容在E元素前
+    E::after 生成内容在E元素后
+    E:not(s) 表示E元素不被匹配
+    E~F表示E元素毗邻的F元素
+    Content属性

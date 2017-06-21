@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            width: 300px;
+            font: 12px/30px '微软雅黑';
+            border: 1px solid #ccc;
+        }
+        p:first-line {
+            background-color: #f00;
+        }
+        p:first-letter {
+            font-size: 20px;
+        }
+        p::selection {
+            color: #fff;
+            background-color: #f60;
+        }
+        p::before {
+            display: block;
+            content: 'coco';
+        }
+        p::after {
+            display: block;
+            content: '可爱熊';
+            border: 1px solid #ccc;
+
+        }
+    </style>
+</head>
+<body>
+    <p>
+        人民日报：有的事故通报 585字中用285个字介绍官员
+        小孩入学须父母出具"无犯罪证明" 教育局称已调整
+        换届3天后 省委书记为何带全体常委去这里？
+        专题：进驻20年，驻香港部队交出怎样答卷
+        布鲁塞尔中央火车站发生爆炸 官方确认系恐怖袭击
+    </p>
+</body>
+</html>
