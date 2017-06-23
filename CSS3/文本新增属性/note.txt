@@ -1,2 +1,17 @@
 1. 新增颜色模式
-    rgba
+    rgba()
+
+2. 文字描边 只有webkit内核有
+    -webkit-text-stroke： 宽度 颜色
+    -webkit-text-stroke: 2px #0f0;
+
+3. 新增文本功能
+    direction 定义文字排列方式（全兼容）
+     Rtl 从右向左排列
+     Ltr 从左向右排列
+     注意要配合unicode-bidi 一块使用
+    text-overflow 定义省略文本的处理方式
+        clip 无省略号
+        Ellipsis 省略号 （注意配合overflo:hidden和white-space:nowrap一块使用）
+
+4.
