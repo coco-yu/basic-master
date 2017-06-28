@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /**, ::before, ::after {
+      box-sizing: border-box;
+    }*/
+    div {
+      width: 100px;
+      height: 100px;
+      padding: 5px;
+      margin: 5px;
+      border: 5px solid #ccc;
+      background-color: #f00;
+    }
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      var a = $('div').width();
+      console.log(a);  // 100
+      var b = $('div').innerWidth();
+      console.log(b);  // 100
+      var c = $('div').outerWidth();
+      console.log(c); // 110
+      var d = $('div').outerWidth(true);
+      console.log(d); // 130 加上了margin
+    });
+  </script>
+</head>
+<body>
+  <div>div</div>
+</body>
+</html>

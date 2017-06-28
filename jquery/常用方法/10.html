@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 1000px;
+    }
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      // $('span').insertBefore($('div'));  // 将span添加到div的前面  剪切
+      // $('div').insertAfter($('p'));      // 将div添加到p的后面 剪切
+      // $('span').appendTo($('p'));        // span被添加到p元素的里面<p><span></span></p>
+      // $('span').prependTo($('p'));       // span被添加到p元素的最前面
+      // $('span').before($('div'));
+      // $('span').after($('div'));
+      // $('div').append($('p'));
+      // $('div').prepend($('p'));
+      // $('span').remove();
+      // $('div').on('click mouseover', function(){
+      //   console.log('click');
+      // });
+      // $('div').on('click mouseover', function(){
+      //   console.log('1111111');
+      //   $('div').off('click');
+      // });
+      $(document).on('click', function(){
+        console.log($(window).scrollTop());  // 151
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>div</div>
+  <span>span</span>
+  <p>p</p>
+</body>
+</html>

@@ -10,3 +10,22 @@
   attr(): 操作属性
 
   addClass()
+  removeClass()
+  width():  元素自己的宽
+  innerWidth():  width + padding
+  outerWidth():  width + padding  + border
+  outerWidth(true):  width + padding  + border + margin
+  insertBefore()
+  before()
+  insertAfter()
+  after()
+  appendTo()
+  append()
+  prependTo()
+  prepend()
+  remove(): 删除节点
+  on(): 可以绑定自带事件 自定义事件
+  off(): 取消事件
+  scrollTop(): 纵向的滚动距离
+  scrollLeft(): 横向的滚动距离
+

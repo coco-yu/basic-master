@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    button {
+      width: 50px;
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      background-color: #00f;
+    }
+    .login {
+      display: none;
+      position: relative;
+      width: 400px;
+      height: 100px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    span {
+      display: inline-block;
+      width: 100px;
+    }
+    .close {
+      position: absolute;
+      top: -8px;
+      left: 428px;
+    }
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      // var div = $('<div>'); // 创建元素
+      // $('body').append(div);
+      console.log($(window).width());
+      $('button').on('click', function(){
+        $('.login').show();
+        $('.login').css('left', ($(window).width() - $('.login').outerWidth())/2).css('top', ($(window).height() - $('.login').outerHeight())/2);
+      })
+      $('.close').on('click', function(){
+        $('.login').hide();
+      });
+      $(window).on('resize scroll', function(){
+        $('.login').css('left', ($(window).width() - $('.login').outerWidth())/2 + $(window).scrollLeft()).css('top', ($(window).height() - $('.login').outerHeight())/2 + $(window).scrollTop());
+      });
+    });
+  </script>
+</head>
+<body style="height: 2000px;">
+  <button>点击</button>
+  <div class="login">
+    <p><span>用户名:</span><input type="text" class="username"></p>
+    <p><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="text" class="pwd"></p>
+    <p class="close">x</p>
+  </div>
+</body>
+</html>
