@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div id="div1" class="box">div</div>
+    <ul>
+        <li title="hello"></li>
+        <li></li>
+        <li class="box"></li>
+        <li></li>
+        <li class="box"></li>
+    </ul>
+    <script>
+        var className = $('#div1').attr('class');
+        console.log('className', className);
+        // $('li:even').css('backgroundColor', '#f00');
+        // $('li:odd').css('backgroundColor', '#f00');
+        // $('li:eq(2)').css('backgroundColor', '#f00');
+        // $('li:first').css('backgroundColor', '#f00');
+        // $('li:last').css('backgroundColor', '#f00');
+        // $('li').filter('.box').css('backgroundColor', '#f00');  // 过滤 挑选出有box的li
+        $('li').filter('[title=hello]').css('backgroundColor', '#f00');
+    </script>
+</body>
+</html>

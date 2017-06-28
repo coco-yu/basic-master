@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function () {
+      // $('div').find('h2').css('color', '#f00');
+      var a = $('#h').index();
+      console.log('a', a);  // 2 当前节点在所有兄弟节点中的位置
+    });
+  </script>
+</head>
+
+<body>
+  <div>
+    <h3>h3</h3>
+    <h2>h2</h2>
+    <h3 id="h">h3</h3>
+    <h3>h3</h3>
+    <h2>h2</h2>
+  </div>
+  <h2>h2</h2>
+  <h2>h2</h2>
+</body>
+
+</html>

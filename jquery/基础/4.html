@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      console.log($('li').html());  // 当一组元素的时候， 取值是一组元素中的一个
+      $.each($('li'), function(i, ele){
+        console.log($('li').eq(i).html(), '-------');
+      });
+      $('li').html('coco');  // 所有的li的html都变成coco  相当于省略了循环
+    });
+  </script>
+</head>
+<body>
+<ul>
+  <li>11</li>
+  <li>22</li>
+  <li>33</li>
+  <li>44</li>
+  <li>55</li>
+</ul>
+</body>
+</html>

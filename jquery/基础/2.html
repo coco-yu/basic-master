@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>方法函数化</title>
+    <script src="../lib/js/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function(){
+        var a = $('#div1').html();
+        console.log('a', a);
+        $('#div1').click(function(){
+          console.log($(this).html(), '===');
+        });
+        $('#div1').html('coco').css('color', '#0f0').click(function(){
+          console.log('coco');
+        });
+      });
+    </script>
+</head>
+<body>
+  <div id="div1">div</div>
+</body>
+</html>
