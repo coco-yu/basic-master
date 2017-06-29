@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>动画</title>
+  <style>
+    .div1 {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+    }
+
+    .div2 {
+      width: 100px;
+      height: 100px;
+      background-color: #00f;
+    }
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function () {
+      // $('.div1').hover(function(){
+      //   $(this).css('backgroundColor', '#ccc');
+      // }, function(){
+      //   $(this).css('backgroundColor', '#f00');
+      // });
+
+      // $('.div1').hover(function(){
+      //   $('.div2').hide(2000);
+      // }, function(){
+      //   $('.div2').show(1000);
+      // });
+      // $('.div1').hover(function(){
+      //   $('.div2').fadeOut(1000);
+      // }, function(){
+      //   $('.div2').fadeIn(1000);
+      // })
+      // $('.div1').hover(function () {
+      //   $('.div2').slideUp(1000);  // 向上卷起
+      // }, function () {
+      //   $('.div2').slideDown(1000); // 向下伸开
+      // })
+      $('.div1').hover(function () {
+        $('.div2').fadeTo(1000, 0.5);  // 透明度的变化  参数一： 事件 参数二：透明度
+      }, function () {
+        $('.div2').fadeTo(1000, 1); // 透明度的变化
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <div class="div1"></div>
+  <div class="div2"></div>
+</body>
+
+</html>

@@ -43,4 +43,13 @@
   size(): 获取一组元素的长度
   each()
 
+  hover()
+  show()
+  hide()
+  fadeIn(): 改变透明度 淡入
+  fadeOut(): 改变透明度  淡出
+  fadeTo(): 透明度的变化
+  slideDown(): 向上卷起
+  slideUp(): 向下拉伸
+
 
