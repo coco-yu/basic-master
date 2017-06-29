@@ -12,7 +12,7 @@
     }
 
     .div1 {
-      position: relative;
+      position: -relative;
       /*position: absolute;*/
       width: 200px;
       height: 200px;
@@ -31,10 +31,12 @@
   <script src="../lib/js/jquery-3.2.1.min.js"></script>
   <script>
     $(function(){
-      console.log($('.div2').offset().left);  // 50  这个元素到屏幕边缘的距离
-      console.log($('.div2').offset().top);
-      console.log($('.div2').position().left);  // 到有定位的父级 若父级没有定位则到屏幕的边缘 0
-    })
+      // console.log($('.div2').offset().left);  // 50  这个元素到屏幕边缘的距离
+      // console.log($('.div2').offset().top);
+      // console.log($('.div2').position().left);  // 到有定位的父级 若父级没有定位则到屏幕的边缘 0
+      $('.div2').offsetParent().css('backgroundColor', '#ccc');
+      console.log($('.div2').offsetParent().attr('class'));
+    });
   </script>
 </head>
 <body>
