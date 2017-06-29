@@ -29,3 +29,18 @@
   scrollTop(): 纵向的滚动距离
   scrollLeft(): 横向的滚动距离
 
+  ev: 事件
+  pageX: 鼠标的坐标
+  which： 键值
+  preventDefault: 阻止默认事件
+  stopPropagation: 阻止冒泡
+    // return false   既阻止默认事件又阻止冒泡
+  one(): 事件只执行一次
+  offset(): offset().left  offset().top 元素到屏幕边缘的距离
+  position():  position().left position().top
+  offsetParent()
+  val()
+  size()
+  each()
+
+

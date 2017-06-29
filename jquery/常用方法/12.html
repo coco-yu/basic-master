@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style></style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      // 兼容后的e  原生 ev = ev || window.event;
+      // $('div').click(function(e){
+      //   // console.log(e);
+      //   console.log(e.pageX);   // 鼠标的坐标  36  相对于文档的
+      //   console.log(e.pageY);
+      //   console.log(e.which);  // 键盘的键值
+      // })
+
+      $('div').one('click', function(){  // 只执行事件一次
+        console.log('1111111');
+      });
+    })
+  </script>
+</head>
+<body>
+  <div>111</div>
+</body>
+</html>

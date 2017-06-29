@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .div1 {
+      position: relative;
+      /*position: absolute;*/
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      background-color: #f00;
+      overflow: hidden;
+    }
+
+    .div2 {
+      width: 100px;
+      height: 100px;
+      background-color: #00f;
+      margin: 30px;
+    }
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      console.log($('.div2').offset().left);  // 50  这个元素到屏幕边缘的距离
+      console.log($('.div2').offset().top);
+      console.log($('.div2').position().left);  // 到有定位的父级 若父级没有定位则到屏幕的边缘 0
+    })
+  </script>
+</head>
+<body>
+  <div class="div1">
+    <div class="div2"></div>
+  </div>
+</body>
+</html>
