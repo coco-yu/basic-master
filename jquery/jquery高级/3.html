@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <div>div1<span>span</span></div>
+  <script>
+    $('div').click(function(){
+      console.log('click');
+    })
+    var oDiv = $('div').remove();
+    console.log('oDiv', oDiv.html());
+    $('body').append(oDiv);
+    // var oDiv = $('div').detach();
+    // console.log('oDiv', oDiv);
+  </script>
+</body>
+</html>
