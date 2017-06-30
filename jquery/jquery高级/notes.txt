@@ -1,0 +1,8 @@
+1. 基本方法扩充
+    get(): 下标和length属性
+    outerWidth(): 针对隐藏元素和参数true  对隐藏元素有作用
+      // offsetWidth原生方法 对隐藏的元素不起作用
+    text(): 合体的实例  获取所有文本不会获取到标签
+    remove(): 删除节点
+    detach(): 删除节点
+    $(): $(document).ready()

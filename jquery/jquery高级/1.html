@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <script>
+    $(function(){
+      // console.log($('div').get(0).innerHTML);  // get()将jquery转换成原生的 再与原生的连起来用
+      // console.log($('li').get(2).innerHTML);
+      // console.log($('li'), '-----------');
+      // console.log($('li').get().length);
+      var len = $('li').length;
+      $('li').each(function(i, ele){
+        $(ele).css('color', '#00f');
+      })
+    });
+  </script>
+</head>
+<body>
+  <div>div</div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+</body>
+</html>
