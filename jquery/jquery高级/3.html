@@ -17,14 +17,19 @@
 <body>
   <div>div1<span>span</span></div>
   <script>
+    // $('div').click(function(){
+    //   console.log('click');
+    // })
+    // var oDiv = $('div').remove();
+    // console.log('oDiv', oDiv.html());
+    // $('body').append(oDiv);   //  click不再生效
+
     $('div').click(function(){
       console.log('click');
     })
-    var oDiv = $('div').remove();
-    console.log('oDiv', oDiv.html());
-    $('body').append(oDiv);
-    // var oDiv = $('div').detach();
-    // console.log('oDiv', oDiv);
+    var oDiv = $('div').detach();
+    console.log('oDiv', oDiv);
+    $('body').append(oDiv);  // click 事件仍然有效
   </script>
 </body>
 </html>
