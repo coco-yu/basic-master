@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="div1">aaa
+    <div class="div2">bbb
+    </div>
+  </div>
+  <script>
+    // var a = $('.div2').parents();
+    // console.log(a, 'a');  // div1 body html
+
+    // var b = $('.div2').closest('.div2');
+    // console.log(b, 'b');  // div2  包括自身
+
+    var c = $('.div2').closest('.div1');
+    console.log(c, 'c'); // div1
+
+  </script>
+</body>
+</html>

@@ -4,5 +4,25 @@
       // offsetWidth原生方法 对隐藏的元素不起作用
     text(): 合体的实例  获取所有文本不会获取到标签
     remove(): 删除节点 返回值是被remove()的元素 被remove()后 元素身上的事件不再生效
-    detach(): 删除节点 返回值是被detach()的元素 被detach()后 元素身上的事件仍然生效
-    $(): $(document).ready()
+    detach(): 删除节点 返回值是被detach()的元素 被detach()后 元素身上的所有的操作行为仍然生效
+    $(): 是$(document).ready()的简写方式  DOM加载完就执行；window.onload=function(){}:整个页面上所有东西加载完就执行
+
+
+2. DOM操作方法：
+    parents(): 获取当前元素的所有祖先节点 参数：筛选 想要的父节点 能够找到一组元素
+    closest(): 获取最近的指定的祖先节点(包括当前节点自身), 必须要写筛选的参数 只能找到一个元素
+    siblings()
+    nextAll()
+    prevAll()
+    parentsUtil()
+    nextUtil()
+    prevUtil()
+    clone()
+    wrap()
+    wrapAll()
+    wrapInner()
+    unwrap()
+    add()
+    slice()
+    serialize()
+    serializeArray()
