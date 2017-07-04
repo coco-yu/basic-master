@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ajax</title>
+  <style>
+
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+</body>
+<script>
+  // $.ajax({
+  //   url: '',
+  //   data: {},
+  //   type: 'POST',
+  //   success: function(data) {
+  //     // data;  // 返回的数据
+  //     // 成功执行的函数
+  //   },
+  //   error: function() {
+  //     // 失败执行的函数
+  //   }
+  // })
+
+  // get方法传输数据
+  $.get('xxx.php', {name:'coco'}, function(){
+
+  })
+
+  $.post('xxx.php', {name:'coco'}, function(){
+
+  })
+  $.getJSON('xxx.php');
+</script>
+</html>

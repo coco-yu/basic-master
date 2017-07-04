@@ -1,3 +1,5 @@
+$()下：
+
 1. 基本方法扩充
     get(): 下标和length属性
     outerWidth(): 针对隐藏元素和参数true  对隐藏元素有作用
@@ -26,3 +28,44 @@
     slice(): 截取指定的范围
     serialize(): 对数据进行数据化串联
     serializeArray()
+
+
+3. jquery 高级
+    animate(): 运动 参数一： json {属性名：属性值}  参数二：时间（运动快慢） 参数三： 运动形式 1. swing(慢快慢) 2. linear(匀速)
+                参数四： 回调函数
+    stop(): 阻止运动
+    finish(): 立即停止到所有指定的目标点
+    delay(): 延迟
+    delagate(): 事件委托
+    undelegate(): 阻止事件委托
+    trigger():
+    ev.data:
+    ev.target:
+    ev.type:
+
+
+$下：
+工具方法：
+$.type(): 判断数据类型
+$.trim(): 去除两端空格
+$.inArray(): 通过字符找相应的位置（不是针对字符串， 针对数组）
+$.proxy(): 改变this指向
+$.noConflict(): 防止冲突
+$.parseJson(): 把字符串解析成json
+$.makeArray(): 把类数组转换成真正的数组
+
+
+ajax:
+    ajax(): json形式的配置参数
+        url:
+
+
+插件：
+ $
+ $.extend : 扩展工具方法下的插件形式 $.xxx()
+ $.fn
+ $.fn.extend : 扩展到JQ对象下的插件形式 $().xxx();
+
+
+
+

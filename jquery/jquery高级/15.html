@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>trigger</title>
+  <style>
+
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <div class="div1">div1</div>
+  <script>
+    // $('.div1').on('click', function(){
+    //   alert('111');
+    // })
+    // $('.div1').trigger('click'); // 主动触发
+
+    // 触发自定义事件
+    $('.div1').on('coco', function(){
+      alert('coco');
+    })
+    $('.div1').trigger('coco');
+
+  </script>
+</body>
+</html>
