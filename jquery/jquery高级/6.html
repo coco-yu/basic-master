@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <span>span</span>
+  <span>span</span>
+  <span>span</span>
+  <script>
+    // $('span').wrap('<div>');  // span外面被包裹了div  每个span外面一个div 共三个div
+    $('span').wrapAll('<div>');  // 整体包装 所有span外面包裹一个div 共一个div
+  </script>
+</body>
+</html>

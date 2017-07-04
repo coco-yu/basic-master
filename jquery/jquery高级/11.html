@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <form action="">
+    <input type="text" name="a" value="1">
+    <input type="text" name="b" value="2">
+    <input type="text" name="c" value="3">
+  </form>
+  <script>
+    console.log($('form').serialize()); // a=1&b=2&c=3  需要有name
+    console.log($('form').serializeArray()); // 数组 [Object{name='a', value='1'}, Object{name='b', value='2'},Object{name='c', value='3'}]
+  </script>
+</body>
+</html>

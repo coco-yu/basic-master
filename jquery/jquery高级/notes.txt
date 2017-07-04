@@ -11,18 +11,18 @@
 2. DOM操作方法：
     parents(): 获取当前元素的所有祖先节点 参数：筛选 想要的父节点 能够找到一组元素
     closest(): 获取最近的指定的祖先节点(包括当前节点自身), 必须要写筛选的参数 只能找到一个元素
-    siblings()
-    nextAll()
-    prevAll()
-    parentsUtil()
-    nextUtil()
-    prevUtil()
-    clone()
-    wrap()
-    wrapAll()
-    wrapInner()
-    unwrap()
-    add()
-    slice()
-    serialize()
+    siblings(): 找兄弟节点， 参数：筛选
+    nextAll(): 找到后面所有的兄弟节点
+    prevAll(): 找到前面的所有的兄弟节点
+    parentsUntil():
+    nextUntil(): 往下找 截止到参数所在的位置
+    prevUntil():
+    clone():  参数true  克隆事件和操作行为
+    wrap(): 将元素外面包裹其他元素  参数为其他元素 (<div>)
+    wrapAll():
+    wrapInner(): 内部包装
+    unwrap(): 删除包装（删除父级: 不包括body）
+    add(): 多个元素有相同的操作 .add('span')
+    slice(): 截取指定的范围
+    serialize(): 对数据进行数据化串联
     serializeArray()
