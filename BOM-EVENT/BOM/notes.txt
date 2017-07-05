@@ -1,0 +1,20 @@
+1. BOM : 浏览器对象模型
+
+2. window.open(页面地址的url, 打开的方式, )方法 打开一个新的窗口（页面）
+    如果url为空 则默认打开空白页
+    如果打开方式为空，默认为新窗口
+    返回值： 返回新打开的窗口的window对象
+
+3. window.close(): 关闭窗口
+    1.ff：默认无法关闭
+    2.chrome：默认直接关闭
+    3.询问用户
+
+4. 常用属性: window.navigator.userAgent 浏览器信息
+            window.location  浏览器地址信息
+            href
+            search: url?后面的内容
+            hash: url#后面的内容
+
+
+

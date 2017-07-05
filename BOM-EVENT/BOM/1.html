@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOM</title>
+  <style>
+
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <input type="button" value="打开新页面" class="open">
+  <input type="button" value="关闭" class="close">
+  <script>
+    var opener = null;
+    $('.open').click(function(){
+      opener = window.open('http://www.baidu.com', '_blank');
+    });
+
+    $('.close').click(function(){
+      opener.close(); // 关闭js方式打开的新窗口
+    });
+
+    console.log(window.navigator.userAgent);
+    if(window.navigator.userAgent.indexOf('MSIE') != -1) {
+      console.log('我是ie');
+    } else {
+      console.log('我不是ie');
+    }
+
+    console.log(window.location);
+  </script>
+</body>
+</html>
