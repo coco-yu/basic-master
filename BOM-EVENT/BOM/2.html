@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOM</title>
+  <style>
+    /** {
+      margin: 0;
+      padding: 0;
+    }*/
+    .div1 {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      overflow: hidden;
+      border: 1px solid #f00;
+    }
+    .div2 {
+      width: 100px;
+      height: 200px;
+      background-color: #00f;
+    }
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body style="height: 2000px;">
+  <div class="div1">
+    <div class="div2"></div>
+  </div>
+  <script>
+    var a = document.documentElement.clientWidth;
+    console.log('a', a);
+    var b = document.documentElement.clientHeight;
+    console.log('b', b);
+
+
+
+    var c = document.body.scrollTop;  // chrome下使用 获取滚动条滚动距离
+    console.log('c', c);
+    $(document).click(function(){
+      // var d = document.documentElement.scrollTop; // 除chrome以外  其他浏览器获取滚动条滚动距离
+      // console.log('d', d);
+
+      // 处理兼容性问题
+
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      console.log('scrollTop', scrollTop);
+
+      // var d = document.getElementsByClassName('div1')[0].scrollHeight; //js
+      var d= $('.div1').get(0).scrollHeight;   // jquery
+      console.log('d', d);  // 220
+
+      var e = document.body.scrollHeight;
+      console.log('e', e);
+
+      var f = document.documentElement.offsetHeight; // IE下是可视区域
+      console.log('f', f);  // 2016 加了margin
+
+      var g = document.body.offsetHeight;  // 所有浏览器表现一直
+      console.log('g', g);  // 2000 不加margin
+    })
+  </script>
+</body>
+</html>

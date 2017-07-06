@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>焦点事件</title>
+  <style>
+  </style>
+  <script src="../lib/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <input type="text" class="text1" value="请输入内容"/>
+  <input type="text" class="text2" value="请输入内容"/>
+  <input type="text" class="text3" value="请输入内容"/>
+  <button class="btn">全选</button>
+  <script>
+    $('.text1').on('focus', function(){
+      if ($(this).val() === '请输入内容') {
+        $(this).val('');
+      }
+    });
+
+    $('.text1').on('blur', function(){
+      if($(this).val() === '') {
+        $(this).val('请输入内容');
+      }
+    });
+
+    $('.text2').focus();  //  一进入页面 text2就获取到焦点
+
+    $('.btn').on('click', function(){
+      $('.text1').select();  // 全选 （然后就可以复制了）用户输入的内蓉
+    });
+  </script>
+</body>
+</html>

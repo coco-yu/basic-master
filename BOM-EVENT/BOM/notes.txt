@@ -16,5 +16,37 @@
             search: url?后面的内容
             hash: url#后面的内容
 
+5. 窗口尺寸与大小：
+        可视区尺寸：
+            document.documentElement.clientWidth
+            document.documentElement.clientHeight
+        滚动距离：
+            document.body.scrollTop/scrollLeft
+            document.documentElement.scrollTop/scrollLeft
+        内容高度：
+            document.body.scrollHeight
+        文档高度：
+            document.documentElement.offsetHeight
+            document.body.offsetHeight
+
+6. onscroll : 当滚动条滚动的时候触发
+   onresize : 当窗口大小发生改变的时候触发
+
+7. select() : 选择指定元素里面的文本内容
+
+8.  事件对象必须在一个事件调用的函数里使用才有内容
+    event事件：
+        兼容： ie/chrome : event是一个内置全局对象;
+               标准下 : 事件对象通过事件函数的第一个参数传入的
+               $('div').on('click', function(){
+                var ev = ev || event;
+               })
+
+9. clientX/clientY : 点击事件鼠标的位置距离浏览器可视区域的上/左距离
+    e.clientX
+
+
+
+
 
 
