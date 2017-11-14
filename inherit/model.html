@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>封装弹框组件</title>
+    <style>
+        .clearfix {
+            zoom: 1;
+        }
+        
+        .clearfix:after {
+            display: block;
+            height: 0;
+            content: '';
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .login {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+        
+        .login .title {
+            background-color: #ccc;
+            color: #fff;
+        }
+        
+        .login .title .close {
+            float: right;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+
+
+    <!-- <div class="login">
+        <div class="title clearfix">
+            <span>标题</span>
+            <span class="close">×</span>
+        </div>
+        <div class="content"></div>
+    </div> -->
+    <script src="./model.js"></script>
+</body>
+
+</html>
