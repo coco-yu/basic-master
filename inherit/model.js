@@ -3,19 +3,24 @@ window.onload = function() {
 
     aInp[0].onclick = function() {
         var d1 = new Dialog();
-        d1.init();
+        d1.init({
+            isNow: 0
+        });
     }
 
     aInp[1].onclick = function() {
         var d2 = new Dialog();
         d2.init({
-            width: '100px'
+            isNow: 1,
+            width: '100px',
+            mask: true
         });
     }
 
     aInp[2].onclick = function() {
         var d3 = new Dialog();
         d3.init({
+            isNow: 2,
             width: '300px',
             height: '300px',
             dir: 'right'
@@ -25,18 +30,33 @@ window.onload = function() {
 
 function Dialog() {
     this.oLogin = null;
+    this.oMask = null;
     this.settings = {
+        isNow: false,
         width: '200px',
         height: '200px',
-        dir: 'center'
+        dir: 'center',
+        mask: false
     }
 }
+
+Dialog.prototype.json = {};
 
 Dialog.prototype.init = function(opt) {
     var _this = this;
     extend(_this.settings, opt);
-    _this.create();
-    _this.fnClose();
+    if (_this.json[opt.isNow] == undefined) {
+        _this.json[opt.isNow] = true;
+    }
+    if (_this.json[opt.isNow]) {
+        _this.create();
+        _this.fnClose();
+        if (_this.settings.mask) {
+            _this.mask();
+        }
+        _this.json[opt.isNow] = false;
+    }
+
 }
 
 Dialog.prototype.create = function() {
@@ -78,9 +98,31 @@ Dialog.prototype.right = function() {
 Dialog.prototype.fnClose = function() {
     var _this = this;
     var aClose = document.getElementsByClassName('close');
-    aClose[0].onclick = function() {
-        document.body.removeChild(_this.oLogin);
+    _this.oMask = document.getElementById('mask');
+    for (var i = 0; i < aClose.length; i++) {
+        aClose[i].onclick = function() {
+            document.body.removeChild(_this.oLogin);
+            if (_this.settings.mask) {
+                document.body.removeChild(_this.oMask);
+            }
+            // console.log(_this.json, 'json');
+            _this.json[_this.settings.isNow] = true;
+        }
     }
+}
+
+Dialog.prototype.mask = function() {
+    var _this = this;
+    _this.oMask = document.createElement('div');
+    _this.oMask.id = 'mask';
+    document.body.appendChild(_this.oMask);
+    if (_this.settings.mask) {
+        // console.log('true');
+        _this.oMask.style.display = 'block';
+    } else {
+        // console.log('false');
+    }
+
 }
 
 function viewWidth() {
