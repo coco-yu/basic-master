@@ -38,3 +38,19 @@ html5shiv.js --- google
 自定义标签
 document.createElement('coco');
 
+
+html5新的选择器
+querySelector 
+eg. document.querySelector('#div')    只能选择一组中的第一个元素
+
+querySelectorAll
+选择所有的符合条件的标签
+
+getElementsByClassName
+获取一组class 
+
+属性
+classList
+add
+remove
+toggle 切换class方法

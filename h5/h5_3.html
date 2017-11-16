@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>h5新的选择器</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // var oDiv = document.querySelector('.box');
+            // console.log(oDiv.length, 'length');
+
+            // var aDiv = document.querySelectorAll('.box');
+            // console.log(aDiv.length, 'length'); // 2
+            // aDiv.style.backgroundColor = '#0f0';
+
+            // var aDiv = document.getElementsByClassName('box');
+            // console.log(aDiv.length, 'length');
+            // for (var i = 0; i < aDiv.length; i++) {
+            // aDiv[i].style.backgroundColor = '#0f0';
+            // }
+
+
+            var oDiv = document.getElementById('box2');
+            console.log(oDiv.classList instanceof Object);
+            console.log(oDiv.classList);
+            console.log(oDiv.classList.length);
+            // oDiv.classList.add('box4');
+            // oDiv.classList.remove('box4');
+            oDiv.classList.toggle('box2');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1" class="box"></div>
+    <div class="box">div</div>
+    <div id="box2" class="box box1 box2"></div>
+</body>
+
+</html>
