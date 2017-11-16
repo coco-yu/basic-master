@@ -54,3 +54,15 @@ classList
 add
 remove
 toggle 切换class方法
+
+
+json新方法
+JSON.parse() 把字符串转换成json 要求颜色的json字符串 {'name':'coco'}
+JSON.stringify() json转换成字符串  返回严格的json  深度拷贝
+
+eval 可以解析任何字符串变成js  不安全 植入病毒 网站收到攻击
+JSON.parse() 只能解析json形式的字符串成json  安全性高
+
+JSON.parse JSON.stringify 不兼容使用www.json.org 上面的json2.js可以兼容IE8以下的浏览器
+
+深度拷贝

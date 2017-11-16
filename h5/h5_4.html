@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html5 json新方法</title>
+    <script>
+        // 里面必须是双引号 外面是单引号
+        // var str = '{"name":"coco"}';
+        // console.log(str, 'str');
+        // var tmp = JSON.parse(str);
+        // console.log(tmp, 'json');
+
+        // name也必须是双引号 
+        // var str = '{name: "coco"}';
+        // var tmp = JSON.parse(str);
+        // console.log(tmp.name);
+
+
+        // var tmp = {
+        //     name: 'coco'
+        // };
+        // var str = JSON.stringify(tmp);
+        // console.log(str, typeof str);
+
+        // var a = {
+        //     name: 'coco'
+        // };
+        // var b = {};
+
+        // // 复制a的所有属性
+        // for (var attr in a) {
+        //     b[attr] = a[attr];
+        // }
+
+        // console.log(a, b);
+        // b.name = '可可';
+        // console.log(a, b);
+
+        var a = {
+            name: {
+                age: 23
+            }
+        }
+
+        var str = JSON.stringify(a); // 深度拷贝
+        var b = JSON.parse(str);
+        b.name.age = 18;
+        console.log(a.name.age, 'a name age');
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
