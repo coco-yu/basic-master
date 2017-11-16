@@ -15,5 +15,24 @@
 15. address: 定义文章或者页面作者的详细联系信息
 16. mark: 需要标记的词或句子
 17. keygen: 给表单添加一个公钥
-18. progress: 进度条
+18. progress: 进度条 
+19. forms: 新增表单 email tel search range
+    number 只能包含数字的输入框
+    color 颜色选择器
+    datetime 显示完整日期
+    datetime-local 显示完整日期，不含时区
+    time 显示时间，不含时区
+    date 显示日期
+    week 显示周
+    month 显示月
+
+新增标签低版本浏览器兼容
+ie不兼容h5语义化标签，可以先在页面创建相应的标签，然后再使用。
+
+低版本浏览器支持新增便签的插件
+html5shiv.js --- google
+
+
+自定义标签
+document.createElement('coco');
 

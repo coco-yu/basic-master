@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>h5语义化标签兼容</title>
+    <style>
+        .clearfix:after {
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            content: '';
+        }
+        
+        .clearfix {
+            zoom: 1;
+        }
+        /* header,
+        article,
+        aside,
+        section,
+        footer,
+        coco {
+            display: block;
+        } */
+        
+        header {
+            padding: 20px 0;
+            background-color: #ccc;
+            text-align: center;
+        }
+        
+        article {
+            background-color: #eee;
+            padding: 20px;
+        }
+        
+        aside {
+            float: left;
+            width: 200px;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+        
+        section {
+            float: right;
+            width: 1080px;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+        
+        footer {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        coco {
+            width: 300px;
+            height: 300px;
+            background-color: #00f;
+        }
+    </style>
+    <script>
+        // document.createElement('header');
+        // document.createElement('article');
+        // document.createElement('aside');
+        // document.createElement('section');
+        // document.createElement('footer');
+    </script>
+    <script src="../lib/html5shiv.js"></script>
+</head>
+
+<body>
+    <header>页面头部</header>
+    <article class="clearfix">
+        <aside>侧边栏</aside>
+        <section>内容区域</section>
+    </article>
+    <footer>页面底部</footer>
+    <coco>我是coco</coco>
+</body>
+
+</html>
