@@ -77,6 +77,21 @@ async async="async" 异步加载 同时执行
 
 Labjs库
 
+历史管理
+    : 改变hash值来管理
+history
+    服务器下运行
+    pushState三个参数： 数据 标题（都没实现） 地址（可选）
+    popstate事件： 读取数据 event.state
+    注意：网址是虚假的，需在服务器指定对应页面，不然刷新找不到页面。
+
+触发历史管理
+1. 通过跳转页面
+2. hash
+3. pushState
+
+
+
 
 
 

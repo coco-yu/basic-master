@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>history</title>
+</head>
+
+<body>
+    <input type="button" value="随机选择" id="input1">
+    <div id="div1"></div>
+    <script>
+        var oInput = document.getElementById('input1');
+        var oDiv = document.getElementById('div1');
+
+        var json = {};
+
+        oInput.onclick = function() {
+            var num = Math.random();
+            var numList = randomNum(30, 5);
+            json[num] = numList;
+            oDiv.innerHTML = numList;
+            window.location.hash = num;
+        }
+
+        window.onhashchange = function() {
+            oDiv.innerHTML = json[window.location.hash.substring(1)];
+        }
+
+        function randomNum(all, now) {
+            var arr = [];
+            var newArr = [];
+            for (var i = 0; i < all; i++) {
+                arr.push(i);
+            }
+
+            for (var i = 0; i < now; i++) {
+                newArr.push(Math.floor(Math.random() * all));
+            }
+            return newArr;
+        }
+    </script>
+</body>
+
+</html>
