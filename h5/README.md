@@ -25,6 +25,8 @@
     date 显示日期
     week 显示周
     month 显示月
+20. autocomplete 是否自动保存用户输入值 autocomplete="on" autocomplete="off"
+21. autofocus 获取焦点（一打开页面）
 
 新增标签低版本浏览器兼容
 ie不兼容h5语义化标签，可以先在页面创建相应的标签，然后再使用。
