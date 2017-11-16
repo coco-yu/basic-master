@@ -65,4 +65,34 @@ JSON.parse() 只能解析json形式的字符串成json  安全性高
 
 JSON.parse JSON.stringify 不兼容使用www.json.org 上面的json2.js可以兼容IE8以下的浏览器
 
-深度拷贝
+
+自定义数据与js加载
+
+dataset
+
+
+延迟加载js
+defer defer="defer" 整个页面在整个页面加载完之后onload执行之前再执行/ 
+async async="async" 异步加载 同时执行
+
+Labjs库
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
