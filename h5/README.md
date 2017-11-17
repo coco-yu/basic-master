@@ -92,7 +92,17 @@ history
 
 
 
+拖拽事件
+拖拽元素事件：事件对象为被拖拽对象
+dragstart 拖拽前触发
+drag 拖拽前，拖拽结束之前，连续触发
+dragend 拖拽结束触发
 
+目标元素事件：事件对象为目标元素
+dragenter:进入目标元素触发，相当于mouseover
+dragover:进入目标，离开目标之间，连续触发
+dragleave:离开目标元素触发，相当于mouseout
+drop:在目标元素上释放鼠标触发
 
 
 
